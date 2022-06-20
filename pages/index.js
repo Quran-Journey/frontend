@@ -1,6 +1,8 @@
+import {server} from '../config'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import { lessons } from '../mock_data/data'
 
 export default function Home() {
   return (
@@ -20,6 +22,13 @@ export default function Home() {
           Get started by editing{' '}
           <code className={styles.code}>pages/index.js</code>
         </p>
+
+        {lessons.map(lesson => 
+        <div>
+          <h3>{lesson.name}</h3>
+          <p>{lesson.verses}</p>
+        </div>
+        )}
 
         <div className={styles.grid}>
           <a href="https://nextjs.org/docs" className={styles.card}>
@@ -52,6 +61,7 @@ export default function Home() {
         </div>
       </main>
 
+
       <footer className={styles.footer}>
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
@@ -66,4 +76,15 @@ export default function Home() {
       </footer>
     </div>
   )
+}
+
+export const getStaticProps = async () => {
+  const res = await fetch(`${server}/api/lessons`)
+  const lessons = await res.json()
+
+  return {
+    props: {
+      lessons,
+    }
+  }
 }
