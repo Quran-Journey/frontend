@@ -4,6 +4,12 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import { lessons } from '../mock_data/data'
 
+import * as React from 'react';
+import Chip from '@mui/material/Chip';
+import Stack from '@mui/material/Stack';
+import { Button } from '@mui/material'
+import Typography from '@mui/material/Typography';
+
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -14,11 +20,21 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
+        {/* <h1 className={styles.title}>
           Welcome to <a href="">Quran Journey</a>
-        </h1>
+        </h1> */}
+        <Typography variant="h1">
+        
+          Welcome to Quran Journey
+        
+        </Typography>
+        
         <br/>
         <br/>
+
+        <Chip color="secondary" label="Lessons" />
+        {/* <Button>Lessons</Button> */}
+
 
 
         {/* <p className={styles.description}>
