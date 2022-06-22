@@ -41,6 +41,8 @@ const lightTheme = createTheme({
     },
     h6: {
       fontFamily: '"Poppins", "Helvetica", "Arial", sans-serif',
+      fontWeight: 700,
+
     },
     subtitle1: {
       fontFamily: '"Poppins", "Helvetica", "Arial", sans-serif',
@@ -63,13 +65,25 @@ const lightTheme = createTheme({
       textTransform: 'none',
     },
   },
-  defaultProps: {
+  components: {
+    // Name of the component
     MuiChip: {
-      fontWeight: 600,
-      fontFamily: '"Poppins", "Helvetica", "Arial", sans-serif',
-      textTransform: 'uppercase',
-    }
-  }
+      styleOverrides: {
+        // Name of the slot
+        root: {
+          // Some CSS
+          textTransform: 'uppercase',
+          fontFamily: '"Poppins", "Helvetica", "Arial", sans-serif',
+          fontWeight: 700,
+          paddingLeft: '1.2em',
+          paddingRight: '1.2em',
+          paddingTop: '1.45em',
+          paddingBottom: '1.45em',
+          borderRadius: '50px'
+        },
+      },
+    },
+  },
 })
 
 export default lightTheme;
