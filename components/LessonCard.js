@@ -1,16 +1,17 @@
 import * as React from 'react';
-// import {server} from '../config'
-// import Head from 'next/head'
-// import styles from '../styles/Home.module.css'
 
 import Typography from '@mui/material/Typography';
-import { Container, Grid } from '@mui/material';
+import { Container, Grid, Button } from '@mui/material';
+
 
 const LessonCard = (props) => {
     return (
-        <Grid item xs={12} md={4}>
+        <Grid item xs={12} md={6} lg={4}>
             <Grid container sx={{p: 1}}>
+
             <Grid item sx={{ backgroundColor: '#FFFFFF', borderRadius: '32px', width: '100%' }}>
+            <Button color="dark" sx={{ width: "100%", borderRadius: 'inherit'}}>
+
             <Grid container
             direction="row"
             justifyContent="space-between"
@@ -32,14 +33,23 @@ const LessonCard = (props) => {
                 </Grid>
 
                 <Grid item>
-                  <Typography variant="h5" sx={{ mb: 0 }}>
-                    {/* Al-Fatiha */}
-                    {props.name}
-                  </Typography>
-                  <Typography variant="subtitle2">
-                    {/* The Opener */}
-                    {props.meaning}
-                  </Typography>
+                    <Grid container
+                    direction="column"
+                    justifyContent="flex-start"
+                    alignItems="flex-start">
+                        <Grid item>
+                            <Typography variant="h5" sx={{ mb: 0 }}>
+                                {/* Al-Fatiha */}
+                                {props.name}
+                            </Typography>
+                        </Grid>
+                        <Grid item>
+                            <Typography variant="subtitle2">
+                                {/* The Opener */}
+                                {props.meaning}
+                            </Typography>
+                        </Grid>
+                    </Grid>
                 </Grid>
               </Grid>
               </Grid>
@@ -64,7 +74,10 @@ const LessonCard = (props) => {
                 </Grid>
               </Grid>
             </Grid>
+            </Button>
+
           </Grid>
+
           </Grid>
         </Grid>
     )  
