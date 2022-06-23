@@ -6,14 +6,11 @@ import { lessons } from '../mock_data/data'
 
 import * as React from 'react';
 import Chip from '@mui/material/Chip';
-import Stack from '@mui/material/Stack';
-import { Button, Container, Grid, Paper, InputBase, Divider, IconButton, ListItemSecondaryAction } from '@mui/material'
+import { Button, Container, Grid, Paper, InputBase, IconButton } from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search';
-import PageviewIcon from '@mui/icons-material/Pageview';
 import Typography from '@mui/material/Typography';
 import Nav from '../components/Nav'
-import TextField from '@mui/material/TextField';
-import FindInPageIcon from '@mui/icons-material/FindInPage';
+import LessonCard from '../components/LessonCard'
 
 
 export default function Home() {
@@ -42,7 +39,7 @@ export default function Home() {
 
       <Nav />
 
-      <Container>
+      <Container sx={{ mb: 10 }}>
         <Grid container
           direction="column"
           justifyContent="flex-start"
@@ -77,25 +74,16 @@ export default function Home() {
           </Grid>
         </Grid>
 
+        <Grid container direction="row"
+        justifyContent="flex-start"
+        alignItems="flex-start" sx={{ mt: 4 }} >
+          {lessons.map(lesson => 
+            <LessonCard id={lesson.id} name={lesson.name} name_ar={lesson.name_ar} meaning={lesson.meaning} verses={lesson.verses}/>
+          )}
+        </Grid>
       </Container>
 
-      <main className={styles.main}>
       
-        <div className={styles.grid}>
-
-        {lessons.map(lesson => 
-          <a href="" className={styles.card}>
-            <h2>{lesson.name} &rarr;</h2>
-            <p>{lesson.meaning}</p>
-            <p>{lesson.name_ar}</p>
-            <p>{lesson.verses}</p>
-          </a>
-        )}
-        </div>
-
-      </main>
-
-
       <footer className={styles.footer}>
         <a> Quran Journey </a>
       </footer>

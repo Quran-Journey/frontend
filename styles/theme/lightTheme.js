@@ -23,7 +23,7 @@ const lightTheme = createTheme({
     sage: {
       main: "#CCECE9",
       light: "#F5F4F3",
-      dark: "#bee520"
+      dark: "#FFA24C"
     }
   },
   typography: {
@@ -83,6 +83,8 @@ const lightTheme = createTheme({
     },
     h5: {
       fontFamily: '"Poppins", "Helvetica", "Arial", sans-serif',
+      fontWeight: 600,
+
     },
     h6: {
       fontFamily: '"Poppins", "Helvetica", "Arial", sans-serif',
