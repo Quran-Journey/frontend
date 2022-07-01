@@ -1,5 +1,12 @@
 export const lessons = [
     {
+        id: '100',
+        name: "Al 'adiyat",
+        name_ar: 'العَادیَات',
+        meaning: 'The Courser',
+        verses: '11'
+    },
+    {
         id: '1',
         name: 'Al-Fatiha',
         name_ar: 'الفَاتِحَة',
@@ -62,4 +69,5 @@ export const lessons = [
         meaning: 'The Repentance',
         verses: '129'
     },
+    
 ]

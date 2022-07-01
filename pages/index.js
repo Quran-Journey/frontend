@@ -84,9 +84,9 @@ export default function Home() {
       </Container>
 
       
-      <footer className={styles.footer}>
+      {/* <footer className={styles.footer}>
         <a> Quran Journey </a>
-      </footer>
+      </footer> */}
     </div>
   )
 }

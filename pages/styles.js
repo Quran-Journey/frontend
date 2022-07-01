@@ -33,7 +33,7 @@ import Brightness7RoundedIcon from '@mui/icons-material/Brightness7Rounded';
 // import AccordionDetails from '@mui/material/AccordionDetails';
 // import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
-export default function Home() {
+export default function Style() {
   return (
     <div>
 

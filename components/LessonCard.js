@@ -24,7 +24,7 @@ const LessonCard = (props) => {
                   justifyContent="center"
                   alignItems="center">
                     <Grid item>
-                      <Typography variant="h5" sx={{ mb: 0 }}>
+                      <Typography variant="h6" sx={{ mb: 0 }}>
                         {/* 1 */}
                         {props.id}
                       </Typography>
