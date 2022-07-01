@@ -86,6 +86,13 @@ const lightTheme = createTheme({
       fontWeight: 600,
 
     },
+    h5_ar: {
+      fontFamily: '"IBM Plex Sans Arabic", "Helvetica", "Arial", sans-serif',
+      fontWeight: 500,
+      fontSize: '0.95rem',
+      // lineHeight: 1.5,      
+
+    },
     h6: {
       fontFamily: '"Poppins", "Helvetica", "Arial", sans-serif',
       fontWeight: 700,
@@ -100,7 +107,7 @@ const lightTheme = createTheme({
     body1: {
       fontFamily: '"Open Sans", "Helvetica", "Arial", sans-serif',
       fontWeight: 600,
-      lineHeight: 1.7,
+      lineHeight: 2,
       fontSize: '1.1rem',
     },
     body2: {
@@ -115,6 +122,12 @@ const lightTheme = createTheme({
       textTransform: 'none',
       letterSpacing: '-0.01em',
     },
+    // copyright: {
+    //   fontWeight: 700,
+    //   fontFamily: '"Poppins", "Helvetica", "Arial", sans-serif',
+    //   letterSpacing: '-0.01em',
+    //   fontSize: '0.9rem',
+    // }
   },
   components: {
     // Name of the component
