@@ -112,7 +112,7 @@ const lightTheme = createTheme({
     },
     body2: {
       fontFamily: '"Open Sans", "Helvetica", "Arial", sans-serif',
-      fontWeight: 500,
+      fontWeight: 600,
       lineHeight: 1.7,
       fontSize: '1rem',
     },
