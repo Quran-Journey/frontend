@@ -22,8 +22,8 @@ const lightTheme = createTheme({
     },
     sage: {
       main: "#CCECE9",
-      light: "#F5F4F3",
-      dark: "#FFA24C"
+      light: "#5de3de",
+      dark: "#3fe0da"
     }
   },
   typography: {
