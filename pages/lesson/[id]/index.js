@@ -117,7 +117,9 @@ export default function lessonIntro() {
                 </Grid>
                 <Grid item lg={3} sx={{ pl: 3, borderLeft: 1, minHeight: '100vh' }}>
                     <Grid container direction="column" sx={{ top: 35, position: 'sticky' }}>
-                        {/* <Grid item sx={{ mb: 5 }}>
+                
+
+                    <Grid item sx={{ mb: 5 }}>
                         <Paper elevation={0}
                         component="form"
                         sx={{ px: "4px", py: "4px", borderRadius: 10, display: 'flex', alignItems: 'center', width: '100%', backgroundColor: '#F5F4F3'}}>
@@ -125,12 +127,29 @@ export default function lessonIntro() {
                             <SearchIcon />
                         </IconButton>
                         <InputBase
-                            sx={{ ml: 0, flex: 1 }}
+                            sx={{ ml: 0, flex: 1,  fontSize: 12 }}
+
                             placeholder="Search Surah or Keyword"
                             inputProps={{ 'aria-label': 'Search surah' }}
                         />
                         </Paper>
-                        </Grid> */}
+                        </Grid>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                         <Grid item>
                             <Typography variant="h5" sx={{ mb: 2 }}>
                                 Sections     
