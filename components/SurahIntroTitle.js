@@ -7,7 +7,7 @@ import Nav from './Nav'
 import ArrowCircleRightRoundedIcon from '@mui/icons-material/ArrowCircleRightRounded';
 import DarkModeRoundedIcon from '@mui/icons-material/DarkModeRounded';// import { ColorLensIcon } from '@mui/icons-material';
 import Footer from './Footer';
-import SideBar from './SideBarTest';
+//import SideBar from './SideBarTest';
 import SectionButton from './SectionButton';
 
 const SurahIntroTitle = (props) => {
