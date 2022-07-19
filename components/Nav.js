@@ -2,9 +2,9 @@ import * as React from 'react';
 // import {server} from '../config'
 // import Head from 'next/head'
 // import styles from '../styles/Home.module.css'
-
+import QuranJourneyButton from './QuranJourneyButton';
 import Typography from '@mui/material/Typography';
-import { Container, Grid } from '@mui/material';
+import { Container, Grid, Link } from '@mui/material';
 import IconButton from '@mui/material/IconButton';
 // import Button from '@mui/material';
 import Brightness6Icon from '@mui/icons-material/Brightness6';
@@ -22,24 +22,9 @@ const Nav = () => {
         direction="row"
         justifyContent="space-between"
         alignItems="center">
-            <Grid item>
-
-              <Grid container
-              direction="row"
-              justifyContent="flex-start"
-              alignItems="center">
-                <Grid item>
-                  <IconButton color="dark">
-                      <DarkModeRoundedIcon />
-                  </IconButton>  
-                </Grid>
-                <Grid item>
-                  <Typography variant='h6'>
-                      Quran Journey
-                  </Typography>
-                </Grid>
-              </Grid>
-            </Grid>
+            <Link href="../" style={{ textDecoration: 'none', color: 'black' }}>
+            <QuranJourneyButton/>
+            </Link>
 
             <Grid item>
                 <IconButton color="dark">

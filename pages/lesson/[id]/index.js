@@ -10,14 +10,14 @@
 
 import * as React from 'react';
 import Chip from '@mui/material/Chip';
-import { Button, Container, Grid, Paper, InputBase, IconButton } from '@mui/material'
+import { Button, Container, Grid, Paper, InputBase, IconButton, Link } from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search';
 import Typography from '@mui/material/Typography';
 import Nav from '../../../components/Nav';
 // import LessonCard from '../components/LessonCard'
 import ArrowCircleRightRoundedIcon from '@mui/icons-material/ArrowCircleRightRounded';
 import DarkModeRoundedIcon from '@mui/icons-material/DarkModeRounded';// import { ColorLensIcon } from '@mui/icons-material';
-
+import QuranJourneyButton from '../../../components/QuranJourneyButton';
 
 
 
@@ -231,31 +231,17 @@ export default function lessonIntro() {
             direction="row"
             alignItems="center"
             justifyContent="space-between">
-                <Grid item>
-                    <Grid container
-                    direction="row"
-                    justifyContent="flex-start"
-                    alignItems="center">
-                        <Grid item>
-                        <IconButton color="dark">
-                            <DarkModeRoundedIcon />
-                        </IconButton>  
-                        </Grid>
-                        <Grid item>
-                        <Typography variant='h6'>
-                            Quran Journey
-                        </Typography>
-                        </Grid>
-                    </Grid>
-                </Grid>
-                <Grid item>
+                <Link href="../" style={{ textDecoration: 'none', color: 'black' }}>
+                <QuranJourneyButton/>
+                </Link>
+
                     {/* Come back to this styling */}
                     <Typography vairant="h6" sx={{ color: '#727272', textTransform: 'uppercase', fontWeight: '700', fontFamily: '"Poppins", "Helvetica", "Arial", sans-serif', fontSize: '0.9rem'}}>
                         © 2022 Quran Journey All Rights Reserved
                     </Typography>
                     
                 </Grid>
-            </Grid>
+        
         </Container>
         </>
     )
