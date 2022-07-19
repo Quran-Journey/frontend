@@ -22,10 +22,9 @@ const Nav = () => {
         direction="row"
         justifyContent="space-between"
         alignItems="center">
-            <Link href="../" style={{ textDecoration: 'none', color: 'black' }}>
-            <QuranJourneyButton/>
-            </Link>
-
+            <Grid item>
+              <QuranJourneyButton/>
+            </Grid>
             <Grid item>
                 <IconButton color="dark">
                     <Brightness6Icon />

@@ -11,9 +11,10 @@ const Footer = () => {
             direction="row"
             alignItems="center"
             justifyContent="space-between">
-                <Link href="../" style={{ textDecoration: 'none', color: 'black' }}>
-                <QuranJourneyButton/>
-                </Link>
+
+                <Grid item>                
+                    <QuranJourneyButton/>
+                </Grid>
 
                 <Grid item>
                     {/* Come back to this styling */}

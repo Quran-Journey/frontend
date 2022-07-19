@@ -231,9 +231,7 @@ export default function lessonIntro() {
             direction="row"
             alignItems="center"
             justifyContent="space-between">
-                <Link href="../" style={{ textDecoration: 'none', color: 'black' }}>
                 <QuranJourneyButton/>
-                </Link>
 
                     {/* Come back to this styling */}
                     <Typography vairant="h6" sx={{ color: '#727272', textTransform: 'uppercase', fontWeight: '700', fontFamily: '"Poppins", "Helvetica", "Arial", sans-serif', fontSize: '0.9rem'}}>
