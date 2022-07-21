@@ -36,7 +36,7 @@ export default function lessonMain () {
         <Nav />
 
         <Container sx={{ pb: 10 }}>
-        <Button variant="outlined" color="dark" startIcon={ <ArrowCircleLeftRoundedIcon />}>Back</Button>
+        <Button variant="outlined" color="dark" startIcon={ <ArrowCircleLeftRoundedIcon />}><a href="/lessonIntro" style={{textDecoration: 'none'}}>Back</a></Button>
 
         {/* <Grid container direction='column'>
             <Grid item>
