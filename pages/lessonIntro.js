@@ -5,7 +5,7 @@
 // import {server} from '../config'
 // import Head from 'next/head'
 // import Image from 'next/image'
-// import styles from '../styles/Home.module.css'
+import styles from '../styles/Home.module.css'
 // import { lessons } from '../mock_data/data'
 
 import * as React from 'react';
@@ -24,7 +24,7 @@ import SideBar from '../components/SideBar'
 import SectionButton from '../components/SectionButton';
 import SurahIntroTitle from '../components/SurahIntroTitle';
 import BodyText from '../components/BodyText';
-// import { Link } from "react-scroll";
+import { Link } from "react-scroll";
 
 // This will change later
 // const sections = [{section: 'Name'}, {section: 'Period of Revelation'}, {section: 'Theme and Subject Matter'}]
@@ -54,8 +54,7 @@ export default function lessonIntro() {
                     {surah_info.map((surah) =>
                         <BodyText heading={surah.heading} highlighted={surah.highlighted} content={surah.content}/>
                     )}
-                    
-                    <Button variant="outlined" color="dark" startIcon={ <ArrowCircleRightRoundedIcon />}>Go to Lecture</Button>
+                    <Button variant="outlined" color="dark" startIcon={ <ArrowCircleRightRoundedIcon />}><a href="/lessonMain" style={{textDecoration: 'none'}}>Go to Lecture</a></Button>
                 </Grid>
                 <SideBar type={sideBarType.type} sections={surah_info} />
             </Grid>
