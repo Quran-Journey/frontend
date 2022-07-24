@@ -14,6 +14,7 @@ import SideBar from '../components/SideBar'
 import SectionButton from '../components/SectionButton';
 import SurahIntroTitle from '../components/SurahIntroTitle';
 import BodyText from '../components/BodyText';
+import ArrowDropDownCircleRoundedIcon from '@mui/icons-material/ArrowDropDownCircleRounded';
 
 const surah_details = {name: "Surah Al 'adiyat", name_ar: 'سُوۡرَةُ العَادیَات', verses: '11'}
 const verse_data = [
@@ -216,7 +217,27 @@ export default function lessonMain () {
                                 </Grid>
 
                     
+                                <Grid item sx={{ mt: 5, mb: 2 }}>
+                                    <Grid container direction='row'
+                                    alignItems="center">
+                                        <Grid item sx={{ mr: 3 }}>
+                                            <Typography variant='h5'>
+                                                Tafasir
+                                            </Typography>
+                                        </Grid>
+                                        <Grid item>
+                                            <Button variant="outlined" color="dark" endIcon={ <ArrowDropDownCircleRoundedIcon />}> {verse_data[0].tafsir[0].mufasir} </Button>
 
+                                        </Grid>
+                                    </Grid>
+                                    
+                                </Grid>
+
+                                <Grid item>
+                                    <Typography variant='body2'>
+                                        {verse_data[0].tafsir[0].text}
+                                    </Typography>
+                                </Grid>
                             </Grid>
                         </Grid>
 
