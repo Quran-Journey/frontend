@@ -60,7 +60,7 @@ const verse_data = [
             text: 'Horses or Camels and this is during battle. From other reports: It is when horses/riders set out in the way of Allah SWT and then take refuge at night and make food by making a fire. Ata narrates that Ibn Abbas described the noise as أَحْ أَحْ.'
         }],
         reflections: [{
-            sub_heading: '', 
+            sub_heading: 'Horse Vocalizations', 
             text: '*Whinny or Neigh* - A whinny or a neigh often denotes a greeting or an affirmation of location. *Nicker* - The nicker is a low pitched guttural sound. I equate it with happiness. *Snort* - The horse usually holds his head high while exhaling through the nose with his mouth shut. *Squeal* - The horse usually squeals with its mouth closed. A squeal varies in length and loudness depending on the intensity of the situation. Often you hear a mare squeal when she did not like something that is happening or is being courted by a male. *Blow* - The blow is a simple exhale through the nose but the horse has his mouth shut. The blow is much like the snort but without any vibration or fluttering noises. Curiosity, well being, happy anticipation of a good romp and ride, or the greeting of another horse will bring on a blow. *Grunt or Groan* - The grunt or groan can be considered a sign of pain as well as a sign of contentment. *Roar or Trumpet* - Anger, confusion, fear, rage and pain will bring on a roar or trumpet. It is really a disturbing sound. It is a sound of a horse in some kind of distress. *Roar or Trumpet* - Anger, confusion, fear, rage and pain will bring on a roar or trumpet. It is really a disturbing sound. It is a sound of a horse in some kind of distress. *Sigh* - Drawing in a deep breath, then letting it out slowly and audibly through the mouth or nostrils is a horse sigh. A sigh can mean relief from something that is bothering the horse.'
         }]
         },
@@ -233,9 +233,21 @@ export default function lessonMain () {
                                     
                                 </Grid>
 
-                                <Grid item>
+                                <Grid item sx={{pb: 5, borderBottom: 1}}>
                                     <Typography variant='body2'>
                                         {verse_data[0].tafsir[0].text}
+                                    </Typography>
+                                </Grid>
+
+                                <Grid item sx={{ mt: 5, mb: 2 }}>
+                                    <Typography variant='h5'>
+                                        Reflections
+                                    </Typography>
+                                </Grid>
+
+                                <Grid item sx={{ mb: 6 }}>
+                                    <Typography variant='body2'>
+                                        {verse_data[0].reflections[0].text}
                                     </Typography>
                                 </Grid>
                             </Grid>
