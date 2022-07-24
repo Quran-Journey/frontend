@@ -19,9 +19,15 @@ const SideBar = (props) => {
                     </Typography>
                 </Grid>
                 <Grid item>
-                    {props.sections.map((sections) => 
-                    <SectionButton section={sections.heading} />
-                    )}
+                    {props.sections ?
+                        <>
+                        {props.sections.map((sections) => 
+                            <SectionButton section={sections.heading} />
+                            )} 
+                        </> 
+                        : <></>
+                    }
+                    
                 </Grid>
             </Grid>
         </Grid>
