@@ -77,36 +77,146 @@ export default function lessonMain () {
                 <Grid item lg={9} sx={{ pr: 9, pb: 10 }}>
                     <Grid container direction='column'>
                         <Grid item sx={{ backgroundColor: '#EEF1EC', py: 3, px: 4, borderRadius: '32px', width: '100%' }}>
-                            <Grid container direction='column' sx={{ pb: 4, borderBottom: 1 }}>
+                            <Grid container direction='column'>
                                 <Grid item sx={{ mb: 1 }}>
                                     <Grid container direction='row' justifyContent="space-between">
                                         <Grid item>
-                                            <Typography variant='subtitle1'>
+                                            <Typography variant='subtitle1' sx={{ color: '#727272' }}>
                                                 {verse_data[0].surah_num}:{verse_data[0].verse}
                                             </Typography>
                                         </Grid>
                                         <Grid item>
-                                            <Typography variant='h5_ar'>
+                                            <Typography variant='h5_ar' sx={{ color: '#727272' }}>
                                                 {surah_details.name_ar}
                                             </Typography>
                                         </Grid>
                                     </Grid>
                                 </Grid>
-                                <Grid item>
+                                <Grid item sx={{pb: 5, borderBottom: 1}}>
                                     <Grid container direction='row' justifyContent="space-between">
-                                            <Grid item>
-                                                <Typography variant='body2'>
-                                                    {verse_data[0].translation}
-                                                </Typography>
+                                        <Grid item>
+                                            <Typography variant='body2'>
+                                                {verse_data[0].translation}
+                                            </Typography>
+                                        </Grid>
+                                        <Grid item>
+                                            <Typography variant='h4_ar'>
+                                                {verse_data[0].ayah} ({verse_data[0].verse})
+                                            </Typography>
+                                        </Grid>
+                                    </Grid>
+                                </Grid>
+
+                                <Grid item sx={{ mt: 5, mb: 4 }}>
+                                    <Typography variant='h5'>
+                                        Linguistics/Rhetorical Benefits
+                                    </Typography>
+                                </Grid>
+
+                                <Grid item sx={{ mb: 3 }}>
+                                    <Grid container direction='row'>
+                                        <Grid item lg={4} sx={{ pr: 2 }}>
+                                            <Grid container direction="column"
+                                            justifyContent="space-between"
+                                            alignItems="center" sx={{ backgroundColor: '#ffffff', borderRadius: '32px', height: '100%', py: 2}}>
+                                                <Grid item>
+                                                    {/* <Chip color="secondary" label="Word" size="small"/> */}
+                                                </Grid>
+                                                <Grid item>
+                                                    <Grid container direction='column'
+                                                    justifyContent="center"
+                                                    alignItems="center">
+                                                        <Grid item>
+                                                            <Typography variant='h3_ar'>
+                                                                {verse_data[0].root_words[0].word}
+                                                            </Typography>
+                                                        </Grid>
+                                                        <Grid item>
+                                                            <Grid container direction='row' justifyContent="center" alignItems="center">
+                                                                <Grid item>
+                                                                    <Typography variant='subtitle2' sx={{pt: 1, pr: 1}}>
+                                                                        Root word:
+                                                                    </Typography>
+                                                                </Grid>
+                                                                <Grid item>
+                                                                    <Typography variant='h5_ar'>
+                                                                        {verse_data[0].root_words[0].root}
+                                                                    </Typography>
+                                                                </Grid>
+                                                            </Grid>
+                                                        </Grid>
+                                                    </Grid>
+                                                </Grid>
+                                                <Grid item>
+                                                    {/* <Chip /> */}
+                                                    
+                                                </Grid>
+
                                             </Grid>
-                                            <Grid item>
-                                                <Typography variant='h4_ar'>
-                                                    {verse_data[0].ayah} ({verse_data[0].verse})
-                                                </Typography>
-                                            </Grid>
+
+                                        </Grid>
+                                        <Grid item lg={8} sx={{ pl: 3 }}>
+                                            <Typography variant='body2'>
+                                                {verse_data[0].root_words[0].blurb}
+                                            </Typography>
                                         </Grid>
 
+                                    </Grid>
                                 </Grid>
+
+                                <Grid item sx={{pb: 5, borderBottom: 1}}>
+                                    <Grid container direction='row'>
+                                        <Grid item lg={4} sx={{ pr: 2 }}>
+                                            <Grid container direction="column"
+                                            justifyContent="space-between"
+                                            alignItems="center" sx={{ backgroundColor: '#ffffff', borderRadius: '32px', height: '100%', py: 2}}>
+                                                <Grid item>
+                                                    {/* <Chip color="secondary" label="Word" size="small"/> */}
+                                                </Grid>
+                                                <Grid item>
+                                                    <Grid container direction='column'
+                                                    justifyContent="center"
+                                                    alignItems="center">
+                                                        <Grid item>
+                                                            <Typography variant='h3_ar'>
+                                                                {verse_data[0].root_words[1].word}
+                                                            </Typography>
+                                                        </Grid>
+                                                        <Grid item>
+                                                            <Grid container direction='row' justifyContent="center" alignItems="center">
+                                                                <Grid item>
+                                                                    <Typography variant='subtitle2' sx={{pt: 1, pr: 1}}>
+                                                                        Root word:
+                                                                    </Typography>
+                                                                </Grid>
+                                                                <Grid item>
+                                                                    <Typography variant='h5_ar'>
+                                                                        {verse_data[0].root_words[1].root}
+                                                                    </Typography>
+                                                                </Grid>
+                                                            </Grid>
+                                                        </Grid>
+                                                    </Grid>
+                                                </Grid>
+                                                <Grid item>
+                                                    {/* <Chip /> */}
+                                                    
+                                                </Grid>
+
+                                            </Grid>
+
+                                        </Grid>
+                                        <Grid item lg={8} sx={{ pl: 3 }}>
+                                            <Typography variant='body2'>
+                                                {verse_data[0].root_words[1].blurb}
+                                            </Typography>
+                                        </Grid>
+
+                                    </Grid>
+                                </Grid>
+
+                    
+
                             </Grid>
                         </Grid>
 
