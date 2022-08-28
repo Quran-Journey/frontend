@@ -27,6 +27,7 @@ import VisibilityOffRoundedIcon from '@mui/icons-material/VisibilityOffRounded';
 import AddBoxRoundedIcon from '@mui/icons-material/AddBoxRounded';
 import Brightness6RoundedIcon from '@mui/icons-material/Brightness6Rounded';
 import Brightness7RoundedIcon from '@mui/icons-material/Brightness7Rounded';
+import AyahButton from '../components/AyahButton'
 // import LightModeRoundedIcon from '@mui/icons-material/LightModeRounded';
 // import Accordion from '@mui/material/Accordion';
 // import AccordionSummary from '@mui/material/AccordionSummary';
@@ -150,6 +151,8 @@ export default function Style() {
                 
             </Grid>
           </Grid>
+
+          <AyahButton/>
 
           <Grid item sx={{ mt: 0 }}>
             <Typography variant="h3">
