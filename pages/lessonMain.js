@@ -1,33 +1,36 @@
 import * as React from 'react';
-import Chip from '@mui/material/Chip';
+// import Chip from '@mui/material/Chip';
 import { Button, Container, Grid, Paper, InputBase, IconButton } from '@mui/material'
-import SearchIcon from '@mui/icons-material/Search';
+// import AspectRatio from '@mui/joy/AspectRatio';
+// import SearchIcon from '@mui/icons-material/Search';
 import Typography from '@mui/material/Typography';
 // import Nav from '../../components/Nav';
 import Nav from '../components/Nav'
 // import LessonCard from '../components/LessonCard'
 import ArrowCircleLeftRoundedIcon from '@mui/icons-material/ArrowCircleLeftRounded';
-import DarkModeRoundedIcon from '@mui/icons-material/DarkModeRounded';// import { ColorLensIcon } from '@mui/icons-material';
+// import DarkModeRoundedIcon from '@mui/icons-material/DarkModeRounded';// import { ColorLensIcon } from '@mui/icons-material';
 import Footer from '../components/Footer';
 // import SideBar from '../components/SideBarTest';
 import SideBar from '../components/SideBar'
-import SectionButton from '../components/SectionButton';
-import SurahIntroTitle from '../components/SurahIntroTitle';
-import BodyText from '../components/BodyText';
+// import SectionButton from '../components/SectionButton';
+// import SurahIntroTitle from '../components/SurahIntroTitle';
+// import BodyText from '../components/BodyText';
 import ArrowDropDownCircleRoundedIcon from '@mui/icons-material/ArrowDropDownCircleRounded';
-
-import ListSubheader from '@mui/material/ListSubheader';
-import List from '@mui/material/List';
+import SurahIntroTitle from '../components/SurahIntroTitle';
+import ReactPlayer from "react-player"
+// import ListSubheader from '@mui/material/ListSubheader';
+// import List from '@mui/material/List';
 import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
+// import ListItemIcon from '@mui/material/ListItemIcon';
+// import ListItemText from '@mui/material/ListItemText';
 import Collapse from '@mui/material/Collapse';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import DraftsIcon from '@mui/icons-material/Drafts';
-import SendIcon from '@mui/icons-material/Send';
-import ExpandLess from '@mui/icons-material/ExpandLess';
-import ExpandMore from '@mui/icons-material/ExpandMore';
-import StarBorder from '@mui/icons-material/StarBorder';
+import DetailedSurahTitle from '../components/DetailedSurahTitle'
+// import InboxIcon from '@mui/icons-material/MoveToInbox';
+// import DraftsIcon from '@mui/icons-material/Drafts';
+// import SendIcon from '@mui/icons-material/Send';
+// import ExpandLess from '@mui/icons-material/ExpandLess';
+// import ExpandMore from '@mui/icons-material/ExpandMore';
+// import StarBorder from '@mui/icons-material/StarBorder';
 
 const surah_details = {name: "Surah Al 'adiyat", name_ar: 'سُوۡرَةُ العَادیَات', verses: '11'}
 const verse_data = [
@@ -38,7 +41,7 @@ const verse_data = [
     root_words: [{
         word: 'ٱلْعَـٰدِيَـٰتِ',
         root: 'عدو',
-        blurb: 'The وَ in the word وَالْعَادِيَاتِ is for taking an oath. Thus we can look for the response to the oath in ayah 6 /n The word وَالْعَادِيَاتِ is from the root عدو and is associated with the meanings of: to run, speed, gallop, dash, race; to go pass the limits of something, to transgress rights,to engage in aggressive or hostile action; to harbor mutual enmity and hatred'
+        blurb: 'The وَ in the word وَالْعَادِيَاتِ is for taking an oath. Thus we can look for the response to the oath in ayah 6 \r\n The word وَالْعَادِيَاتِ is from the root عدو and is associated with the meanings of: to run, speed, gallop, dash, race; to go pass the limits of something, to transgress rights,to engage in aggressive or hostile action; to harbor mutual enmity and hatred'
         },
         {
             word: 'ضَبْحًا',
@@ -81,6 +84,9 @@ const verse_data = [
 
 console.log(verse_data)
 
+// split string from api
+// Recoil -> For state management
+// Redux 
 export default function lessonMain () {
 
     const [open, setOpen] = React.useState(false);
@@ -102,10 +108,18 @@ export default function lessonMain () {
        
 
         <Container>
+            {/* Vimeo - place holder sdk */}
 
             <Grid container direction='row'>
                 <Grid item lg={9} sx={{ pr: 9, pb: 10 }}>
+
                     <Grid container direction='column'>
+                        <Grid item sx={{ mb: 2 }}>
+                            <iframe src="https://player.vimeo.com/video/695692957?h=0c7714e3d7&title=0&byline=0&portrait=0" class="video" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                        </Grid>
+                        <Grid item>
+                            <DetailedSurahTitle name={surah_details.name} name_ar={surah_details.name_ar} verses={surah_details.verses}/>
+                        </Grid>
                     <ListItemButton onClick={handleClick} sx={{ borderRadius: '32px', width: '100%', m: 0, p: 0,  mb: 2 }}>
 
                         <Grid item sx={{ backgroundColor: '#EEF1EC', py: 3, px: 4, borderRadius: '32px', width: '100%' }}>
@@ -155,10 +169,10 @@ export default function lessonMain () {
 
                                 <Grid item sx={{ mb: 3 }}>
                                     <Grid container direction='row'>
-                                        <Grid item lg={4} sx={{ pr: 2 }}>
+                                        <Grid item xs={4} sx={{ pr: 2 }}>
                                             <Grid container direction="column"
                                             justifyContent="space-between"
-                                            alignItems="center" sx={{ backgroundColor: '#ffffff', borderRadius: '32px', height: '100%', py: 2}}>
+                                            alignItems="center" sx={{ backgroundColor: '#ffffff', width: '100%', aspectRatio: '1', borderRadius: '32px', py: 2}}>
                                                 <Grid item>
                                                     {/* <Chip color="secondary" label="Word" size="small"/> */}
                                                 </Grid>
@@ -195,7 +209,7 @@ export default function lessonMain () {
                                             </Grid>
 
                                         </Grid>
-                                        <Grid item lg={8} sx={{ pl: 3 }}>
+                                        <Grid item xs={8} sx={{ pl: 2, pt: 1 }}>
                                             <Typography variant='body2'>
                                                 {verse_data[0].root_words[0].blurb}
                                             </Typography>
@@ -206,10 +220,10 @@ export default function lessonMain () {
 
                                 <Grid item sx={{pb: 5, borderBottom: 1}}>
                                     <Grid container direction='row'>
-                                        <Grid item lg={4} sx={{ pr: 2 }}>
+                                        <Grid item xs={4} sx={{ pr: 2 }}>
                                             <Grid container direction="column"
                                             justifyContent="space-between"
-                                            alignItems="center" sx={{ backgroundColor: '#ffffff', borderRadius: '32px', height: '100%', py: 2}}>
+                                            alignItems="center" sx={{ backgroundColor: '#ffffff', borderRadius: '32px',width: '100%', aspectRatio: '1', py: 2}}>
                                                 <Grid item>
                                                     {/* <Chip color="secondary" label="Word" size="small"/> */}
                                                 </Grid>
@@ -246,7 +260,7 @@ export default function lessonMain () {
                                             </Grid>
 
                                         </Grid>
-                                        <Grid item lg={8} sx={{ pl: 3 }}>
+                                        <Grid item xs={8} sx={{ pl: 2, pt: 1 }}>
                                             <Typography variant='body2'>
                                                 {verse_data[0].root_words[1].blurb}
                                             </Typography>
@@ -351,7 +365,7 @@ export default function lessonMain () {
                                         <Grid item lg={4} sx={{ pr: 2 }}>
                                             <Grid container direction="column"
                                             justifyContent="space-between"
-                                            alignItems="center" sx={{ backgroundColor: '#ffffff', borderRadius: '32px', height: '100%', py: 2}}>
+                                            alignItems="center" sx={{ backgroundColor: '#ffffff', borderRadius: '32px', width: '100%', aspectRatio: '1', py: 2}}>
                                                 <Grid item>
                                                     {/* <Chip color="secondary" label="Word" size="small"/> */}
                                                 </Grid>
@@ -388,7 +402,7 @@ export default function lessonMain () {
                                             </Grid>
 
                                         </Grid>
-                                        <Grid item lg={8} sx={{ pl: 3 }}>
+                                        <Grid item sm={8} sx={{ pl: 2, pt: 1 }}>
                                             <Typography variant='body2'>
                                                 {verse_data[0].root_words[0].blurb}
                                             </Typography>
@@ -402,7 +416,7 @@ export default function lessonMain () {
                                         <Grid item lg={4} sx={{ pr: 2 }}>
                                             <Grid container direction="column"
                                             justifyContent="space-between"
-                                            alignItems="center" sx={{ backgroundColor: '#ffffff', borderRadius: '32px', height: '100%', py: 2}}>
+                                            alignItems="center" sx={{ backgroundColor: '#ffffff', borderRadius: '32px', width: '100%', aspectRatio: '1', py: 2}}>
                                                 <Grid item>
                                                     {/* <Chip color="secondary" label="Word" size="small"/> */}
                                                 </Grid>
@@ -439,7 +453,7 @@ export default function lessonMain () {
                                             </Grid>
 
                                         </Grid>
-                                        <Grid item lg={8} sx={{ pl: 3 }}>
+                                        <Grid item lg={8} sx={{ pl: 2, pt: 1 }}>
                                             <Typography variant='body2'>
                                                 {verse_data[0].root_words[1].blurb}
                                             </Typography>
