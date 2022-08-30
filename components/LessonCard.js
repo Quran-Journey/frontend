@@ -1,12 +1,13 @@
 import * as React from 'react';
 
 import Typography from '@mui/material/Typography';
-import { Container, Grid, Button } from '@mui/material';
+import { Container, Grid, Button, Link } from '@mui/material';
 
 
 const LessonCard = (props) => {
     return (
         <Grid item xs={12} md={6} lg={4}>
+          <Link sx={{ textDecoration: 'none' }} href={'/lesson/' + props.id}>
             <Grid container sx={{p: 1}}>
 
             <Grid item sx={{ backgroundColor: '#FFFFFF', borderRadius: '32px', width: '100%' }}>
@@ -75,10 +76,10 @@ const LessonCard = (props) => {
               </Grid>
             </Grid>
             </Button>
-
           </Grid>
-
           </Grid>
+          </Link>
+
         </Grid>
     )  
 }

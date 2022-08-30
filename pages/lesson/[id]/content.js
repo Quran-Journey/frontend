@@ -1,36 +1,15 @@
 import * as React from 'react';
-// import Chip from '@mui/material/Chip';
 import { Button, Container, Grid, Paper, InputBase, IconButton } from '@mui/material'
-// import AspectRatio from '@mui/joy/AspectRatio';
-// import SearchIcon from '@mui/icons-material/Search';
 import Typography from '@mui/material/Typography';
-// import Nav from '../../components/Nav';
-import Nav from '../components/Nav'
-// import LessonCard from '../components/LessonCard'
+import Nav from '../../../components/Nav'
 import ArrowCircleLeftRoundedIcon from '@mui/icons-material/ArrowCircleLeftRounded';
-// import DarkModeRoundedIcon from '@mui/icons-material/DarkModeRounded';// import { ColorLensIcon } from '@mui/icons-material';
-import Footer from '../components/Footer';
-// import SideBar from '../components/SideBarTest';
-import SideBar from '../components/SideBar'
-// import SectionButton from '../components/SectionButton';
-// import SurahIntroTitle from '../components/SurahIntroTitle';
-// import BodyText from '../components/BodyText';
+import Footer from '../../../components/Footer';
+import SideBar from '../../../components/SideBar'
 import ArrowDropDownCircleRoundedIcon from '@mui/icons-material/ArrowDropDownCircleRounded';
-import SurahIntroTitle from '../components/SurahIntroTitle';
-import ReactPlayer from "react-player"
-// import ListSubheader from '@mui/material/ListSubheader';
-// import List from '@mui/material/List';
 import ListItemButton from '@mui/material/ListItemButton';
-// import ListItemIcon from '@mui/material/ListItemIcon';
-// import ListItemText from '@mui/material/ListItemText';
 import Collapse from '@mui/material/Collapse';
-import DetailedSurahTitle from '../components/DetailedSurahTitle'
-// import InboxIcon from '@mui/icons-material/MoveToInbox';
-// import DraftsIcon from '@mui/icons-material/Drafts';
-// import SendIcon from '@mui/icons-material/Send';
-// import ExpandLess from '@mui/icons-material/ExpandLess';
-// import ExpandMore from '@mui/icons-material/ExpandMore';
-// import StarBorder from '@mui/icons-material/StarBorder';
+import DetailedSurahTitle from '../../../components/DetailedSurahTitle'
+
 
 const surah_details = {name: "Surah Al 'adiyat", name_ar: 'سُوۡرَةُ العَادیَات', verses: '11'}
 const verse_data = [
@@ -114,9 +93,9 @@ export default function lessonMain () {
                 <Grid item lg={9} sx={{ pr: 9, pb: 10 }}>
 
                     <Grid container direction='column'>
-                        <Grid item sx={{ mb: 2 }}>
+                        {/* <Grid item sx={{ mb: 2 }}>
                             <iframe src="https://player.vimeo.com/video/695692957?h=0c7714e3d7&title=0&byline=0&portrait=0" class="video" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-                        </Grid>
+                        </Grid> */}
                         <Grid item>
                             <DetailedSurahTitle name={surah_details.name} name_ar={surah_details.name_ar} verses={surah_details.verses}/>
                         </Grid>
