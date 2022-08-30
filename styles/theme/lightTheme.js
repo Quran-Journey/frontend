@@ -98,6 +98,13 @@ const lightTheme = createTheme({
       fontWeight: 700,
 
     },
+    h6_ar: {
+      fontFamily: '"IBM Plex Sans Arabic", "Helvetica", "Arial", sans-serif',
+      fontWeight: 500,
+      fontSize: '0.75rem',
+      // lineHeight: 1.5,      
+
+    },
     subtitle1: {
       fontFamily: '"Poppins", "Helvetica", "Arial", sans-serif',
     },

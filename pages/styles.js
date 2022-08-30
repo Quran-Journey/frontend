@@ -195,50 +195,9 @@ export default function Style() {
           </Grid>
           <Grid item sx={{ mt: 5, backgroundColor: '#EEF1EC', px: 6, py: 5, borderRadius: '32px', mb: 10, textAlign: "center" }}>
             <Typography variant="h4_ar">
-            عن النبي صلى هللا عليه وسلم - من قرأ سورة والعاديات أعطى من األجر عشر حسنات بعدد من بات بالمزدلفة وشهد جمعاً            
+            عن النبي صلى الله عليه وسلم - من قرأ سورة والعاديات أعطى من األجر عشر حسنات بعدد من بات بالمزدلفة وشهد جمعاً            
             </Typography>
           </Grid>
-
-          {/* <Grid item sx={{ mt: 5 }}>
-            <Typography variant="h4">
-              Accordion        
-            </Typography>
-          </Grid>
-
-          <Grid item sx={{ mt: 2, mb: 10 }}>
-          <Accordion sx={{ mb: 5 }}>
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel1a-content"
-              id="panel1a-header"
-            >
-              <Typography>Ayah 1</Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <Typography>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                malesuada lacus ex, sit amet blandit leo lobortis eget.
-              </Typography>
-            </AccordionDetails>
-          </Accordion>
-
-          <Accordion>
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel2a-content"
-              id="panel2a-header"
-            >
-              <Typography>Accordion 2</Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <Typography>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                malesuada lacus ex, sit amet blandit leo lobortis eget.
-              </Typography>
-            </AccordionDetails>
-          </Accordion>
-      
-          </Grid> */}
 
         </Grid>
 
@@ -249,14 +208,3 @@ export default function Style() {
     </div>
   )
 }
-
-// export const getStaticProps = async () => {
-//   const res = await fetch(`${server}/api/lessons`)
-//   const lessons = await res.json()
-
-//   return {
-//     props: {
-//       lessons,
-//     }
-//   }
-// }

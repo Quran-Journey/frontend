@@ -11,7 +11,7 @@ const SectionButton = (props) => {
                 to={id}
                 spy={true}
                 smooth={true}
-                offset={-50}
+                offset={-30}
                 duration={400}>
                 <Button variant="contained" color="sage" disableElevation fullWidth sx={{ mb: 1 }}>
                     <Grid container>
