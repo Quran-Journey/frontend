@@ -1,37 +1,20 @@
-import {server} from '../config'
 import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
-import { lessons } from '../mock_data/data'
 
 import * as React from 'react';
 import Chip from '@mui/material/Chip';
-// import Stack from '@mui/material/Stack';
 import { Button, Container, Grid, Paper, InputBase, Divider, IconButton, ListItemSecondaryAction } from '@mui/material'
-// import SearchIcon from '@mui/icons-material/Search';
-// import PageviewIcon from '@mui/icons-material/Pageview';
 import Typography from '@mui/material/Typography';
 import Nav from '../components/Nav'
-// import TextField from '@mui/material/TextField';
-// import FindInPageIcon from '@mui/icons-material/FindInPage';
 import ArrowCircleRightRoundedIcon from '@mui/icons-material/ArrowCircleRightRounded';
 import ArrowCircleLeftRoundedIcon from '@mui/icons-material/ArrowCircleLeftRounded';
 import ArrowCircleDownRoundedIcon from '@mui/icons-material/ArrowCircleDownRounded';
-// import ModeEditOutlineIcon from '@mui/icons-material/ModeEditOutline';
-// import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh';
-// import CreateIcon from '@mui/icons-material/Create';
-// import SaveAltIcon from '@mui/icons-material/SaveAlt';
 import LibraryAddRoundedIcon from '@mui/icons-material/LibraryAddRounded';
 import VisibilityRoundedIcon from '@mui/icons-material/VisibilityRounded';
 import VisibilityOffRoundedIcon from '@mui/icons-material/VisibilityOffRounded';
 import AddBoxRoundedIcon from '@mui/icons-material/AddBoxRounded';
 import Brightness6RoundedIcon from '@mui/icons-material/Brightness6Rounded';
 import Brightness7RoundedIcon from '@mui/icons-material/Brightness7Rounded';
-// import LightModeRoundedIcon from '@mui/icons-material/LightModeRounded';
-// import Accordion from '@mui/material/Accordion';
-// import AccordionSummary from '@mui/material/AccordionSummary';
-// import AccordionDetails from '@mui/material/AccordionDetails';
-// import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+
 
 export default function Style() {
   return (

@@ -1,7 +1,9 @@
 import * as React from 'react';
 
 import Typography from '@mui/material/Typography';
-import { Container, Grid, Button, Link } from '@mui/material';
+import Grid from '@mui/material/Grid';
+import Button from '@mui/material/Button';
+import Link from '@mui/material/Link';
 
 
 const LessonCard = (props) => {

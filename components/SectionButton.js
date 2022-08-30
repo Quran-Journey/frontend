@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { Button, Container, Grid, IconButton } from '@mui/material'
-import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+import Grid from '@mui/material/Grid';
 import { Link } from "react-scroll";
 
 const SectionButton = (props) => {

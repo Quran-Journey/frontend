@@ -1,7 +1,9 @@
 import * as React from 'react';
-import { Grid, Paper, InputBase, IconButton } from '@mui/material'
+import Grid from '@mui/material/Grid';
+import Paper from '@mui/material/Paper';
+import InputBase from '@mui/material/InputBase';
+import IconButton from '@mui/material/IconButton';
 import SearchIcon from '@mui/icons-material/Search';
-
 
 const SearchBar = (props) => {
     return (

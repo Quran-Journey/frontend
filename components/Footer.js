@@ -1,8 +1,8 @@
 import * as React from 'react';
 import QuranJourneyButton from './QuranJourneyButton';
 import Typography from '@mui/material/Typography';
-import { Button, Container, Grid, IconButton, Link} from '@mui/material'
-import DarkModeRoundedIcon from '@mui/icons-material/DarkModeRounded';// import { ColorLensIcon } from '@mui/icons-material';
+import Container from '@mui/material/Container';
+import Grid from '@mui/material/Grid';
 
 const Footer = () => {
     return (

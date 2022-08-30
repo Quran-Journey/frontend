@@ -1,14 +1,18 @@
 import {server} from '../config'
+import * as React from 'react';
+
 import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+
 import { lessons } from '../mock_data/data'
 
-import * as React from 'react';
 import Chip from '@mui/material/Chip';
-import { Button, Container, Grid, Paper, InputBase, IconButton } from '@mui/material'
-import SearchIcon from '@mui/icons-material/Search';
 import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
+import Grid from '@mui/material/Grid';
+import Paper from '@mui/material/Paper';
+import InputBase from '@mui/material/InputBase';
+import IconButton from '@mui/material/IconButton';
+import SearchIcon from '@mui/icons-material/Search';
 import Nav from '../components/Nav'
 import LessonCard from '../components/LessonCard'
 

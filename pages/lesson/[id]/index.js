@@ -9,22 +9,16 @@
 // import { lessons } from '../mock_data/data'
 
 import * as React from 'react';
-import Chip from '@mui/material/Chip';
-import { Button, Container, Grid, Paper, InputBase, IconButton, Link } from '@mui/material'
-import SearchIcon from '@mui/icons-material/Search';
-import Typography from '@mui/material/Typography';
-// import Nav from '../../components/Nav';
-import Nav from '../../../components/Nav'
-// import LessonCard from '../components/LessonCard'
+import Button from '@mui/material/Button';
+import Container from '@mui/material/Container';
+import Grid from '@mui/material/Grid';
 import ArrowCircleRightRoundedIcon from '@mui/icons-material/ArrowCircleRightRounded';
-import DarkModeRoundedIcon from '@mui/icons-material/DarkModeRounded';// import { ColorLensIcon } from '@mui/icons-material';
+import Nav from '../../../components/Nav'
 import Footer from '../../../components/Footer';
-// import SideBar from '../components/SideBarTest';
 import SideBar from '../../../components/SideBar'
-import SectionButton from '../../../components/SectionButton';
 import SurahIntroTitle from '../../../components/SurahIntroTitle';
 import BodyText from '../../../components/BodyText';
-// import { Link } from "react-scroll";
+
 // This will change later
 // const sections = [{section: 'Name'}, {section: 'Period of Revelation'}, {section: 'Theme and Subject Matter'}]
 const surah_details = {name: "Surah Al 'adiyat", name_ar: 'سُوۡرَةُ العَادیَات', verses: '11'}
@@ -55,8 +49,6 @@ export default function lessonIntro() {
                     {surah_info.map((surah) =>
                         <BodyText heading={surah.heading} highlighted={surah.highlighted} content={surah.content}/>
                     )}
-                    {/* <Link href='/lesson/2/main'> */}
-
                     {/* <Link href={'/lesson/'+surahNum+'/main'}> */}
                         <Button variant="outlined" color="dark" startIcon={ <ArrowCircleRightRoundedIcon />}>Go to Lecture</Button>
                     {/* </Link> */}

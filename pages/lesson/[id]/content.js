@@ -1,13 +1,15 @@
 import * as React from 'react';
-import { Button, Container, Grid, Paper, InputBase, IconButton } from '@mui/material'
+import Button from '@mui/material/Button'
+import Container from '@mui/material/Container';
+import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-import Nav from '../../../components/Nav'
 import ArrowCircleLeftRoundedIcon from '@mui/icons-material/ArrowCircleLeftRounded';
-import Footer from '../../../components/Footer';
-import SideBar from '../../../components/SideBar'
 import ArrowDropDownCircleRoundedIcon from '@mui/icons-material/ArrowDropDownCircleRounded';
 import ListItemButton from '@mui/material/ListItemButton';
 import Collapse from '@mui/material/Collapse';
+import Nav from '../../../components/Nav'
+import Footer from '../../../components/Footer';
+import SideBar from '../../../components/SideBar'
 import DetailedSurahTitle from '../../../components/DetailedSurahTitle'
 
 
