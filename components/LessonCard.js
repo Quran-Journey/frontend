@@ -12,14 +12,14 @@ const LessonCard = (props) => {
           <Link sx={{ textDecoration: 'none' }} href={'/lesson/' + props.id}>
             <Grid container sx={{p: 1}}>
 
-            <Grid item sx={{ backgroundColor: '#FFFFFF', borderRadius: '32px', width: '100%' }}>
+            <Grid item sx={{ backgroundColor: '#FFFFFF', borderRadius: '22px', width: '100%' }}>
             <Button color="dark" sx={{ width: "100%", borderRadius: 'inherit'}}>
 
             <Grid container
             direction="row"
             justifyContent="space-between"
             alignItems="center"
-            sx={{ pl: 2, pr: 3, py: 3 }}>
+            sx={{ pl: 0.5, pr: 1, py: 2 }}>
               <Grid item>
               <Grid container>
                 <Grid item sx={{ mr: 2 }}>
