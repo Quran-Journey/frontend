@@ -13,9 +13,9 @@ const HighlightedText = (props) => {
                 <Typography variant='h5' sx={{ mb: 1 }}>
                     {props.heading}
                 </Typography>
-                
+
                 {props.content.map((content) =>
-                <SmallParagraph content={content}/>
+                    <SmallParagraph content={content} />
                 )}
 
             </Grid>

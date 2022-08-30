@@ -16,7 +16,6 @@ const SearchBar = (props) => {
                 </IconButton>
                 <InputBase
                     sx={{ ml: 0, flex: 1,  fontSize: 12 }}
-
                     placeholder="Search Surah or Keyword"
                     inputProps={{ 'aria-label': 'Search surah' }}
                 />

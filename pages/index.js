@@ -1,4 +1,4 @@
-import {server} from '../config'
+import { server } from '../config'
 import * as React from 'react';
 
 import Head from 'next/head'
@@ -26,14 +26,14 @@ export default function Home() {
 
       </div>
       <div className='elipse-10'>
-        
-        </div>
-        <div className='elipse-11'>
-        
-        </div>
-        <div className='elipse-6 '>
-        
-        </div>
+
+      </div>
+      <div className='elipse-11'>
+
+      </div>
+      <div className='elipse-6 '>
+
+      </div>
 
       <Head>
         <title>Create Next App</title>
@@ -52,25 +52,23 @@ export default function Home() {
 
           <Grid item>
             <Typography variant="h1">
-              Search Lesson        
+              Search Lesson
             </Typography>
           </Grid>
 
           <Grid item sx={{ mt: 3 }}>
             <Paper elevation={0}
               component="form"
-              sx={{ px: "4px", py: "2px", borderRadius: 10, display: 'flex', alignItems: 'center', width: '850px'}}>
+              sx={{ px: "4px", py: "2px", borderRadius: 10, display: 'flex', alignItems: 'center', width: '850px' }}>
               <IconButton sx={{ p: '20px' }} aria-label="search">
                 <SearchIcon />
-                {/* <PageviewIcon /> */}
-                {/* <FindInPageIcon /> */}
               </IconButton>
               <InputBase
                 sx={{ ml: 1, flex: 1 }}
                 placeholder="What surah would you like to investigate?"
                 inputProps={{ 'aria-label': 'What surah would you like to investigate?' }}
               />
-              </Paper>
+            </Paper>
           </Grid>
 
           <Grid item sx={{ mt: 10 }}>
@@ -79,15 +77,15 @@ export default function Home() {
         </Grid>
 
         <Grid container direction="row"
-        justifyContent="flex-start"
-        alignItems="flex-start" sx={{ mt: 4 }} >
-          {lessons.map(lesson => 
-            <LessonCard id={lesson.id} name={lesson.name} name_ar={lesson.name_ar} meaning={lesson.meaning} verses={lesson.verses}/>
+          justifyContent="flex-start"
+          alignItems="flex-start" sx={{ mt: 4 }} >
+          {lessons.map(lesson =>
+            <LessonCard id={lesson.id} name={lesson.name} name_ar={lesson.name_ar} meaning={lesson.meaning} verses={lesson.verses} />
           )}
         </Grid>
       </Container>
 
-      
+
       {/* <footer className={styles.footer}>
         <a> Quran Journey </a>
       </footer> */}

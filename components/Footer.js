@@ -7,21 +7,21 @@ import Grid from '@mui/material/Grid';
 const Footer = () => {
     return (
         <Container>
-            <Grid container sx={{ pt: 10, borderTop: 1, pb: 15}}
-            direction="row"
-            alignItems="center"
-            justifyContent="space-between">
+            <Grid container sx={{ pt: 10, borderTop: 1, pb: 15 }}
+                direction="row"
+                alignItems="center"
+                justifyContent="space-between">
 
-                <Grid item>                
-                    <QuranJourneyButton/>
+                <Grid item>
+                    <QuranJourneyButton />
                 </Grid>
 
                 <Grid item>
                     {/* Come back to this styling */}
-                    <Typography vairant="h6" sx={{ color: '#727272', textTransform: 'uppercase', fontWeight: '700', fontFamily: '"Poppins", "Helvetica", "Arial", sans-serif', fontSize: '0.9rem'}}>
+                    <Typography vairant="h6" sx={{ color: '#727272', textTransform: 'uppercase', fontWeight: '700', fontFamily: '"Poppins", "Helvetica", "Arial", sans-serif', fontSize: '0.9rem' }}>
                         © 2022 Quran Journey All Rights Reserved
                     </Typography>
-                    
+
                 </Grid>
             </Grid>
         </Container>

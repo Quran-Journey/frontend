@@ -11,7 +11,7 @@ const SurahIntroTitle = (props) => {
         justifyContent="flex-start"
         alignItems="flex-start" sx={{mb:6}}>
             <Grid item sx={{ width: '100%'}}>
-                    <Grid container
+                <Grid container
                 direction="row"
                 justifyContent="space-between"
                 alignItems="center"
