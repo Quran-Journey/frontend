@@ -7,21 +7,21 @@ export const lessons = [
         verses: '11'
     },
     {
-        id: '1',
+        id: '78',
         name: 'Al-Fatiha',
         name_ar: 'الفَاتِحَة',
         meaning: 'The Opener',
         verses: '7'
     },
     {
-        id: '2',
+        id: '79',
         name: 'Al-Baqarah',
         name_ar: 'البَقَرَة',
         meaning: 'The Cow',
         verses: '286'
     },
     {
-        id: '3',
+        id: '80',
         name: 'Ali ‘Imran',
         name_ar: 'آل عِمرَان',
         meaning: 'Family of Imran',
