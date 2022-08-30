@@ -32,14 +32,12 @@ export default function Style() {
         <Grid container
           direction="column"
           justifyContent="flex-start"
-        //   alignItems="center"
           sx={{ mt: 5 }}>
 
           <Grid item sx={{ borderBottom: 1, pb: 2, borderColor: '#B9B9B9' }}>
             <Typography variant="h1">
               Styles        
             </Typography>
-            
           </Grid>
 
           <Grid item sx={{ mt: 8 }}>
