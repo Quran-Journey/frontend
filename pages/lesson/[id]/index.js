@@ -2,12 +2,6 @@
 // [id] is what shoes in the link on browser i.e. lesson/1
 // Check https://www.youtube.com/watch?v=mTz0GXj8NN0&t=1s&ab_channel=TraversyMedia at 40:30 nested pages
 
-// import {server} from '../config'
-// import Head from 'next/head'
-// import Image from 'next/image'
-// import styles from '../styles/Home.module.css'
-// import { lessons } from '../mock_data/data'
-
 import * as React from 'react';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
@@ -18,6 +12,10 @@ import Footer from '../../../components/Footer';
 import SideBar from '../../../components/SideBar'
 import SurahIntroTitle from '../../../components/SurahIntroTitle';
 import BodyText from '../../../components/BodyText';
+
+import { intro } from '../../../mock_data/introData';
+
+console.log(intro[0])
 
 // This will change later
 // const sections = [{section: 'Name'}, {section: 'Period of Revelation'}, {section: 'Theme and Subject Matter'}]
