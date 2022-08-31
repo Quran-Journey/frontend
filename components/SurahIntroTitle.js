@@ -3,8 +3,11 @@ import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import ArrowCircleRightRoundedIcon from '@mui/icons-material/ArrowCircleRightRounded';
+import { useRouter } from 'next/router';
 
 const SurahIntroTitle = (props) => {
+    const router = useRouter()
+
     return (
         <Grid container
         direction="column"
@@ -20,7 +23,13 @@ const SurahIntroTitle = (props) => {
                         <Typography variant="h3" sx={{ mb: 1 }}>
                             {props.name}
                         </Typography>
-                        <Button variant="outlined" color="dark" startIcon={ <ArrowCircleRightRoundedIcon />}>Go to Lecture</Button>
+                        <Button variant="outlined" color="dark" startIcon={ <ArrowCircleRightRoundedIcon />}
+                        onClick={() => {
+                            router.push({
+                              pathname: ('/lesson/' + props.id + '/[page]'),
+                              query: { page: 'content' },
+                            })
+                          }}>Go to Lecture</Button>
                     </Grid>
                     <Grid item>
                         <Grid container

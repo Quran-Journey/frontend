@@ -11,7 +11,7 @@ import Nav from '../../../components/Nav'
 import Footer from '../../../components/Footer';
 import SideBar from '../../../components/SideBar'
 import DetailedSurahTitle from '../../../components/DetailedSurahTitle'
-
+import { useRouter } from 'next/router';
 
 const surah_details = { name: "Surah Al 'adiyat", name_ar: 'سُوۡرَةُ العَادیَات', verses: '11' }
 const verse_data = [
@@ -69,6 +69,7 @@ const verse_data = [
 // Recoil -> For state management
 // Redux 
 export default function lessonMain() {
+    const router = useRouter()
 
     const [open, setOpen] = React.useState(false);
     const [open2, setOpen2] = React.useState(false);
@@ -489,7 +490,8 @@ export default function lessonMain() {
 
 
                             <Grid item sx={{ mt: 5 }}>
-                                <Button variant="outlined" color="dark" startIcon={<ArrowCircleLeftRoundedIcon />}>Back</Button>
+                                <Button variant="outlined" color="dark" startIcon={<ArrowCircleLeftRoundedIcon />}
+                                onClick={() => router.back()}>Back</Button>
                             </Grid>
                         </Grid>
                     </Grid>
