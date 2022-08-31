@@ -1,7 +1,5 @@
 import * as React from 'react';
-import Chip from '@mui/material/Chip';
-import { Button, Container, Grid, Paper, InputBase, IconButton } from '@mui/material'
-import SearchIcon from '@mui/icons-material/Search';
+import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import SectionButton from './SectionButton';
 import SearchBar from './SearchBar';
@@ -15,19 +13,19 @@ const SideBar = (props) => {
                 </Grid>
                 <Grid item>
                     <Typography variant="h5" sx={{ mb: 2 }}>
-                        {props.type}     
+                        {props.type}
                     </Typography>
                 </Grid>
                 <Grid item>
                     {props.sections ?
                         <>
-                        {props.sections.map((sections) => 
-                            <SectionButton section={sections.heading} />
-                            )} 
-                        </> 
+                            {props.sections.map((sections) =>
+                                <SectionButton section={sections.heading} />
+                            )}
+                        </>
                         : <></>
                     }
-                    
+
                 </Grid>
             </Grid>
         </Grid>

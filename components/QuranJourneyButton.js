@@ -1,6 +1,8 @@
 import * as React from 'react';
 import DarkModeRoundedIcon from '@mui/icons-material/DarkModeRounded';
-import { Button, Container, Grid, IconButton, Link } from '@mui/material'
+import Grid from '@mui/material/Grid';
+import IconButton from '@mui/material/IconButton';
+import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 
 const QuranJourneyButton = () => {

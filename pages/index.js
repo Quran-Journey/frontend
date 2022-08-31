@@ -1,16 +1,17 @@
-import {server} from '../config'
+import { server } from '../config'
+import * as React from 'react';
+
 import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+
 import { lessons } from '../mock_data/data'
 
-import * as React from 'react';
 import Chip from '@mui/material/Chip';
-import { Button, Container, Grid, Paper, InputBase, IconButton } from '@mui/material'
-import SearchIcon from '@mui/icons-material/Search';
 import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
+import Grid from '@mui/material/Grid';
 import Nav from '../components/Nav'
 import LessonCard from '../components/LessonCard'
+import SearchBarLg from '../components/SearchBarLg';
 
 
 export default function Home() {
@@ -22,14 +23,14 @@ export default function Home() {
 
       </div>
       <div className='elipse-10'>
-        
-        </div>
-        <div className='elipse-11'>
-        
-        </div>
-        <div className='elipse-6 '>
-        
-        </div>
+
+      </div>
+      <div className='elipse-11'>
+
+      </div>
+      <div className='elipse-6 '>
+
+      </div>
 
       <Head>
         <title>Create Next App</title>
@@ -38,52 +39,43 @@ export default function Home() {
       </Head>
 
       <Nav />
-
-      <Container sx={{ mb: 10 }}>
+      <Container>
         <Grid container
           direction="column"
           justifyContent="flex-start"
           alignItems="center"
-          sx={{ mt: 5 }}>
+          sx={{ mt: 5 }} >
 
           <Grid item>
             <Typography variant="h1">
-              Search Lesson        
+              Search Lesson
             </Typography>
           </Grid>
-
-          <Grid item sx={{ mt: 3 }}>
-            <Paper elevation={0}
-              component="form"
-              sx={{ px: "4px", py: "2px", borderRadius: 10, display: 'flex', alignItems: 'center', width: '850px'}}>
-              <IconButton sx={{ p: '20px' }} aria-label="search">
-                <SearchIcon />
-                {/* <PageviewIcon /> */}
-                {/* <FindInPageIcon /> */}
-              </IconButton>
-              <InputBase
-                sx={{ ml: 1, flex: 1 }}
-                placeholder="What surah would you like to investigate?"
-                inputProps={{ 'aria-label': 'What surah would you like to investigate?' }}
-              />
-              </Paper>
-          </Grid>
-
+        </Grid>
+      </Container>
+      <Container>
+        <SearchBarLg />
+      </Container>
+      <Container>
+        <Grid container
+          direction="column"
+          justifyContent="flex-start"
+          alignItems="center">
           <Grid item sx={{ mt: 10 }}>
             <Chip color="secondary" label="Lessons" />
           </Grid>
+
         </Grid>
 
         <Grid container direction="row"
-        justifyContent="flex-start"
-        alignItems="flex-start" sx={{ mt: 4 }} >
-          {lessons.map(lesson => 
-            <LessonCard id={lesson.id} name={lesson.name} name_ar={lesson.name_ar} meaning={lesson.meaning} verses={lesson.verses}/>
+          justifyContent="flex-start"
+          alignItems="flex-start" sx={{ mt: 4 }} >
+          {lessons.map(lesson =>
+            <LessonCard id={lesson.id} name={lesson.name} name_ar={lesson.name_ar} meaning={lesson.meaning} verses={lesson.verses} />
           )}
         </Grid>
       </Container>
 
-      
       {/* <footer className={styles.footer}>
         <a> Quran Journey </a>
       </footer> */}
