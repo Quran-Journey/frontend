@@ -5,7 +5,6 @@ import { Link } from "react-scroll";
 
 const SectionButton = (props) => {
     const id = props.section.replace(/\s+/g, '-')
-    console.log(id)
     return (
             <Link activeClass="active"
                 to={id}

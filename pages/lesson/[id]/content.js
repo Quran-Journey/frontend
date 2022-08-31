@@ -65,8 +65,6 @@ const verse_data = [
     },
 ]
 
-console.log(verse_data)
-
 // split string from api
 // Recoil -> For state management
 // Redux 
