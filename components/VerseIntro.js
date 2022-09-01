@@ -32,7 +32,7 @@ const VerseIntro = (props) => {
                     </Grid> 
                     <Grid item xs={12} md={6} sx={{ pl: 1 }} >
                         <Box display="flex" justifyContent="flex-end">
-                            <Typography variant='h4_ar'>
+                            <Typography variant='h4_ar' align="right">
                                 {props.ayah} ({props.verse_num})
                             </Typography>
                         </Box>
