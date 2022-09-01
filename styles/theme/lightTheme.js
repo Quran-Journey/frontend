@@ -105,6 +105,11 @@ const lightTheme = createTheme({
       // lineHeight: 1.5,      
 
     },
+    quran_text: {
+      fontFamily: "'Lateef', cursive",
+      fontWeight: 500,
+      fontSize: '0.95rem'
+    },
     subtitle1: {
       fontFamily: '"Poppins", "Helvetica", "Arial", sans-serif',
     },
