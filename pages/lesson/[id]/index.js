@@ -21,7 +21,7 @@ let info = intro.find(i => i.id === '97');
 
 // This will change later
 // const sections = [{section: 'Name'}, {section: 'Period of Revelation'}, {section: 'Theme and Subject Matter'}]
-const surah_details = { name: "Surah Al 'adiyat", name_ar: 'سُوۡرَةُ العَادیَات', verses: '11' }
+const surah_details = { name: "Surah Al-Qadr", name_ar: 'سُوۡرَةُ القَدر', verses: '5' }
 
 const sideBarType = { type: 'Sections' }
 
