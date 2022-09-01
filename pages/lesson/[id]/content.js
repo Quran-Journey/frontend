@@ -104,6 +104,9 @@ export default function lessonMain() {
                 <Grid container direction='row'>
                     <Grid item lg={9} sx={{ pr: 9, pb: 10 }}>
                         <Grid container direction='column'>
+                            <Grid item sx={{ borderRadius: '22px', mb: 1}}>
+                                <iframe width="100%" height="450px" src="https://www.youtube.com/embed/OKSCjGi411c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </Grid>
 
                             <Grid item>
                                 <DetailedSurahTitle name={curr_lesson.name} name_ar={curr_lesson.name_ar} verses={curr_lesson.verses} num={curr_lesson.id} />
