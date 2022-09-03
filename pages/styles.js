@@ -16,6 +16,9 @@ import Brightness6RoundedIcon from '@mui/icons-material/Brightness6Rounded';
 import Brightness7RoundedIcon from '@mui/icons-material/Brightness7Rounded';
 import NextLessonButton from '../components/NextLessonButton'
 
+import AyahButton from '../components/AyahButton'
+
+
 export default function Style() {
   return (
     <div>
@@ -161,6 +164,8 @@ export default function Style() {
           </Grid>
 
           <NextLessonButton/>
+
+          <AyahButton/>
 
           <Grid item sx={{ mt: 5 }}>
             <Typography variant="h3">
