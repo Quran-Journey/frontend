@@ -14,8 +14,8 @@ import DetailedSurahTitle from '../../../components/DetailedSurahTitle';
 import VerseCollapse from '../../../components/VerseCollapse';
 import { useRouter } from 'next/router';
 
-import { lessons } from '../../mock_data/data';
-import { ayah_data } from '../../mock_data/lessonData';
+import { lessons } from '../../../mock_data/data';
+import { ayah_data } from '../../../mock_data/lessonData';
 
 // console.log(lessons[0])
 // console.log(ayah_data[0])
