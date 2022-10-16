@@ -95,7 +95,7 @@ const verse_data = [
 // split string from api
 // Recoil -> For state management
 // Redux
-export default function lessonMain() {
+export default function LessonMain() {
   const router = useRouter();
 
   const [open, setOpen] = React.useState(false);
@@ -127,9 +127,9 @@ export default function lessonMain() {
                   height="450px"
                   src="https://www.youtube.com/embed/OKSCjGi411c"
                   title="YouTube video player"
-                  frameborder="0"
+                  frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen
+                  allowFullScreen
                 ></iframe>
               </Grid>
 
@@ -144,6 +144,7 @@ export default function lessonMain() {
 
               {ayah_data.map((curr_verse_data) => (
                 <VerseCollapse
+                  key={curr_lesson.id}
                   name_ar={curr_lesson.name_ar}
                   surah_num={curr_lesson.id}
                   verse_num={curr_verse_data.verse_num}

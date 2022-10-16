@@ -66,6 +66,7 @@ export default function Home() {
         >
           {lessons.map((lesson) => (
             <LessonCard
+              key={lesson.id}
               id={lesson.id}
               name={lesson.name}
               name_ar={lesson.name_ar}

@@ -30,7 +30,7 @@ const sideBarType = { type: 'Sections' };
 
 const surahNum = '100';
 
-export default function lessonIntro() {
+export default function LessonIntro() {
   const router = useRouter();
   // const {id} = router.query
   // const { id } = router.query
