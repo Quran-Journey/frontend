@@ -7,7 +7,7 @@ import Button from '@mui/material/Button';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-const LessonCard = (props) => {
+export default function LessonCard(props) {
   const router = useRouter();
 
   return (
@@ -104,6 +104,4 @@ const LessonCard = (props) => {
       </Grid>
     </Grid>
   );
-};
-
-export default LessonCard;
+}

@@ -67,6 +67,7 @@ export default function LessonIntro() {
             />
             {info.surah_info.map((surah) => (
               <BodyText
+                key={surah.heading}
                 heading={surah.heading}
                 highlighted={surah.highlighted}
                 content={surah.content}

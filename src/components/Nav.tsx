@@ -22,7 +22,7 @@ const Nav = () => {
           <QuranJourneyButton />
         </Grid>
         <Grid item>
-          <IconButton color="dark">
+          <IconButton color="inherit">
             <Brightness6Icon />
           </IconButton>
         </Grid>
