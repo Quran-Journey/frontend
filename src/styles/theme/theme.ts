@@ -17,6 +17,7 @@ const theme = createTheme({
       main: '#000000',
       light: '#d5e86a',
       dark: '#aace12',
+      contrastText: '#aace12',
     },
     sage: {
       main: '#CCECE9',
@@ -80,7 +81,6 @@ const theme = createTheme({
       fontFamily: '"IBM Plex Sans Arabic", "Helvetica", "Arial", sans-serif',
       fontWeight: 500,
       fontSize: '0.95rem',
-      // lineHeight: 1.5,
     },
     h6: {
       fontFamily: '"Poppins", "Helvetica", "Arial", sans-serif',
@@ -90,7 +90,6 @@ const theme = createTheme({
       fontFamily: '"IBM Plex Sans Arabic", "Helvetica", "Arial", sans-serif',
       fontWeight: 500,
       fontSize: '0.75rem',
-      // lineHeight: 1.5,
     },
     quran_text: {
       fontFamily: "'Lateef', cursive",
@@ -159,7 +158,7 @@ const theme = createTheme({
       variants: [
         {
           // Come back to this
-          props: { variant: 'main' },
+          props: { variant: 'contained' },
           style: {
             borderColor: '#000000',
             color: '#000000',

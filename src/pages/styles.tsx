@@ -2,16 +2,7 @@ import Head from 'next/head';
 
 import * as React from 'react';
 import Chip from '@mui/material/Chip';
-import {
-  Button,
-  Container,
-  Grid,
-  Paper,
-  InputBase,
-  Divider,
-  IconButton,
-  ListItemSecondaryAction,
-} from '@mui/material';
+import { Button, Container, Grid, IconButton } from '@mui/material';
 import Typography from '@mui/material/Typography';
 import Nav from '../components/Nav';
 import ArrowCircleRightRoundedIcon from '@mui/icons-material/ArrowCircleRightRounded';
@@ -167,6 +158,7 @@ export default function Style() {
               <a
                 href="https://mui.com/material-ui/material-icons/?theme=Rounded"
                 target="_blank"
+                rel="noreferrer"
               >
                 rounded MUI icons
               </a>
