@@ -1,13 +1,24 @@
 import * as React from 'react';
-
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
-// import Link from '@mui/material/Link';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-export default function LessonCard(props) {
+interface Props {
+  id: number;
+  name: string;
+  name_ar: string;
+  meaning: string;
+  verses: number;
+}
+
+export default function LessonCard({
+  id,
+  name,
+  name_ar,
+  meaning,
+  verses,
+}: Props) {
   const router = useRouter();
 
   return (
@@ -27,7 +38,7 @@ export default function LessonCard(props) {
             onClick={() => {
               router.push({
                 pathname: '/lesson/[id]',
-                query: { id: props.id },
+                query: { id },
               });
             }}
           >
@@ -54,7 +65,7 @@ export default function LessonCard(props) {
                     >
                       <Grid item>
                         <Typography variant="h6" sx={{ mb: 0 }}>
-                          {props.id}
+                          {id}
                         </Typography>
                       </Grid>
                     </Grid>
@@ -68,13 +79,11 @@ export default function LessonCard(props) {
                     >
                       <Grid item>
                         <Typography variant="h5" sx={{ mb: 0 }}>
-                          {props.name}
+                          {name}
                         </Typography>
                       </Grid>
                       <Grid item>
-                        <Typography variant="subtitle2">
-                          {props.meaning}
-                        </Typography>
+                        <Typography variant="subtitle2">{meaning}</Typography>
                       </Grid>
                     </Grid>
                   </Grid>
@@ -89,12 +98,10 @@ export default function LessonCard(props) {
                   alignItems="flex-end"
                 >
                   <Grid item>
-                    <Typography variant="h4_ar">{props.name_ar}</Typography>
+                    <Typography variant="h4_ar">{name_ar}</Typography>
                   </Grid>
                   <Grid item>
-                    <Typography variant="subtitle2">
-                      {props.verses} Ayahs
-                    </Typography>
+                    <Typography variant="subtitle2">{verses} Ayahs</Typography>
                   </Grid>
                 </Grid>
               </Grid>

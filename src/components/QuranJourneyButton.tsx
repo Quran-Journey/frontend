@@ -15,7 +15,7 @@ const QuranJourneyButton = () => {
         alignItems="center"
       >
         <Grid item>
-          <IconButton color="inherit">
+          <IconButton color="dark">
             <DarkModeRoundedIcon />
           </IconButton>
         </Grid>

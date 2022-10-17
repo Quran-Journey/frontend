@@ -2,11 +2,7 @@ import * as React from 'react';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
-import Typography from '@mui/material/Typography';
 import ArrowCircleLeftRoundedIcon from '@mui/icons-material/ArrowCircleLeftRounded';
-import ArrowDropDownCircleRoundedIcon from '@mui/icons-material/ArrowDropDownCircleRounded';
-import ListItemButton from '@mui/material/ListItemButton';
-import Collapse from '@mui/material/Collapse';
 import Nav from '../../../components/Nav';
 import Footer from '../../../components/Footer';
 import SideBar from '../../../components/SideBar';
@@ -16,9 +12,6 @@ import { useRouter } from 'next/router';
 
 import { lessons } from '../../../mock_data/data';
 import { ayah_data } from '../../../mock_data/lessonData';
-
-// console.log(lessons[0])
-// console.log(ayah_data[0])
 
 const surah_details = {
   name: "Surah Al 'adiyat",
@@ -104,10 +97,6 @@ export default function LessonMain() {
   const handleClick = () => {
     setOpen(!open);
   };
-
-  // const handleClick2 = () => {
-  //     setOpen2(!open2);
-  // };
 
   const curr_lesson = lessons[0];
   const curr_verse_data = ayah_data[0];

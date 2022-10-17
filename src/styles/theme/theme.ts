@@ -1,13 +1,12 @@
 import { createTheme } from '@mui/material/styles';
 
-const lightTheme = createTheme({
+const theme = createTheme({
   palette: {
-    type: 'light',
     primary: {
       main: '#1fc9b9',
-      contrastText: '#000000',
       light: '#cce0de',
       dark: '#8dbab5',
+      contrastText: '#000000',
     },
     secondary: {
       main: '#bee520',
@@ -18,6 +17,7 @@ const lightTheme = createTheme({
       main: '#000000',
       light: '#d5e86a',
       dark: '#aace12',
+      contrastText: '#aace12',
     },
     sage: {
       main: '#CCECE9',
@@ -81,7 +81,6 @@ const lightTheme = createTheme({
       fontFamily: '"IBM Plex Sans Arabic", "Helvetica", "Arial", sans-serif',
       fontWeight: 500,
       fontSize: '0.95rem',
-      // lineHeight: 1.5,
     },
     h6: {
       fontFamily: '"Poppins", "Helvetica", "Arial", sans-serif',
@@ -91,7 +90,6 @@ const lightTheme = createTheme({
       fontFamily: '"IBM Plex Sans Arabic", "Helvetica", "Arial", sans-serif',
       fontWeight: 500,
       fontSize: '0.75rem',
-      // lineHeight: 1.5,
     },
     quran_text: {
       fontFamily: "'Lateef', cursive",
@@ -160,7 +158,7 @@ const lightTheme = createTheme({
       variants: [
         {
           // Come back to this
-          props: { variant: 'main' },
+          props: { variant: 'contained' },
           style: {
             borderColor: '#000000',
             color: '#000000',
@@ -182,4 +180,4 @@ const lightTheme = createTheme({
   },
 });
 
-export default lightTheme;
+export default theme;
