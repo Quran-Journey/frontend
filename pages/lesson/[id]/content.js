@@ -12,6 +12,7 @@ import Footer from '../../../components/Footer';
 import SideBar from '../../../components/SideBar'
 import DetailedSurahTitle from '../../../components/DetailedSurahTitle'
 import { useRouter } from 'next/router';
+import Player from '@vimeo/player';
 
 const surah_details = { name: "Surah Al 'adiyat", name_ar: 'سُوۡرَةُ العَادیَات', verses: '11' }
 const verse_data = [
@@ -96,9 +97,11 @@ export default function lessonMain() {
                     <Grid item lg={9} sx={{ pr: 9, pb: 10 }}>
 
                         <Grid container direction='column'>
-                            {/* <Grid item sx={{ mb: 2 }}>
-                            <iframe src="https://player.vimeo.com/video/695692957?h=0c7714e3d7&title=0&byline=0&portrait=0" class="video" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-                        </Grid> */}
+                            <Grid item sx={{ mb: 2 }}>
+                                {/* <iframe src="https://player.vimeo.com/video/{video_id}?h={hash_parameter}" </iframe> */}
+                            <iframe src="https://player.vimeo.com/video/695692957?h=0c7714e3d7&title=0&byline=0&portrait=0" width="640" height="360"
+                             allow="autoplay; fullscreen; picture-in-picture" allowFullScreen></iframe>
+                        </Grid>
                             <Grid item>
                                 <DetailedSurahTitle name={surah_details.name} name_ar={surah_details.name_ar} verses={surah_details.verses} />
                             </Grid>
