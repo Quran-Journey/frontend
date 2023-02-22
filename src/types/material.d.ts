@@ -5,11 +5,21 @@ declare module '@mui/material/styles' {
   interface Palette {
     dark: Palette['primary'];
     sage: Palette['primary'];
+    lavendar: Palette['primary'];
+    periwinkle: Palette['primary'];
+    babyBlue: Palette['primary'];
+    mint: Palette['primary'];
+    black: Palette['primary'];
   }
 
   interface PaletteOptions {
     dark: PaletteOptions['primary'];
     sage: PaletteOptions['primary'];
+    lavendar: PaletteOptions['primary'];
+    periwinkle: PaletteOptions['primary'];
+    babyBlue: PaletteOptions['primary'];
+    mint: PaletteOptions['primary'];
+    black: PaletteOptions['primary'];
   }
 
   interface TypographyVariants {
@@ -37,7 +47,11 @@ declare module '@mui/material/styles' {
 declare module '@mui/material/Button' {
   interface ButtonPropsColorOverrides {
     dark: true;
-    sage: true;
+    lavendar: true;
+    periwinkle: true;
+    babyBlue: true;
+    mint: true;
+    black: true;
   }
 }
 
@@ -45,6 +59,11 @@ declare module '@mui/material/IconButton' {
   interface IconButtonPropsColorOverrides {
     dark: true;
     sage: true;
+    lavendar: true;
+    periwinkle: true;
+    babyBlue: true;
+    mint: true;
+    black: true;
   }
 }
 
@@ -52,6 +71,11 @@ declare module '@mui/material/Chip' {
   export interface ChipPropsColorOverrides {
     dark: true;
     sage: true;
+    lavendar: true;
+    periwinkle: true;
+    babyBlue: true;
+    mint: true;
+    black: true;
   }
 }
 

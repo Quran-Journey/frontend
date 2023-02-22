@@ -17,13 +17,32 @@ const theme = createTheme({
       main: '#000000',
       light: '#d5e86a',
       dark: '#aace12',
-      contrastText: '#aace12',
+      contrastText: '#FFFFFF',
     },
     sage: {
       main: '#CCECE9',
       light: '#5de3de',
       dark: '#3fe0da',
     },
+    lavendar: {
+      main: '#DBBEFF',
+    },
+    periwinkle: {
+      main: '#D8E1FE',
+      light: '#EBF0FF',
+      dark: '#B8C9FF',
+      contrastText: '#000000',
+    },
+    babyBlue: {
+      main: '#D9EEFE'
+    },
+    mint: {
+      main: '#E0EBD3'
+    },
+    black: {
+      main: '#000000',
+      contrastText: '#FFFFFF',
+    }
   },
   typography: {
     h1: {
