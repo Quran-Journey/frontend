@@ -83,7 +83,7 @@ export const MainButton = ({
         sx={{
           borderRadius: 5,
           textTransform: 'none',
-          fontWeight: 600,
+          fontWeight: 500,
           fontFamily: 'Inter',
           boxShadow: 0,
           '&:hover': { boxShadow: 0 },
