@@ -26,6 +26,9 @@ const theme = createTheme({
     },
     lavendar: {
       main: '#DBBEFF',
+      light: '#EBF0FF',
+      dark: '#B8C9FF',
+      contrastText: '#000000',
     },
     periwinkle: {
       main: '#D8E1FE',
@@ -34,10 +37,16 @@ const theme = createTheme({
       contrastText: '#000000',
     },
     babyBlue: {
-      main: '#D9EEFE'
+      main: '#D9EEFE',
+      light: '#EDF6FC',
+      dark: '#B8E0FF',
+      contrastText: '#000000',
     },
     mint: {
-      main: '#E0EBD3'
+      main: '#E0EBD3',
+      light: '#F2F9E9',
+      dark: '#BEE294',
+      contrastText: '#000000',
     },
     black: {
       main: '#000000',
@@ -133,12 +142,12 @@ const theme = createTheme({
       lineHeight: 1.7,
       fontSize: '1rem',
     },
-    button: {
-      fontWeight: 700,
-      fontFamily: '"Poppins", "Helvetica", "Arial", sans-serif',
-      textTransform: 'none',
-      letterSpacing: '-0.01em',
-    },
+    // button: {
+    //   fontWeight: 700,
+    //   fontFamily: '"Poppins", "Helvetica", "Arial", sans-serif',
+    //   textTransform: 'none',
+    //   letterSpacing: '-0.01em',
+    // },
     // copyright: {
     //   fontWeight: 700,
     //   fontFamily: '"Poppins", "Helvetica", "Arial", sans-serif',
@@ -148,54 +157,54 @@ const theme = createTheme({
   },
   components: {
     // Name of the component
-    MuiChip: {
-      styleOverrides: {
-        // Name of the slot
-        root: {
-          // Some CSS
-          textTransform: 'uppercase',
-          fontFamily: '"Poppins", "Helvetica", "Arial", sans-serif',
-          fontWeight: 700,
-          paddingLeft: '1.2em',
-          paddingRight: '1.2em',
-          paddingTop: '1.45em',
-          paddingBottom: '1.45em',
-          borderRadius: '50px',
-        },
-      },
-    },
-    MuiButton: {
-      styleOverrides: {
-        root: {
-          borderRadius: '50px',
-          paddingLeft: '1.3em',
-          paddingRight: '1.3em',
-          paddingTop: '0.75em',
-          paddingBottom: '0.75em',
-        },
-      },
-      variants: [
-        {
-          // Come back to this
-          props: { variant: 'contained' },
-          style: {
-            borderColor: '#000000',
-            color: '#000000',
-          },
-        },
-      ],
-    },
-    MuiAccordion: {
-      // Work in progress
-      styleOverrides: {
-        root: {
-          borderRadius: '32px',
-          border: 'none',
-          boxShadow: 'none',
-          backgroundColor: '#EEF1EC',
-        },
-      },
-    },
+    // MuiChip: {
+    //   styleOverrides: {
+    //     // Name of the slot
+    //     root: {
+    //       // Some CSS
+    //       textTransform: 'uppercase',
+    //       fontFamily: '"Poppins", "Helvetica", "Arial", sans-serif',
+    //       fontWeight: 700,
+    //       paddingLeft: '1.2em',
+    //       paddingRight: '1.2em',
+    //       paddingTop: '1.45em',
+    //       paddingBottom: '1.45em',
+    //       borderRadius: '50px',
+    //     },
+    //   },
+    // },
+    // MuiButton: {
+    //   styleOverrides: {
+    //     root: {
+    //       borderRadius: '50px',
+    //       paddingLeft: '1.3em',
+    //       paddingRight: '1.3em',
+    //       paddingTop: '0.75em',
+    //       paddingBottom: '0.75em',
+    //     },
+    //   },
+    //   variants: [
+    //     {
+    //       // Come back to this
+    //       props: { variant: 'contained' },
+    //       style: {
+    //         borderColor: '#000000',
+    //         color: '#000000',
+    //       },
+    //     },
+    //   ],
+    // },
+    // MuiAccordion: {
+    //   // Work in progress
+    //   styleOverrides: {
+    //     root: {
+    //       borderRadius: '32px',
+    //       border: 'none',
+    //       boxShadow: 'none',
+    //       backgroundColor: '#EEF1EC',
+    //     },
+    //   },
+    // },
   },
 });
 
