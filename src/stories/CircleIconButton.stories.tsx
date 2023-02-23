@@ -5,7 +5,7 @@ import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
 import EditIcon from '@mui/icons-material/Edit';
 
 export default {
-  title: 'UI Elements/Circle Icon Button',
+  title: 'UI Basic Elements/Circle Icon Button',
   component: CircleIconButton,
   argTypes: {
     backgroundColor: { control: 'color' },

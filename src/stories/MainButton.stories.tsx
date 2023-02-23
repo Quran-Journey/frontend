@@ -3,12 +3,11 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { MainButton } from './MainButton';
 import ArrowCircleRightOutlinedIcon from '@mui/icons-material/ArrowCircleRightOutlined';
 import ArrowCircleLeftOutlinedIcon from '@mui/icons-material/ArrowCircleLeftOutlined';
-import ClearIcon from '@mui/icons-material/Clear';
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 
 export default {
-  title: 'UI Elements/Button',
+  title: 'UI Basic Elements/Button',
   component: MainButton,
   argTypes: {
     backgroundColor: { control: 'color' },
@@ -17,28 +16,42 @@ export default {
 
 const Template: ComponentStory<typeof MainButton> = (args) => <MainButton {...args} />;
 
+export const Main = Template.bind({});
+Main.args = {
+  color: 'black',
+  size: 'small',
+  label: 'Main Button',
+};
+
 export const JumpToLesson = Template.bind({});
 JumpToLesson.args = {
-  color: 'periwinkle',
+  color: 'black',
   size: 'small',
   label: 'Jump to Lesson',
 };
 
 export const Back = Template.bind({});
 Back.args = {
-  color: 'periwinkle',
+  color: 'black',
   size: 'small',
   label: 'Back',
-  disabled: true,
   iconStart: <ArrowCircleLeftOutlinedIcon />
 };
 
 export const Next = Template.bind({});
 Next.args = {
-  color: 'periwinkle',
+  color: 'black',
   size: 'small',
   label: 'Next',
   iconEnd: <ArrowCircleRightOutlinedIcon />
+};
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+  size: 'small',
+  label: 'Back',
+  disabled: true,
+  iconStart: <ArrowCircleLeftOutlinedIcon />
 };
 
 export const Delete = Template.bind({});
