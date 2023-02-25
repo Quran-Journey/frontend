@@ -5,11 +5,11 @@ import theme from '../styles/theme/theme';
 
 interface IconButtonProps {
   /**
-   * Icon used for button
+   * Icon element
    */
   icon: React.ReactElement | undefined;
   /**
-   * Button color
+   * Icon button color
    */
   color:
     | 'inherit'
@@ -27,7 +27,7 @@ interface IconButtonProps {
     | 'black'
     | undefined;
   /**
-   * Aria label for icon button
+   * Icon button aria-label
    */
   ariaLabel: string;
 }
