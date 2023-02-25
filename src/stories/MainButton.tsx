@@ -5,7 +5,7 @@ import theme from '../styles/theme/theme';
 
 interface ButtonProps {
   /**
-   * What background color to use
+   * Button color
    */
   color?:
     | 'inherit'
@@ -23,23 +23,23 @@ interface ButtonProps {
     | 'black'
     | undefined;
   /**
-   * How large should the button be?
+   * Button size
    */
   size?: 'small' | 'medium' | 'large' | undefined;
   /**
-   * Outlined or not
+   * Button filled or outlined
    */
   variant?: 'outlined' | 'contained' | undefined;
   /**
-   * Contains icon to the left/start of button
+   * Icon to the left/start of button
    */
   iconStart?: React.ReactElement | undefined;
   /**
-   * Contains icon to the right/end of button
+   * Icon to the right/end of button
    */
   iconEnd?: React.ReactElement | undefined;
   /**
-   * Button contents
+   * Button text contents
    */
   label: string;
   /**
@@ -53,9 +53,8 @@ interface ButtonProps {
 }
 
 /**
- * Primary UI component for user interaction
+ * Primary button used throughout user and admin interfaces
  */
-
 export const MainButton = ({
   size = 'small',
   color = 'dark',
