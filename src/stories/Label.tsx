@@ -5,7 +5,7 @@ import theme from '../styles/theme/theme';
 
 interface LabelProps {
   /**
-   * Label background
+   * Label color
    */
   color?:
     | 'primary'
@@ -26,22 +26,21 @@ interface LabelProps {
    */
   size?: 'small' | 'medium' | undefined;
   /**
-   * Label contents
+   * Label text contents
    */
   label: string;
   /**
-   * Label text weight 
+   * Label text font weight 
    */
   fontWeight?: '400' | '600' | undefined;
   /**
-   * TODO: Only using click for anchor scroll
    * Optional click handler
    */
   onClick?: () => void | undefined;
 }
 
 /**
- * Primary UI component for user interaction
+ * Primary label used in user and admin interfaces
  */
 export const Label = ({
   size,
