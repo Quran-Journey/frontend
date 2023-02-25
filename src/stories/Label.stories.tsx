@@ -5,9 +5,6 @@ import { Label } from './Label';
 export default {
   title: 'UI Basic Elements/Label',
   component: Label,
-  argTypes: {
-    backgroundColor: { control: 'color' },
-  },
 } as ComponentMeta<typeof Label>;
 
 const Template: ComponentStory<typeof Label> = (args) => <Label {...args} />;

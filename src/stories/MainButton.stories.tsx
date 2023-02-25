@@ -9,9 +9,6 @@ import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 export default {
   title: 'UI Basic Elements/Button',
   component: MainButton,
-  argTypes: {
-    backgroundColor: { control: 'color' },
-  },
 } as ComponentMeta<typeof MainButton>;
 
 const Template: ComponentStory<typeof MainButton> = (args) => <MainButton {...args} />;

@@ -7,9 +7,6 @@ import EditIcon from '@mui/icons-material/Edit';
 export default {
   title: 'UI Basic Elements/Circle Icon Button',
   component: CircleIconButton,
-  argTypes: {
-    backgroundColor: { control: 'color' },
-  },
 } as ComponentMeta<typeof CircleIconButton>;
 
 const Template: ComponentStory<typeof CircleIconButton> = (args) => <CircleIconButton {...args} />;
