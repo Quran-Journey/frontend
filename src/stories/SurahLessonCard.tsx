@@ -53,7 +53,7 @@ export const SurahLessonCard = ({
   return (
     <ThemeProvider theme={theme}>
       <HoverGrid container direction="row">
-        <Grid item xs={2} sm={1} md={1} lg={0.75} >
+        <Grid item xs={2.25} sm={1.25} md={1} lg={0.75} >
           <Label
             color="lavendar"
             label={surahNumber}
@@ -61,7 +61,7 @@ export const SurahLessonCard = ({
             size="small"
           />
         </Grid>
-        <Grid item xs={10} sm={11} md={11} lg={11.25}>
+        <Grid item xs={9.75} sm={10.75} md={11} lg={11.25}>
           <Grid
             container
             direction="row"
