@@ -52,64 +52,74 @@ export const SurahLessonCard = ({
 }: SurahLessonCardProps) => {
   return (
     <ThemeProvider theme={theme}>
-      <HoverGrid container>
-        <Grid
-          container
-          direction="row"
-          justifyContent="space-between"
-          alignItems="flex-start"
-          sx={{
-            mb: 2,
-          }}
-        >
-          <Grid item>
-            <Typography variant="h6">{surahNameEn}</Typography>
-            <Typography
-              variant="subtitle1"
-              sx={{ color: '#323334', fontSize: '13px' }}
-            >
-              {surahNameTranslation}
-            </Typography>
-          </Grid>
-          <Grid item>
-            <Typography variant="h3_ar" sx={{ fontSize: '18px' }}>
-              {surahNameAr}
-            </Typography>
-            <Typography
-              variant="subtitle1"
-              sx={{ color: '#323334', fontSize: '13px' }}
-            >
-              {surahVerses} verses
-            </Typography>
-          </Grid>
+      <HoverGrid container direction="row">
+        <Grid item xs={2} sm={1} md={1} lg={0.75} >
+          <Label
+            color="lavendar"
+            label={surahNumber}
+            fontWeight={'600'}
+            size="small"
+          />
         </Grid>
-        <Grid
-          container
-          direction="row"
-          justifyContent="space-between"
-          alignItems="flex-start"
-        >
-          <Grid item>
-            <Grid container direction="row" spacing={0.5}>
-              <Grid item>
-                <Label color="periwinkle" label={numberOfLessons} />
-              </Grid>
-              <Grid item>
-                <Label color="periwinkle" label={surahType} />
-              </Grid>
+        <Grid item xs={10} sm={11} md={11} lg={11.25}>
+          <Grid
+            container
+            direction="row"
+            justifyContent="space-between"
+            alignItems="flex-start"
+            sx={{
+              mb: 2,
+            }}
+          >
+            <Grid item>
+              <Typography variant="h6">{surahNameEn}</Typography>
+              <Typography
+                variant="subtitle1"
+                sx={{ color: '#323334', fontSize: '13px' }}
+              >
+                {surahNameTranslation}
+              </Typography>
+            </Grid>
+            <Grid item>
+              <Typography variant="h3_ar" sx={{ fontSize: '18px' }}>
+                {surahNameAr}
+              </Typography>
+              <Typography
+                variant="subtitle1"
+                sx={{ color: '#323334', fontSize: '13px' }}
+              >
+                {surahVerses} verses
+              </Typography>
             </Grid>
           </Grid>
-          <Grid item>
-            <CircleIconButton
-              ariaLabel="Open Button"
-              color="black"
-              icon={
-                <ArrowCircleRightIcon
-                  fontSize="large"
-                  sx={{ transform: 'rotate(-45deg)' }}
-                />
-              }
-            />
+          <Grid
+            container
+            direction="row"
+            justifyContent="space-between"
+            alignItems="flex-start"
+          >
+            <Grid item>
+              <Grid container direction="row" spacing={0.5}>
+                <Grid item>
+                  <Label color="periwinkle" label={numberOfLessons} />
+                </Grid>
+                <Grid item>
+                  <Label color="periwinkle" label={surahType} />
+                </Grid>
+              </Grid>
+            </Grid>
+            <Grid item>
+              <CircleIconButton
+                ariaLabel="Open Button"
+                color="black"
+                icon={
+                  <ArrowCircleRightIcon
+                    fontSize="large"
+                    sx={{ transform: 'rotate(-45deg)' }}
+                  />
+                }
+              />
+            </Grid>
           </Grid>
         </Grid>
       </HoverGrid>
