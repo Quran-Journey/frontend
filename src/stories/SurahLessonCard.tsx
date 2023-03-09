@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ThemeProvider } from '@mui/material/styles';
+import { styled, ThemeProvider } from '@mui/material/styles';
 import theme from '../styles/theme/theme';
 import { CircleIconButton } from './CircleIconButton';
 import { Label } from './Label';
@@ -18,6 +18,28 @@ interface SurahLessonCardProps {
   surahType: string;
 }
 
+const HoverGrid = styled(Grid)`
+  ${({ theme }) => `
+  cursor: pointer;
+  border-top: solid;
+  border-bottom: solid;
+  border-width: 0.5px;
+  border-color: #797979;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: inherit;
+  transition: ${theme.transitions.create(['background-color', 'transform'], {
+    duration: theme.transitions.duration.standard,
+  })};
+  &:hover {
+    background-color: #F3EEFF;
+    transform: scale(1.03);
+  }
+  `}
+`;
+
 export const SurahLessonCard = ({
   surahNumber,
   surahNameEn,
@@ -30,15 +52,7 @@ export const SurahLessonCard = ({
 }: SurahLessonCardProps) => {
   return (
     <ThemeProvider theme={theme}>
-      <Grid
-        container
-        sx={{
-          borderTop: 0.5,
-          borderBottom: 0.5,
-          py: 2,
-          borderColor: '#797979',
-        }}
-      >
+      <HoverGrid container>
         <Grid
           container
           direction="row"
@@ -98,7 +112,7 @@ export const SurahLessonCard = ({
             />
           </Grid>
         </Grid>
-      </Grid>
+      </HoverGrid>
     </ThemeProvider>
   );
 };
