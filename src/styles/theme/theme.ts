@@ -55,11 +55,11 @@ const theme = createTheme({
   },
   typography: {
     h1: {
-      fontFamily: '"Poppins", "Helvetica", "Arial", sans-serif',
+      // fontFamily: '"Poppins", "Helvetica", "Arial", sans-serif',
       fontWeight: 600,
-      letterSpacing: '-0.02em',
-      fontSize: '5rem',
-      lineHeight: 1.2,
+      // letterSpacing: '-0.02em',
+      // fontSize: '5rem',
+      // lineHeight: 1.2,
     },
     h1_ar: {
       fontFamily: '"IBM Plex Sans Arabic", "Helvetica", "Arial", sans-serif',
@@ -156,6 +156,14 @@ const theme = createTheme({
     // }
   },
   components: {
+    MuiChip: {
+      styleOverrides: {
+        root: {
+          fontFamily: '"Poppins", "Helvetica", "Arial", sans-serif',
+          fontSize: '13px'
+        }
+      }
+    }
     // Name of the component
     // MuiChip: {
     //   styleOverrides: {
