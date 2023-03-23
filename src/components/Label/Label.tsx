@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Chip from '@mui/material/Chip';
 import { ThemeProvider } from '@mui/material/styles';
-import theme from '../styles/theme/theme';
+import theme from '../../styles/theme/theme';
 
 interface LabelProps {
   /**

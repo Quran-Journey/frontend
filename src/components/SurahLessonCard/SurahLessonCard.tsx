@@ -1,12 +1,11 @@
 import * as React from 'react';
 import { styled, ThemeProvider } from '@mui/material/styles';
-import theme from '../styles/theme/theme';
-import { CircleIconButton } from './CircleIconButton';
-import { Label } from './Label';
+import theme from '../../styles/theme/theme';
+import { CircleIconButton } from '../CircleIconButton/CircleIconButton';
+import { Label } from '../Label/Label';
 import { Grid } from '@mui/material';
 import { Typography } from '@mui/material';
 import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
-import Button from '@mui/material';
 
 interface SurahLessonCardProps {
   surahNumber: string;

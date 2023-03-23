@@ -1,7 +1,7 @@
 import * as React from 'react';
 import IconButton from '@mui/material/IconButton';
 import { ThemeProvider } from '@mui/material/styles';
-import theme from '../styles/theme/theme';
+import theme from '../../styles/theme/theme';
 
 interface IconButtonProps {
   /**

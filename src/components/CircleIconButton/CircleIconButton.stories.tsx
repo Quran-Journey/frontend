@@ -2,7 +2,6 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { CircleIconButton } from './CircleIconButton';
 import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
-import EditIcon from '@mui/icons-material/Edit';
 
 export default {
   title: 'UI Basic Elements/Circle Icon Button',
