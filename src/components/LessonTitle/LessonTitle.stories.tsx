@@ -17,5 +17,16 @@ export default {
     surahNameTranslation: 'The Courser',
     surahNameAr: 'سُوۡرَةُ العَادیَات',
     surahVerses: '11',
-    introSections: ['Name', 'Revelation', 'Theme']
+    introSections: ['Name', 'Revelation', 'Theme'],
+    buttonLabel: 'Jump to Lecture'
+  }
+
+  export const InnerLessonTitle = Template.bind({});
+  InnerLessonTitle.args = {
+    surahNameEn: 'Al-’Adiyat',
+    surahNameTranslation: 'The Courser',
+    surahNameAr: 'سُوۡرَةُ العَادیَات',
+    surahVerses: '11',
+    introSections: ['3 Lessons', 'Meccan'],
+    buttonLabel: 'Back to Introduction'
   }
