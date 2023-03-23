@@ -12,6 +12,7 @@ interface LessonTitleProps {
   surahNameAr: string;
   surahVerses: string;
   introSections: Array<string>;
+  buttonLabel: string;
 }
 
 export const LessonTitle = ({
@@ -20,6 +21,7 @@ export const LessonTitle = ({
   surahNameAr,
   surahVerses,
   introSections,
+  buttonLabel,
   ...props
 }: LessonTitleProps) => {
   return (
@@ -64,7 +66,7 @@ export const LessonTitle = ({
             <Grid item sx={{ mt: 2 }}>
               <MainButton
                 color="black"
-                label="Jump to Lecture"
+                label={buttonLabel}
                 size="small"
               />
             </Grid>
