@@ -44,7 +44,7 @@ export const InternalLessonCard = ({
   return (
     <ThemeProvider theme={theme}>
       <HoverGrid container direction="row">
-        <Grid item xs={3} sm={2.5} md={2} lg={1.5}>
+        <Grid item xs={3} sm={1.75} md={1.5} lg={1.25}>
           <Label
             color="periwinkle"
             label={"Lesson " + lessonNumber}
@@ -52,15 +52,13 @@ export const InternalLessonCard = ({
             size="small"
           />
         </Grid>
-        <Grid item xs={8} sm={9.5} md={10} lg={10.5}>
+        <Grid item xs={8} sm={10.25} md={10.5} lg={10.75}>
           <Grid
             container
             direction="row"
             justifyContent="space-between"
-            alignItems="flex-start"
-            sx={{
-              mb: 2,
-            }}
+            alignItems="center"
+            
           >
             <Grid item>
               <Typography variant="h6">{verseSection}</Typography>
@@ -71,15 +69,6 @@ export const InternalLessonCard = ({
                 {surahNameEn}
               </Typography>
             </Grid>
-            
-          </Grid>
-          <Grid
-            container
-            direction="row"
-            justifyContent="space-between"
-            alignItems="flex-start"
-          >
-        
             <Grid item>
               <CircleIconButton
                 ariaLabel="Open Button"
@@ -92,6 +81,7 @@ export const InternalLessonCard = ({
                 }
               />
             </Grid>
+            
           </Grid>
         </Grid>
       </HoverGrid>
