@@ -8,15 +8,40 @@ import { Typography } from '@mui/material';
 import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
 
 interface SurahLessonCardProps {
+  /**
+   * Surah number as listed in the Quran
+   */
   surahNumber: string;
+  /**
+   * Surah name transliterated in English
+   */
   surahNameEn: string;
+  /**
+   * Surah name translated in English
+   */
   surahNameTranslation: string;
+  /**
+   * Surah name in Arabic
+   */
   surahNameAr: string;
+  /**
+   * Number of verses within the surah
+   */
   surahVerses: string;
+  /**
+   * Number of sub lessons associated with the surah
+   */
   numberOfLessons: string;
-  surahType: string;
+  /**
+   * Type of Surah (Median or Makki)
+   */
+  surahType: 'Median'
+  | 'Makki';
 }
 
+/**
+ * Styled grid element for hover effect
+ */
 const HoverGrid = styled(Grid)`
   ${({ theme }) => `
   cursor: pointer;
@@ -39,6 +64,9 @@ const HoverGrid = styled(Grid)`
   `}
 `;
 
+/**
+ * Surah lesson card used within side bar
+ */
 export const SurahLessonCard = ({
   surahNumber,
   surahNameEn,

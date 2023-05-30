@@ -8,11 +8,23 @@ import { Typography } from '@mui/material';
 import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
 
 interface InternalLessonCard {
+  /**
+   * Sub lesson number  
+   */
   lessonNumber: string;
+  /**
+   * Verses within sub lesson
+   */
   verseSection: string;
+  /**
+   * Surah name in English
+   */
   surahNameEn: string;
 }
 
+/**
+ * Styled grid element for hover effect
+ */
 const HoverGrid = styled(Grid)`
   ${({ theme }) => `
   cursor: pointer;
@@ -35,6 +47,9 @@ const HoverGrid = styled(Grid)`
   `}
 `;
 
+/**
+ * Internal lesson card used within surah intro page and surah lesson pages
+ */
 export const InternalLessonCard = ({
   lessonNumber,
   verseSection,

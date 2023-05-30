@@ -32,6 +32,9 @@ interface IconButtonProps {
   ariaLabel: string;
 }
 
+/**
+ * Circular icon button used in navigation on the user interface
+ */
 export const CircleIconButton = ({
   color,
   ariaLabel,
