@@ -24,7 +24,7 @@ background-color: inherit;
 export const Header = () => {
   return (
     <HeaderContainer maxWidth={false} disableGutters>
-      <Container maxWidth='lg' disableGutters>
+      <Container maxWidth='xl' >
         <Grid container justifyContent="space-between">
           <Grid item>
             <Typography variant="h6">Quran Journey</Typography>
