@@ -7,7 +7,7 @@ import { Grid } from '@mui/material';
 import { Typography } from '@mui/material';
 import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
 
-interface SurahLessonCardProps {
+export interface SurahLessonCardProps {
   /**
    * Surah number as listed in the Quran
    */
