@@ -6,7 +6,8 @@ interface ButtonProps {
   children?: React.ReactNode; // make the component able to receive children elements
   disabled?: boolean; // make the button disabled or not
   startIcon?: React.ReactNode; // new property for the start icon
-  endIcon?: React.ReactElement | any | null;
+  endIcon?: React.ReactElement;
+  selected?: boolean;
 }
 
 const ButtonDiv = styled.button<ButtonProps>`
@@ -45,6 +46,7 @@ const ButtonDiv = styled.button<ButtonProps>`
   }
 
   ${(props) => props.disabled && DISABLED}
+  ${(props) => props.selected && SELECTED}
 `;
 
 const DISABLED = css`
@@ -65,8 +67,16 @@ const DISABLED = css`
   }
 `;
 
+const SELECTED = css`
+  border-bottom: none;
+  background: #005b45;
+
+  &:hover {
+    border: none;
+  }
+`;
+
 const IconWrapper = styled.span`
-  // You can add additional styles for the icon wrapper if needed
   color: inherit;
   width: 18px;
 `;
@@ -75,14 +85,15 @@ export const Button = ({
   onClick,
   children,
   disabled = false,
+  selected = false,
   startIcon,
-  // startIcon = <IconWrapper><ArrowLeftCircleFill /></IconWrapper>,
   endIcon,
 }: ButtonProps) => {
   return (
     <ButtonDiv
       onClick={onClick}
       disabled={disabled}
+      selected={selected}
       startIcon={startIcon}
       endIcon={endIcon}
     >

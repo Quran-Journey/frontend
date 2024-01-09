@@ -1,6 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { ArrowLeftCircleFill, ArrowRightCircleFill } from '@styled-icons/bootstrap';
+import {
+  ArrowLeftCircleFill,
+  ArrowRightCircleFill,
+} from '@styled-icons/bootstrap';
 // import { ArrowLeftCircleFill } from 'styled-icons/bootstrap';
 
 import { Button } from './Button';
@@ -50,5 +53,12 @@ export const EndIcon: Story = {
   args: {
     children: 'Next Video',
     endIcon: <ArrowRightCircleFill />,
+  },
+};
+
+export const Selected: Story = {
+  args: {
+    children: 'Chapters',
+    selected: true,
   },
 };
