@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { breakpoints } from '../styles/breakpoints';
+import { breakpoints } from '../../styles/breakpoints';
 
 interface ButtonProps {
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void; // to handle onClick functions
