@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
+import { breakpoints } from '../styles/breakpoints';
 
 interface ButtonProps {
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void; // to handle onClick functions
@@ -43,6 +44,20 @@ const ButtonDiv = styled.button<ButtonProps>`
   &:active {
     border-bottom: none;
     background: #005b45;
+  }
+
+  @media (${breakpoints.sm}) {
+    font-size: 13px;
+    line-height: normal;
+
+    padding: 5px 12px;
+  }
+
+  @media (${breakpoints.xs}) {
+    font-size: 10px;
+    line-height: normal;
+
+    padding: 3px 8px;
   }
 
   ${(props) => props.disabled && DISABLED}
