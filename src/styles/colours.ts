@@ -18,6 +18,6 @@ export const colours: Colours = {
   white: '#FFFFFF',
   black: '#000000',
   darkGrey: '#323334',
-  lightGrey: '#A9A9A9',
-  grey: '#E7E7E7',
+  grey: '#A9A9A9',
+  lightGrey: '#E7E7E7',
 };
