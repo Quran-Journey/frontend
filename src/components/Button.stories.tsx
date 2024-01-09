@@ -1,5 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
+import { ArrowLeftCircleFill, ArrowRightCircleFill } from '@styled-icons/bootstrap';
+// import { ArrowLeftCircleFill } from 'styled-icons/bootstrap';
+
 import { Button } from './Button';
 
 const meta: Meta<typeof Button> = {
@@ -14,6 +17,8 @@ const meta: Meta<typeof Button> = {
   // More on argTypes: https://storybook.js.org/docs/api/argtypes
   argTypes: {
     children: { control: 'text' },
+    startIcon: { control: 'icon' },
+    endIcon: { control: 'icon' },
   },
 };
 
@@ -28,7 +33,22 @@ export const Main: Story = {
 
 export const Disabled: Story = {
   args: {
-    children: 'Button',
+    children: 'Previous Video',
     disabled: true,
+    startIcon: <ArrowLeftCircleFill />,
+  },
+};
+
+export const StartIcon: Story = {
+  args: {
+    children: 'Previous Video',
+    startIcon: <ArrowLeftCircleFill />,
+  },
+};
+
+export const EndIcon: Story = {
+  args: {
+    children: 'Next Video',
+    endIcon: <ArrowRightCircleFill />,
   },
 };

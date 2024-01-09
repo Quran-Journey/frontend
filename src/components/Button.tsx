@@ -5,6 +5,8 @@ interface ButtonProps {
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void; // to handle onClick functions
   children?: React.ReactNode; // make the component able to receive children elements
   disabled?: boolean; // make the button disabled or not
+  startIcon?: React.ReactNode; // new property for the start icon
+  endIcon?: React.ReactElement | any | null;
 }
 
 const ButtonDiv = styled.button<ButtonProps>`
@@ -21,7 +23,7 @@ const ButtonDiv = styled.button<ButtonProps>`
   display: inline-flex;
   padding: 8px 15px;
   align-items: center;
-  gap: 5px;
+  gap: 8px;
 
   border-radius: 30px;
   border-bottom: 3px solid #005b45;
@@ -63,14 +65,30 @@ const DISABLED = css`
   }
 `;
 
+const IconWrapper = styled.span`
+  // You can add additional styles for the icon wrapper if needed
+  color: inherit;
+  width: 18px;
+`;
+
 export const Button = ({
   onClick,
   children,
   disabled = false,
+  startIcon,
+  // startIcon = <IconWrapper><ArrowLeftCircleFill /></IconWrapper>,
+  endIcon,
 }: ButtonProps) => {
   return (
-    <ButtonDiv onClick={onClick} disabled={disabled}>
+    <ButtonDiv
+      onClick={onClick}
+      disabled={disabled}
+      startIcon={startIcon}
+      endIcon={endIcon}
+    >
+      {startIcon && <IconWrapper>{startIcon}</IconWrapper>}
       {children}
+      {endIcon && <IconWrapper>{endIcon}</IconWrapper>}
     </ButtonDiv>
   );
 };
