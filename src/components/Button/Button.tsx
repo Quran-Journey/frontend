@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { breakpoints } from '../../styles/breakpoints';
+import { colours } from '../../styles/colours'
 
 interface ButtonProps {
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void; // to handle onClick functions
@@ -14,7 +15,7 @@ interface ButtonProps {
 const ButtonDiv = styled.button<ButtonProps>`
   all: unset;
 
-  color: #fff;
+  color: ${colours.white};
   font-family: General Sans;
   font-size: 15px;
   font-style: normal;
@@ -28,22 +29,22 @@ const ButtonDiv = styled.button<ButtonProps>`
   gap: 8px;
 
   border-radius: 30px;
-  border-bottom: 3px solid #005b45;
+  border-bottom: 3px solid ${colours.forestGreen};
   outline: inherit;
-  background: #00916e;
+  background: ${colours.emrald};
 
   cursor: pointer;
 
   transition: background 0.5s ease, border-bottom 0.5s ease;
 
   &:hover {
-    border-bottom: 3px solid #003c2d;
-    background: #005b45;
+    border-bottom: 3px solid ${colours.darkGreen};
+    background: ${colours.forestGreen};
   }
 
   &:active {
     border-bottom: none;
-    background: #005b45;
+    background: ${colours.forestGreen};
   }
 
   @media (${breakpoints.sm}) {
@@ -65,26 +66,26 @@ const ButtonDiv = styled.button<ButtonProps>`
 `;
 
 const DISABLED = css`
-  color: #a9a9a9;
-  background: #e8e8e8;
+  color: ${colours.grey};
+  background: ${colours.lightGrey};
   border: none;
 
   cursor: default;
 
   &:hover {
     border: none;
-    background: #e8e8e8;
+    background: ${colours.lightGrey};
   }
 
   &:active {
     border: none;
-    background: #e8e8e8;
+    background: ${colours.lightGrey};
   }
 `;
 
 const SELECTED = css`
   border-bottom: none;
-  background: #005b45;
+  background: ${colours.forestGreen};
 
   &:hover {
     border: none;
