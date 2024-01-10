@@ -8,6 +8,7 @@ interface Colours {
   darkGrey: string;
   grey: string;
   lightGrey: string;
+  [key: string]: string; 
 }
 
 export const colours: Colours = {
