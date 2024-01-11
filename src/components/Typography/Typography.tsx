@@ -3,6 +3,8 @@ import styled, { css } from 'styled-components';
 import { breakpoints } from '../../styles/breakpoints';
 import { colours } from '../../styles/colours';
 
+import 'typeface-poppins'; // Import the Poppins CSS
+
 interface TypographyProps {
   variant: 'h1' | 'h2' | 'h3' | 'h4' | 'subtitle1' | 'subtitle2';
   children: React.ReactNode;
