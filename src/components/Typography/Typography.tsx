@@ -15,7 +15,7 @@ interface TypographyProps {
     | 'subtitle2'
     | 'h1_arabic'
     | 'h2_arabic';
-  children: React.ReactNode;
+  children: string;
 }
 
 const H1 = css`
