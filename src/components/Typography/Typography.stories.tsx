@@ -9,7 +9,7 @@ const meta: Meta<typeof Typography> = {
 
   argTypes: {
     variant: {
-      options: ['h1', 'h2', 'h3', 'h4', 'subtitle1', 'subtitle2'],
+      options: ['h1', 'h2', 'h3', 'h4', 'subtitle1', 'subtitle2', 'h1_arabic', 'h2_arabic'],
       control: { type: 'radio' },
     },
     children: {
@@ -60,5 +60,19 @@ export const Subtitle2: Story = {
   args: {
     variant: 'subtitle2',
     children: 'Subtitle 2',
+  },
+};
+
+export const ArabicHeading1: Story = {
+  args: {
+    variant: 'h1_arabic',
+    children: 'عنوان',
+  },
+};
+
+export const ArabicHeading2: Story = {
+  args: {
+    variant: 'h2_arabic',
+    children: 'عنوان',
   },
 };
