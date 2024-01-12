@@ -8,6 +8,7 @@ interface Colours {
   darkGrey: string;
   grey: string;
   lightGrey: string;
+  lightGreenGradient: string;
   [key: string]: string; 
 }
 
@@ -21,4 +22,5 @@ export const colours: Colours = {
   darkGrey: '#323334',
   grey: '#A9A9A9',
   lightGrey: '#E7E7E7',
+  lightGreenGradient: 'linear-gradient(273deg, #CFFFEA -28.42%, #E7FDD8 100.54%)'
 };
