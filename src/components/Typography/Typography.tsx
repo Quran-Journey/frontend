@@ -6,7 +6,15 @@ import { colours } from '../../styles/colours';
 import 'typeface-poppins'; // Import the Poppins CSS
 
 interface TypographyProps {
-  variant: 'h1' | 'h2' | 'h3' | 'h4' | 'subtitle1' | 'subtitle2';
+  variant:
+    | 'h1'
+    | 'h2'
+    | 'h3'
+    | 'h4'
+    | 'subtitle1'
+    | 'subtitle2'
+    | 'h1_arabic'
+    | 'h2_arabic';
   children: React.ReactNode;
 }
 
@@ -70,6 +78,28 @@ const SUBTITLE2 = css`
   line-height: normal;
 `;
 
+const ARABIC_H1 = css`
+  color: ${colours.darkGrey};
+
+  font-family: Noto Naskh Arabic;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 32px;
+  text-align: right;
+`;
+
+const ARABIC_H2 = css`
+  color: ${colours.darkGrey};
+
+  font-family: Noto Naskh Arabic;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: right;
+`;
+
 const StyledTypography = styled.div<TypographyProps>`
   ${(props) => {
     switch (props.variant) {
@@ -85,6 +115,10 @@ const StyledTypography = styled.div<TypographyProps>`
         return SUBTITLE1;
       case 'subtitle2':
         return SUBTITLE2;
+      case 'h1_arabic':
+        return ARABIC_H1;
+      case 'h2_arabic':
+        return ARABIC_H2;
       default:
         return H1;
     }
