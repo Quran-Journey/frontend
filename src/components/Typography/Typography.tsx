@@ -32,66 +32,121 @@ interface TypographyProps {
 // CSS styles for various Typography variants
 const H1 = css`
   color: ${colours.black};
+  display: inline-block;
 
   font-family: Poppins, Helvetica, sans-serif;
   font-size: 40px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+
+  @media (${breakpoints.sm}) {
+    font-size: 32px;
+  }
+
+  @media (${breakpoints.xs}) {
+    font-size: 24px;
+  }
 `;
 
 const H2 = css`
   color: ${colours.black};
+  display: inline-block;
 
   font-family: Poppins, Helvetica, sans-serif;
   font-size: 36px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+
+  @media (${breakpoints.sm}) {
+    font-size: 28px;
+  }
+
+  @media (${breakpoints.xs}) {
+    font-size: 20px;
+  }
 `;
 
 const H3 = css`
   color: ${colours.black};
+  display: inline-block;
 
   font-family: Poppins, Helvetica, sans-serif;
   font-size: 24px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+
+  @media (${breakpoints.sm}) {
+    font-size: 20px;
+  }
+
+  @media (${breakpoints.xs}) {
+    font-size: 18px;
+  }
 `;
 
 const H4 = css`
   color: ${colours.black};
+  display: inline-block;
 
   font-family: Poppins, Helvetica, sans-serif;
   font-size: 20px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+
+  @media (${breakpoints.sm}) {
+    font-size: 18px;
+  }
+
+  @media (${breakpoints.xs}) {
+    font-size: 16px;
+  }
 `;
 
 const SUBTITLE1 = css`
   color: ${colours.darkGrey};
+  display: inline-block;
 
   font-family: General Sans, Open Sans, sans-serif;
-  font-size: 18px;
+  font-size: 17px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+
+  @media (${breakpoints.sm}) {
+    font-size: 15px;
+  }
+
+  @media (${breakpoints.xs}) {
+    font-size: 13px;
+  }
 `;
 
 const SUBTITLE2 = css`
   color: ${colours.darkGrey};
+  display: inline-block;
 
   font-family: General Sans, Open Sans, sans-serif;
-  font-size: 18px;
+  font-size: 14px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+
+  @media (${breakpoints.sm}) {
+    font-size: 13px;
+  }
+
+  @media (${breakpoints.xs}) {
+    font-size: 12px;
+  }
 `;
 
 const ARABIC_H1 = css`
   color: ${colours.darkGrey};
+  display: inline-block;
 
   font-family: Noto Naskh Arabic;
   font-size: 32px;
@@ -99,17 +154,34 @@ const ARABIC_H1 = css`
   font-weight: 500;
   line-height: 32px;
   text-align: right;
+
+  @media (${breakpoints.sm}) {
+    font-size: 28px;
+  }
+
+  @media (${breakpoints.xs}) {
+    font-size: 24px;
+  }
 `;
 
 const ARABIC_H2 = css`
   color: ${colours.darkGrey};
+  display: inline-block;
 
-  font-family: Noto Naskh Arabic, IBM Plex Sans Arabic, sans-serif;
+  font-family: Noto Naskh Arabic;
   font-size: 20px;
   font-style: normal;
   font-weight: 500;
   line-height: 20px;
   text-align: right;
+
+  @media (${breakpoints.sm}) {
+    font-size: 18px;
+  }
+
+  @media (${breakpoints.xs}) {
+    font-size: 16px;
+  }
 `;
 
 // Styled component for the Typography

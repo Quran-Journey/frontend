@@ -29,6 +29,17 @@ const IconButtonDiv = styled.div<IconButtonProps>`
   height: auto;
 
   cursor: pointer;
+
+  @media (${breakpoints.sm}) {
+    width: 20px;
+    height: auto;
+  }
+
+  @media (${breakpoints.xs}) {
+    width: 15px;
+    height: auto;
+    padding: 0 2px 1px 2px;
+  }
 `;
 
 /**

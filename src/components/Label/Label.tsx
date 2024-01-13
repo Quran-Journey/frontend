@@ -30,6 +30,16 @@ const LabelDiv = styled.div`
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+
+  @media (${breakpoints.sm}) {
+    font-size: 12px;
+    padding: 1px 7px;
+  }
+
+  @media (${breakpoints.xs}) {
+    font-size: 10px;
+    padding: 1px 6px;
+  }
 `;
 
 /**
