@@ -3,7 +3,12 @@ import styled, { css } from 'styled-components';
 import { breakpoints } from '../../styles/breakpoints';
 import { colours } from '../../styles/colours';
 
-import 'typeface-poppins'; // Import the Poppins CSS
+import '@fontsource/poppins/400.css';
+import '@fontsource/poppins/500.css';
+import '@fontsource/poppins/600.css';
+
+import '@fontsource/noto-naskh-arabic/500.css';
+import '@fontsource/open-sans/500.css';
 
 interface TypographyProps {
   variant:
@@ -21,7 +26,7 @@ interface TypographyProps {
 const H1 = css`
   color: ${colours.black};
 
-  font-family: Poppins, sans-serif;
+  font-family: Poppins, Helvetica, sans-serif;
   font-size: 40px;
   font-style: normal;
   font-weight: 600;
@@ -31,7 +36,7 @@ const H1 = css`
 const H2 = css`
   color: ${colours.black};
 
-  font-family: Poppins, sans-serif;
+  font-family: Poppins, Helvetica, sans-serif;
   font-size: 36px;
   font-style: normal;
   font-weight: 600;
@@ -41,7 +46,7 @@ const H2 = css`
 const H3 = css`
   color: ${colours.black};
 
-  font-family: Poppins, sans-serif;
+  font-family: Poppins, Helvetica, sans-serif;
   font-size: 24px;
   font-style: normal;
   font-weight: 600;
@@ -51,7 +56,7 @@ const H3 = css`
 const H4 = css`
   color: ${colours.black};
 
-  font-family: Poppins, sans-serif;
+  font-family: Poppins, Helvetica, sans-serif;
   font-size: 20px;
   font-style: normal;
   font-weight: 500;
@@ -61,7 +66,7 @@ const H4 = css`
 const SUBTITLE1 = css`
   color: ${colours.darkGrey};
 
-  font-family: General Sans, sans-serif;
+  font-family: General Sans, Open Sans, sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
@@ -71,7 +76,7 @@ const SUBTITLE1 = css`
 const SUBTITLE2 = css`
   color: ${colours.darkGrey};
 
-  font-family: General Sans, sans-serif;
+  font-family: General Sans, Open Sans, sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
@@ -92,7 +97,7 @@ const ARABIC_H1 = css`
 const ARABIC_H2 = css`
   color: ${colours.darkGrey};
 
-  font-family: Noto Naskh Arabic;
+  font-family: Noto Naskh Arabic, IBM Plex Sans Arabic, sans-serif;
   font-size: 20px;
   font-style: normal;
   font-weight: 500;
