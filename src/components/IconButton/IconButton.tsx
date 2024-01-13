@@ -11,12 +11,13 @@ interface IconButtonProps {
 const IconButtonDiv = styled.div<IconButtonProps>`
   border-radius: 50%;
   background: ${(props) => props.colour};
-  display: flex;
+  display: inline-block;
   padding: 1px 1px;
   align-items: center;
 
   color: ${colours.black};
   width: 25px;
+  height: auto;
 
   cursor: pointer;
 `;
