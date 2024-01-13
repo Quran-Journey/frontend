@@ -12,11 +12,13 @@ interface ButtonProps {
   selected?: boolean;
 }
 
+import '@fontsource/open-sans/400.css';
+
 const ButtonDiv = styled.button<ButtonProps>`
   all: unset;
 
   color: ${colours.white};
-  font-family: General Sans;
+  font-family: General Sans, Open Sans, sans-serif;
   font-size: 15px;
   font-style: normal;
   font-weight: 400;
