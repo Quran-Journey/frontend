@@ -145,7 +145,7 @@ const SUBTITLE2 = css`
 `;
 
 const ARABIC_H1 = css`
-  color: ${colours.darkGrey};
+  color: ${colours.black};
   display: inline-block;
 
   font-family: Noto Naskh Arabic;
@@ -165,7 +165,7 @@ const ARABIC_H1 = css`
 `;
 
 const ARABIC_H2 = css`
-  color: ${colours.darkGrey};
+  color: ${colours.black};
   display: inline-block;
 
   font-family: Noto Naskh Arabic;
