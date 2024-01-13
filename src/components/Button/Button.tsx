@@ -1,19 +1,32 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { breakpoints } from '../../styles/breakpoints';
-import { colours } from '../../styles/colours'
-
-interface ButtonProps {
-  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void; // to handle onClick functions
-  children?: React.ReactNode; // make the component able to receive children elements
-  disabled?: boolean; // make the button disabled or not
-  startIcon?: React.ReactNode; // new property for the start icon
-  endIcon?: React.ReactElement;
-  selected?: boolean;
-}
+import { colours } from '../../styles/colours';
 
 import '@fontsource/open-sans/400.css';
 
+/**
+ * Props for button component with optional icons.
+ *
+ * @param onClick - Function to handle button click.
+ * @param children - Content inside the button.
+ * @param disabled - Boolean indicating whether the button is disabled.
+ * @param startIcon - Optional icon to display before the button text.
+ * @param endIcon - Optional icon to display after the button text.
+ * @param selected - Boolean indicating whether the button is in a selected state.
+ */
+interface ButtonProps {
+  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  children?: React.ReactNode;
+  disabled?: boolean;
+  startIcon?: React.ReactNode;
+  endIcon?: React.ReactNode;
+  selected?: boolean;
+}
+
+/**
+ * Styled button component with customizable styles.
+ */
 const ButtonDiv = styled.button<ButtonProps>`
   all: unset;
 
@@ -67,6 +80,9 @@ const ButtonDiv = styled.button<ButtonProps>`
   ${(props) => props.selected && SELECTED}
 `;
 
+/**
+ * CSS for disabled state.
+ */
 const DISABLED = css`
   color: ${colours.grey};
   background: ${colours.lightGrey};
@@ -85,6 +101,9 @@ const DISABLED = css`
   }
 `;
 
+/**
+ * CSS for selected state.
+ */
 const SELECTED = css`
   border-bottom: none;
   background: ${colours.forestGreen};
@@ -94,11 +113,24 @@ const SELECTED = css`
   }
 `;
 
+/**
+ * Styled wrapper for icons inside the button.
+ */
 const IconWrapper = styled.span`
   color: inherit;
   width: 18px;
 `;
 
+/**
+ * Button component that can include optional icons.
+ *
+ * @param onClick - Function to handle button click.
+ * @param children - Content inside the button.
+ * @param disabled - Boolean indicating whether the button is disabled.
+ * @param selected - Boolean indicating whether the button is in a selected state.
+ * @param startIcon - Optional icon to display before the button text.
+ * @param endIcon - Optional icon to display after the button text.
+ */
 export const Button = ({
   onClick,
   children,

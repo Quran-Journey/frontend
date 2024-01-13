@@ -3,11 +3,20 @@ import styled from 'styled-components';
 import { breakpoints } from '../../styles/breakpoints';
 import { colours } from '../../styles/colours';
 
+/**
+ * Props for the IconButton component.
+ *
+ * @param icon - The icon to be displayed inside the button.
+ * @param colour - Color of the button (optional, defaults to lightGreen from colours).
+ */
 interface IconButtonProps {
   icon: React.ReactNode;
   colour?: string;
 }
 
+/**
+ * Styled component for the IconButton.
+ */
 const IconButtonDiv = styled.div<IconButtonProps>`
   border-radius: 50%;
   background: ${(props) => props.colour};
@@ -22,6 +31,12 @@ const IconButtonDiv = styled.div<IconButtonProps>`
   cursor: pointer;
 `;
 
+/**
+ * IconButton component that renders the styled IconButtonDiv.
+ *
+ * @param icon - The icon to be displayed inside the button.
+ * @param colour - Color of the button (optional, defaults to lightGreen from colours).
+ */
 export const IconButton = ({
   icon,
   colour = colours.lightGreen,

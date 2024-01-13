@@ -5,10 +5,18 @@ import { colours } from '../../styles/colours';
 
 import '@fontsource/open-sans/400.css';
 
+/**
+ * Props for the Label component.
+ *
+ * @param labelText - The text to be displayed in the label.
+ */
 interface LabelProps {
   labelText: string;
 }
 
+/**
+ * Styled component for the Label.
+ */
 const LabelDiv = styled.div`
   border-radius: 10px;
   background: ${colours.lightGreen};
@@ -24,6 +32,11 @@ const LabelDiv = styled.div`
   line-height: normal;
 `;
 
+/**
+ * Label component that renders a styled label.
+ *
+ * @param labelText - The text to be displayed in the label.
+ */
 export const Label = ({ labelText }: LabelProps) => {
   return <LabelDiv>{labelText}</LabelDiv>;
 };

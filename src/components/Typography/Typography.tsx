@@ -10,6 +10,12 @@ import '@fontsource/poppins/600.css';
 import '@fontsource/noto-naskh-arabic/500.css';
 import '@fontsource/open-sans/500.css';
 
+/**
+ * Props for the Typography component.
+ *
+ * @param variant - The typography variant (e.g., 'h1', 'subtitle1').
+ * @param children - The text content to be displayed.
+ */
 interface TypographyProps {
   variant:
     | 'h1'
@@ -23,6 +29,7 @@ interface TypographyProps {
   children: string;
 }
 
+// CSS styles for various Typography variants
 const H1 = css`
   color: ${colours.black};
 
@@ -105,6 +112,7 @@ const ARABIC_H2 = css`
   text-align: right;
 `;
 
+// Styled component for the Typography
 const StyledTypography = styled.div<TypographyProps>`
   ${(props) => {
     switch (props.variant) {
@@ -130,6 +138,12 @@ const StyledTypography = styled.div<TypographyProps>`
   }}
 `;
 
+/**
+ * Typography component that renders a styled text based on the specified variant.
+ *
+ * @param variant - The typography variant (e.g., 'h1', 'subtitle1').
+ * @param children - The text content to be displayed.
+ */
 export const Typography = ({ variant, children }: TypographyProps) => {
   return <StyledTypography variant={variant}>{children}</StyledTypography>;
 };
