@@ -44,6 +44,7 @@ export const White: Story = {
   args: {
     icon: <ArrowRightShort />,
     colour: 'white,',
+    size: 'medium',
   },
 };
 
@@ -52,5 +53,6 @@ export const Download: Story = {
   args: {
     icon: <BoxArrowDown />,
     colour: 'white,',
+    size: 'medium',
   },
 };
