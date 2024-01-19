@@ -4,6 +4,7 @@ import { breakpoints } from '../../styles/breakpoints';
 import { colours } from '../../styles/colours';
 import { Typography } from '../Typography/Typography';
 
+// Styled component for the navigation bar (NavBar)
 const NavDiv = styled.div`
   padding: 30px 100px 15px 100px;
   width: 100%;
@@ -27,6 +28,7 @@ const NavDiv = styled.div`
   }
 `;
 
+// NavBar component that renders the navigation bar with a title
 export const NavBar = ({}) => {
   return (
     <NavDiv>
