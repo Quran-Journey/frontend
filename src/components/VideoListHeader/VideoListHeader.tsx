@@ -26,6 +26,7 @@ const SurahNameDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  padding-left: 10px;
 `;
 
 /**
@@ -36,6 +37,7 @@ const SurahNameDivAr = styled.div`
   flex-direction: column;
   align-items: flex-end;
   gap: 2px;
+  padding-right: 10px;
 
   @media (${breakpoints.sm}) {
     gap: 0px;
@@ -50,6 +52,7 @@ const SpaceBetween = styled.div`
   width: 100%;
   justify-content: space-between;
   align-items: flex-end;
+  padding: 10px 0;
 `;
 
 /**
