@@ -6,14 +6,16 @@ import { colours } from '../../styles/colours';
 /**
  * Props for the IconButton component.
  *
- * @param icon - The icon to be displayed inside the button.
- * @param colour - Color of the button (optional, defaults to lightGreen from colours).
- * @param size - Size of the button (optional, defaults to medium).
+ * @param {React.ReactNode} icon - The icon to be displayed inside the button.
+ * @param {string} [colour] - Color of the button (optional, defaults to lightGreen from colours).
+ * @param {'small' | 'medium' | 'large'} [size] - Size of the button (optional, defaults to medium).
+ * @param {boolean} [isWhiteOnHover] - Optional boolean indicating if the label should be white on hover.
  */
 interface IconButtonProps {
   icon: React.ReactNode;
   colour?: string;
   size?: 'small' | 'medium' | 'large';
+  isWhiteOnHover?: boolean;
 }
 
 /**
@@ -21,7 +23,8 @@ interface IconButtonProps {
  */
 const IconButtonDiv = styled.div<IconButtonProps>`
   border-radius: 50%;
-  background: ${(props) => props.colour};
+  background: ${(props) =>
+    props.isWhiteOnHover ? colours.white : props.colour};
   display: inline-block;
   align-items: center;
 
@@ -43,6 +46,7 @@ const IconButtonDiv = styled.div<IconButtonProps>`
   }}
 `;
 
+// Styled CSS block for a small icon button.
 const SMALL = css`
   width: 17px;
   height: auto;
@@ -58,6 +62,7 @@ const SMALL = css`
   }
 `;
 
+// Styled CSS block for a medium icon button.
 const MEDIUM = css`
   width: 20px;
   height: auto;
@@ -74,6 +79,7 @@ const MEDIUM = css`
   }
 `;
 
+// Styled CSS block for a large icon button.
 const LARGE = css`
   width: 25px;
   height: auto;
@@ -92,17 +98,23 @@ const LARGE = css`
 /**
  * IconButton component that renders the styled IconButtonDiv.
  *
- * @param icon - The icon to be displayed inside the button.
- * @param colour - Color of the button (optional, defaults to lightGreen from colours).
- * @param size - Size of the button (optional, defaults to medium).
+ * @param {React.ReactNode} icon - The icon to be displayed inside the button.
+ * @param {string} colour - Color of the button (optional, defaults to lightGreen from colours).
+ * @param {'small' | 'medium' | 'large'} [size] - Size of the button (optional, defaults to medium).
  */
 export const IconButton = ({
   icon,
   colour = colours.lightGreen,
   size = 'medium',
+  isWhiteOnHover = false,
 }: IconButtonProps) => {
   return (
-    <IconButtonDiv icon={icon} colour={colour} size={size}>
+    <IconButtonDiv
+      icon={icon}
+      colour={colour}
+      size={size}
+      isWhiteOnHover={isWhiteOnHover}
+    >
       {icon}
     </IconButtonDiv>
   );
