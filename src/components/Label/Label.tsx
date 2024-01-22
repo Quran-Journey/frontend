@@ -1,25 +1,28 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { breakpoints } from '../../styles/breakpoints';
 import { colours } from '../../styles/colours';
 
 import '@fontsource/open-sans/400.css';
 
 /**
- * Props for the Label component.
+ * Interface for the LabelProps.
  *
- * @param labelText - The text to be displayed in the label.
+ * @param {string | string[]} labelText - The text to be displayed in the label.
+ * @param {boolean} [isWhiteOnHover] - Optional boolean indicating if the label should be white on hover.
  */
 interface LabelProps {
-  labelText: string;
+  labelText: string | string[];
+  isWhiteOnHover?: boolean;
 }
 
 /**
  * Styled component for the Label.
  */
-const LabelDiv = styled.div`
+const LabelDiv = styled.div<LabelProps>`
   border-radius: 10px;
-  background: ${colours.lightGreen};
+  background: ${(props) =>
+    props.isWhiteOnHover ? colours.white : colours.lightGreen};
   display: flex;
   padding: 1px 7px;
   align-items: center;
@@ -43,10 +46,17 @@ const LabelDiv = styled.div`
 `;
 
 /**
- * Label component that renders a styled label.
- *
- * @param labelText - The text to be displayed in the label.
+ * Renders a styled label component.
+ * @param {string | string[]} labelText - The text to be displayed in the label.
+ * @returns {JSX.Element} The rendered label component.
  */
-export const Label = ({ labelText }: LabelProps) => {
-  return <LabelDiv>{labelText}</LabelDiv>;
+export const Label = ({
+  labelText,
+  isWhiteOnHover = false,
+}: LabelProps): JSX.Element => {
+  return (
+    <LabelDiv isWhiteOnHover={isWhiteOnHover} labelText={labelText}>
+      {labelText}
+    </LabelDiv>
+  );
 };
