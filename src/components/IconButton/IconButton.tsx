@@ -25,7 +25,9 @@ const IconButtonDiv = styled.div<IconButtonProps>`
   border-radius: 50%;
   background: ${(props) =>
     props.isWhiteOnHover ? colours.white : props.colour};
-  display: inline-block;
+    
+  display: flex;
+  justify-content: center;
   align-items: center;
 
   color: ${colours.black};
