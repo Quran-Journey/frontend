@@ -13,8 +13,9 @@ import '@fontsource/open-sans/500.css';
 /**
  * Props for the Typography component.
  *
- * @param variant - The typography variant (e.g., 'h1', 'subtitle1').
- * @param children - The text content to be displayed.
+ * @interface TypographyProps
+ * @property {string} variant - The variant of the typography.
+ * @property {string|string[]} children - The content of the typography.
  */
 interface TypographyProps {
   variant:
@@ -26,10 +27,12 @@ interface TypographyProps {
     | 'subtitle2'
     | 'h1_arabic'
     | 'h2_arabic';
-  children: string;
+  children: string | string[];
 }
 
 // CSS styles for various Typography variants
+
+// Defines a styled component for English heading 1 with font size adjustments for different breakpoints.
 const H1 = css`
   color: ${colours.black};
   display: inline-block;
@@ -49,6 +52,7 @@ const H1 = css`
   }
 `;
 
+// Defines a styled component for English heading 2 with font size adjustments for different breakpoints.
 const H2 = css`
   color: ${colours.black};
   display: inline-block;
@@ -68,6 +72,7 @@ const H2 = css`
   }
 `;
 
+// Defines a styled component for English heading 3 with font size adjustments for different breakpoints.
 const H3 = css`
   color: ${colours.black};
   display: inline-block;
@@ -87,6 +92,7 @@ const H3 = css`
   }
 `;
 
+// Defines a styled component for English heading 4 with font size adjustments for different breakpoints.
 const H4 = css`
   color: ${colours.black};
   display: inline-block;
@@ -106,6 +112,7 @@ const H4 = css`
   }
 `;
 
+// Defines a styled component for English subtitle 1 with font size adjustments for different breakpoints.
 const SUBTITLE1 = css`
   color: ${colours.darkGrey};
   display: inline-block;
@@ -125,6 +132,7 @@ const SUBTITLE1 = css`
   }
 `;
 
+// Defines a styled component for English subtitle 2 with font size adjustments for different breakpoints.
 const SUBTITLE2 = css`
   color: ${colours.darkGrey};
   display: inline-block;
@@ -144,6 +152,7 @@ const SUBTITLE2 = css`
   }
 `;
 
+// Defines a styled component for Arabic heading 1 with font size adjustments for different breakpoints.
 const ARABIC_H1 = css`
   color: ${colours.black};
   display: inline-block;
@@ -164,6 +173,7 @@ const ARABIC_H1 = css`
   }
 `;
 
+// Defines a styled component for Arabic heading 2 with font size adjustments for different breakpoints.
 const ARABIC_H2 = css`
   color: ${colours.black};
   display: inline-block;
@@ -184,7 +194,19 @@ const ARABIC_H2 = css`
   }
 `;
 
-// Styled component for the Typography
+/**
+ * This is a styled div that applies different typography styles based on the "variant" prop.
+ * The "variant" prop can be one of the following values: 'h1', 'h2', 'h3', 'h4', 'subtitle1', 'subtitle2', 'h1_arabic', 'h2_arabic'.
+ * The component uses styled-components to apply the appropriate CSS styles based on the "variant" prop.
+ *
+ * Example usage:
+ *
+ * <StyledTypography variant="h1">Heading 1</StyledTypography>
+ *
+ * @param {object} props - The component props.
+ * @param {string} props.variant - The variant of the typography.
+ * @param {string|string[]} props.children - The content of the typography.
+ */
 const StyledTypography = styled.div<TypographyProps>`
   ${(props) => {
     switch (props.variant) {
@@ -211,11 +233,24 @@ const StyledTypography = styled.div<TypographyProps>`
 `;
 
 /**
- * Typography component that renders a styled text based on the specified variant.
+ * Renders a typography component with the specified variant and children.
  *
- * @param variant - The typography variant (e.g., 'h1', 'subtitle1').
- * @param children - The text content to be displayed.
+ * @param {Object} props - The component props.
+ * @param {string} props.variant - The variant of the typography component. Possible values are:
+ *   - 'h1'
+ *   - 'h2'
+ *   - 'h3'
+ *   - 'h4'
+ *   - 'subtitle1'
+ *   - 'subtitle2'
+ *   - 'h1_arabic'
+ *   - 'h2_arabic'
+ * @param {string|string[]} props.children - The content of the typography component.
+ * @returns {JSX.Element} The rendered typography component.
  */
-export const Typography = ({ variant, children }: TypographyProps) => {
+export const Typography = ({
+  variant,
+  children,
+}: TypographyProps): JSX.Element => {
   return <StyledTypography variant={variant}>{children}</StyledTypography>;
 };
