@@ -30,6 +30,6 @@ const GroupDiv = styled.div`
  */
 export const ButtonGroup = ({
   children,
-}: ButtonGroupProps): React.ReactNode => {
+}: ButtonGroupProps): JSX.Element => {
   return <GroupDiv>{children}</GroupDiv>;
 };
