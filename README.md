@@ -24,7 +24,7 @@ npm run build
 
 ## Run Storybook
 
-Storybook is a development environment for building UI components in isolation. This is where you can view all built components
+Storybook is a development environment for building UI components in isolation. This is where you can view all built components.
 
 To run Storybook, use:
 
