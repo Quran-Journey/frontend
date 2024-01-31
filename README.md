@@ -39,6 +39,6 @@ Note: You do not need to build the application before running Storybook.
 If you encounter errors:
 
 1. Run npm install again.
-2. Ensure your Node version is v18.17.0.
+2. Ensure your Node version is v18.17.0 or higher.
 3. Ensure your React version is 18.2.0.
 4. Run npm run build again.
