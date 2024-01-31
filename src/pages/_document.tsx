@@ -7,7 +7,6 @@ import Document, {
   DocumentContext,
 } from 'next/document';
 
-
 /**
  * Represents a custom document class for Next.js.
  * This class extends the base Document class provided by Next.js.
