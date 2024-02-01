@@ -1,29 +1,38 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
-import { breakpoints } from '../../styles/breakpoints';
-import { colours } from '../../styles/colours';
-
+import styled from 'styled-components';
 import { ChapterListHeader } from '../ChapterListHeader/ChapterListHeader';
 import {
   ChapterButtonCardProps,
   ChapterButtonCard,
 } from '../ChapterButtonCard/ChapterButtonCard';
 
+/**
+ * Represents the props for the ChapterListSidebar component.
+ * @interface ChapterListSidebarProps
+ * @property {Array<ChapterButtonCardProps>} allChapters - The array of ChapterButtonCardProps representing all the chapters.
+ */
 interface ChapterListSidebarProps {
   allChapters: Array<ChapterButtonCardProps>;
 }
 
+/**
+ * Represents the styled component for the sidebar div.
+ */
 const SidebarDiv = styled.div`
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 `;
 
-
-
+/**
+ * Renders the sidebar component for the chapter list.
+ *
+ * @param {ChapterListSidebarProps} allChapters - The array of ChapterButtonCards to be displayed in the sidebar.
+ * @returns {JSX.Element} The rendered sidebar component.
+ */
 export const ChapterListSidebar = ({
-    allChapters,
-}: ChapterListSidebarProps) => {
+  allChapters,
+}: ChapterListSidebarProps): JSX.Element => {
   return (
     <SidebarDiv>
       <ChapterListHeader />
