@@ -52,7 +52,7 @@ export const LessonList = ({
       {allLessons.map((Lesson, index) => (
         <LessonButtonCard
           key={index} // Add a unique key for each mapped component
-          LessonNumber={Lesson.LessonNumber}
+          lessonNumber={Lesson.lessonNumber}
           totalLessons={Lesson.totalLessons}
           verseStart={Lesson.verseStart}
           verseEnd={Lesson.verseEnd}

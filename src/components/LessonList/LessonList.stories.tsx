@@ -33,7 +33,7 @@ const sampleHeaader: LessonListHeaderProps = {
 const sampleLessonData: LessonButtonCardProps[] = Array.from(
   { length: 12 },
   (_, index) => ({
-    LessonNumber: (index + 1).toString(),
+    lessonNumber: (index + 1).toString(),
     totalLessons: '12',
     verseStart: (index * 10 + 1).toString(), // Assuming 10 verses per Lesson, adjust as needed
     verseEnd: ((index + 1) * 10).toString(), // Assuming 10 verses per Lesson, adjust as needed

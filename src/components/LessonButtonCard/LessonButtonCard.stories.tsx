@@ -16,7 +16,7 @@ type Story = StoryObj<typeof LessonButtonCard>;
 // Main/default story for the LessonButtonCard component
 export const Main: Story = {
   args: {
-    LessonNumber: '1',
+    lessonNumber: '1',
     totalLessons: '12',
     verseStart: '1',
     verseEnd: '10',

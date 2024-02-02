@@ -12,7 +12,7 @@ import { Typography } from '../Typography/Typography';
  *
  * @interface LessonButtonCardProps
  * @property {function} onClick - Optional event handler for click events on the component.
- * @property {string} LessonNumber - The number of the Lesson.
+ * @property {string} lessonNumber - The number of the Lesson.
  * @property {string} totalLessons - The total number of Lessons.
  * @property {string} verseStart - The starting verse of the Lesson.
  * @property {string} verseEnd - The ending verse of the Lesson.
@@ -20,7 +20,7 @@ import { Typography } from '../Typography/Typography';
  */
 export interface LessonButtonCardProps {
   onClick?: (event: React.MouseEvent<HTMLDivElement>) => void;
-  LessonNumber: string;
+  lessonNumber: string;
   totalLessons: string;
   verseStart: string;
   verseEnd: string;
@@ -105,7 +105,7 @@ const HoverDiv = styled.div`
  *
  * @param {Object} props - The component props.
  * @param {Function} props.onClick - The click event handler function.
- * @param {string} props.LessonNumber - The number of the Lesson.
+ * @param {string} props.lessonNumber - The number of the Lesson.
  * @param {string} props.totalLessons - The total number of Lessons.
  * @param {string} props.verseStart - The starting verse number.
  * @param {string} props.verseEnd - The ending verse number.
@@ -114,7 +114,7 @@ const HoverDiv = styled.div`
  */
 export const LessonButtonCard = ({
   onClick,
-  LessonNumber,
+  lessonNumber,
   totalLessons,
   verseStart,
   verseEnd,
@@ -131,7 +131,7 @@ export const LessonButtonCard = ({
         <SpaceBetweenTop>
           <LeftSection>
             <Label
-              labelText={'Lesson ' + LessonNumber + ' of ' + totalLessons}
+              labelText={'Lesson ' + lessonNumber + ' of ' + totalLessons}
               isWhiteOnHover={isHovered}
             />
             <VerseRangeDiv>
