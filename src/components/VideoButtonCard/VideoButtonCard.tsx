@@ -18,7 +18,7 @@ import { Typography } from '../Typography/Typography';
  * @property {string} verseEnd - The ending verse of the video.
  * @property {string} surahName - The name of the surah.
  */
-interface VideoButtonCardProps {
+export interface VideoButtonCardProps {
   onClick?: (event: React.MouseEvent<HTMLDivElement>) => void;
   videoNumber: string;
   totalVideos: string;
@@ -65,7 +65,6 @@ const SpaceBetweenTop = styled.div`
 const ParentDiv = styled.div`
   padding: 13px 0;
   border-top: 0.25px solid ${colours.grey};
-  border-bottom: 0.25px solid ${colours.grey};
   margin: 0 10px;
   min-width: 100%
 
