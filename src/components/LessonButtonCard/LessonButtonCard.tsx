@@ -105,8 +105,8 @@ const HoverDiv = styled.div`
  *
  * @param {Object} props - The component props.
  * @param {Function} props.onClick - The click event handler function.
- * @param {string} props.lessonNumber - The number of the Lesson.
- * @param {string} props.totalLessons - The total number of Lessons.
+ * @param {string} props.lessonNumber - The number of the lesson.
+ * @param {string} props.totalLessons - The total number of lessons.
  * @param {string} props.verseStart - The starting verse number.
  * @param {string} props.verseEnd - The ending verse number.
  * @param {string} props.surahName - The name of the Surah.
@@ -131,7 +131,7 @@ export const LessonButtonCard = ({
         <SpaceBetweenTop>
           <LeftSection>
             <Label
-              labelText={'Lesson ' + lessonNumber + ' of ' + totalLessons}
+              labelText={'lesson ' + lessonNumber + ' of ' + totalLessons}
               isWhiteOnHover={isHovered}
             />
             <VerseRangeDiv>

@@ -49,14 +49,14 @@ export const LessonList = ({
         surahNameArabic={headerDetails.surahNameArabic}
         numberOfVerses={headerDetails.numberOfVerses}
       />
-      {allLessons.map((Lesson, index) => (
+      {allLessons.map((lesson, index) => (
         <LessonButtonCard
           key={index} // Add a unique key for each mapped component
-          lessonNumber={Lesson.lessonNumber}
-          totalLessons={Lesson.totalLessons}
-          verseStart={Lesson.verseStart}
-          verseEnd={Lesson.verseEnd}
-          surahName={Lesson.surahName}
+          lessonNumber={lesson.lessonNumber}
+          totalLessons={lesson.totalLessons}
+          verseStart={lesson.verseStart}
+          verseEnd={lesson.verseEnd}
+          surahName={lesson.surahName}
         />
       ))}
     </LessonListDiv>
