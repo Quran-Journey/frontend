@@ -8,20 +8,20 @@ import { ArrowRightShort } from '@styled-icons/bootstrap';
 import { Typography } from '../Typography/Typography';
 
 /**
- * Represents the props for the VideoButtonCard component.
+ * Represents the props for the LessonButtonCard component.
  *
- * @interface VideoButtonCardProps
+ * @interface LessonButtonCardProps
  * @property {function} onClick - Optional event handler for click events on the component.
- * @property {string} videoNumber - The number of the video.
- * @property {string} totalVideos - The total number of videos.
- * @property {string} verseStart - The starting verse of the video.
- * @property {string} verseEnd - The ending verse of the video.
+ * @property {string} LessonNumber - The number of the Lesson.
+ * @property {string} totalLessons - The total number of Lessons.
+ * @property {string} verseStart - The starting verse of the Lesson.
+ * @property {string} verseEnd - The ending verse of the Lesson.
  * @property {string} surahName - The name of the surah.
  */
-export interface VideoButtonCardProps {
+export interface LessonButtonCardProps {
   onClick?: (event: React.MouseEvent<HTMLDivElement>) => void;
-  videoNumber: string;
-  totalVideos: string;
+  LessonNumber: string;
+  totalLessons: string;
   verseStart: string;
   verseEnd: string;
   surahName: string;
@@ -34,7 +34,7 @@ const VerseRangeDiv = styled.div`
   align-items: flex-start;
 `;
 
-// Styled component for a left section of the VideoButtonCard component
+// Styled component for a left section of the LessonButtonCard component
 const LeftSection = styled.div`
   display: inline-flex;
   align-items: flex-start;
@@ -101,25 +101,25 @@ const HoverDiv = styled.div`
 `;
 
 /**
- * Renders a video button card component.
+ * Renders a Lesson button card component.
  *
  * @param {Object} props - The component props.
  * @param {Function} props.onClick - The click event handler function.
- * @param {string} props.videoNumber - The number of the video.
- * @param {string} props.totalVideos - The total number of videos.
+ * @param {string} props.LessonNumber - The number of the Lesson.
+ * @param {string} props.totalLessons - The total number of Lessons.
  * @param {string} props.verseStart - The starting verse number.
  * @param {string} props.verseEnd - The ending verse number.
  * @param {string} props.surahName - The name of the Surah.
- * @returns {JSX.Element} - The rendered VideoButtonCard component.
+ * @returns {JSX.Element} - The rendered LessonButtonCard component.
  */
-export const VideoButtonCard = ({
+export const LessonButtonCard = ({
   onClick,
-  videoNumber,
-  totalVideos,
+  LessonNumber,
+  totalLessons,
   verseStart,
   verseEnd,
   surahName,
-}: VideoButtonCardProps): JSX.Element => {
+}: LessonButtonCardProps): JSX.Element => {
   const [isHovered, setIsHovered] = useState(false);
   return (
     <HoverDiv
@@ -131,7 +131,7 @@ export const VideoButtonCard = ({
         <SpaceBetweenTop>
           <LeftSection>
             <Label
-              labelText={'video ' + videoNumber + ' of ' + totalVideos}
+              labelText={'Lesson ' + LessonNumber + ' of ' + totalLessons}
               isWhiteOnHover={isHovered}
             />
             <VerseRangeDiv>
