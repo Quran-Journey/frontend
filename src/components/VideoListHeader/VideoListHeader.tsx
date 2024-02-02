@@ -12,7 +12,7 @@ import { Typography } from '../Typography/Typography';
  * @property {string} surahNameArabic - The Arabic name of the surah.
  * @property {string} numberOfVerses - The number of verses in the surah.
  */
-interface VideoListHeaderProps {
+export interface VideoListHeaderProps {
   surahName: string;
   nameTranslation: string;
   surahNameArabic: string;
@@ -53,6 +53,28 @@ const SpaceBetween = styled.div`
   justify-content: space-between;
   align-items: flex-end;
   padding: 10px 0;
+  margin-top: 30px;
+  margin-bottom: 20px;
+
+  @media (${breakpoints.lg}) {
+    margin-top: 25px;
+    margin-bottom: 15px;
+  }
+
+  @media (${breakpoints.md}) {
+    margin-top: 20px;
+    margin-bottom: 15px;
+  }
+
+  @media (${breakpoints.sm}) {
+    margin-top: 20px;
+    margin-bottom: 13px;
+  }
+
+  @media (${breakpoints.xs}) {
+    margin-top: 12px;
+    margin-bottom: 8px;
+  }
 `;
 
 /**
