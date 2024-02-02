@@ -4,15 +4,15 @@ import { breakpoints } from '../../styles/breakpoints';
 import { Typography } from '../Typography/Typography';
 
 /**
- * Represents the props for the VideoListHeader component.
+ * Represents the props for the LessonListHeader component.
  *
- * @interface VideoListHeaderProps
+ * @interface LessonListHeaderProps
  * @property {string} surahName - The name of the surah.
  * @property {string} nameTranslation - The translation of the surah name.
  * @property {string} surahNameArabic - The Arabic name of the surah.
  * @property {string} numberOfVerses - The number of verses in the surah.
  */
-export interface VideoListHeaderProps {
+export interface LessonListHeaderProps {
   surahName: string;
   nameTranslation: string;
   surahNameArabic: string;
@@ -78,21 +78,21 @@ const SpaceBetween = styled.div`
 `;
 
 /**
- * Renders the header component for the video list.
+ * Renders the header component for the Lesson list.
  *
- * @param {VideoListHeaderProps} props - The props for the VideoListHeader component.
+ * @param {LessonListHeaderProps} props - The props for the LessonListHeader component.
  * @param {string} props.surahName - The name of the surah.
  * @param {string} props.nameTranslation - The translation of the surah name.
  * @param {string} props.surahNameArabic - The Arabic name of the surah.
  * @param {string} props.numberOfVerses - The number of verses in the surah.
  * @returns {JSX.Element} The rendered header component.
  */
-export const VideoListHeader = ({
+export const LessonListHeader = ({
   surahName,
   nameTranslation,
   surahNameArabic,
   numberOfVerses,
-}: VideoListHeaderProps): JSX.Element => {
+}: LessonListHeaderProps): JSX.Element => {
   return (
     <SpaceBetween>
       <SurahNameDiv>
