@@ -151,7 +151,7 @@ export const ChapterButtonCard = ({
               isWhiteOnHover={isHovered}
             />
             <Label
-              labelText={numberOfVideos + ' videos'}
+              labelText={`${numberOfVideos} ${numberOfVideos === '1' ? 'lesson' : 'lessons'}`}
               isWhiteOnHover={isHovered}
             />
           </LabelGroup>
