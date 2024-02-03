@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ChapterListSidebar } from './ChapterListSidebar';
+import { ChapterList } from './ChapterList';
 import { ChapterButtonCardProps } from '../ChapterButtonCard/ChapterButtonCard';
-// Meta information for the ChapterListSidebar component
-const meta: Meta<typeof ChapterListSidebar> = {
-  title: 'Organism/ChapterListSidebar',
-  component: ChapterListSidebar,
+// Meta information for the ChapterList component
+const meta: Meta<typeof ChapterList> = {
+  title: 'Organism/ChapterList',
+  component: ChapterList,
   parameters: {
     layout: 'fullscreen',
   },
@@ -13,8 +13,8 @@ const meta: Meta<typeof ChapterListSidebar> = {
 
 export default meta;
 
-// Defining the Story type based on the ChapterListSidebar component
-type Story = StoryObj<typeof ChapterListSidebar>;
+// Defining the Story type based on the ChapterList component
+type Story = StoryObj<typeof ChapterList>;
 
 // Sample data for ChapterButtonCardProps
 const sampleChapterData: ChapterButtonCardProps[] = [
@@ -100,5 +100,5 @@ const sampleChapterData: ChapterButtonCardProps[] = [
   },
 ];
 
-// Main story showcasing the ChapterListSidebar component
+// Main story showcasing the ChapterList component
 export const Main: Story = { args: { allChapters: sampleChapterData } };
