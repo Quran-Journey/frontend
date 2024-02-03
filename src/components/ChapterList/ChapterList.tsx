@@ -11,7 +11,7 @@ import {
  * @interface ChapterListProps
  * @property {Array<ChapterButtonCardProps>} allChapters - The array of ChapterButtonCardProps representing all the chapters.
  */
-interface ChapterListProps {
+export interface ChapterListProps {
   allChapters: Array<ChapterButtonCardProps>;
 }
 
