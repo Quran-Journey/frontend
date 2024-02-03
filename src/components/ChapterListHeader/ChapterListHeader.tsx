@@ -14,26 +14,21 @@ const HeaderDiv = styled.div`
 // Styled component for parent div
 const ParentDiv = styled.div`
   width: 100%;
-  margin-top: 40px;
-  margin-bottom: 22px;
-
-  @media (${breakpoints.lg}) {
-    margin-top: 35px;
-    margin-bottom: 20px;
-  }
+  margin-top: 15px;
+  margin-bottom: 18px;
 
   @media (${breakpoints.md}) {
-    margin-top: 30px;
+    margin-top: 12px;
     margin-bottom: 15px;
   }
 
   @media (${breakpoints.sm}) {
-    margin-top: 28px;
-    margin-bottom: 14px;
+    margin-top: 10px;
+    margin-bottom: 12px;
   }
 
   @media (${breakpoints.xs}) {
-    margin-top: 25px;
+    margin-top: 10px;
     margin-bottom: 10px;
   }
 `;
