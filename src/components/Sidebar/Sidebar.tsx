@@ -30,9 +30,19 @@ export const Sidebar = ({
   return (
     <SidebarDiv>
       <ButtonGroup>
-        <Button selected={isChapterSelected}>Chapter</Button>
+        <Button
+          selected={isChapterSelected}
+          onClick={() => setChapterSelected(true)}
+        >
+          Chapter
+        </Button>
         {lessonData ? (
-          <Button selected={!isChapterSelected}>Lessons / {lessonData.headerDetails.surahName} </Button>
+          <Button
+            selected={!isChapterSelected}
+            onClick={() => setChapterSelected(false)}
+          >
+            Lessons / {lessonData.headerDetails.surahName}{' '}
+          </Button>
         ) : (
           <Button disabled={true}>Lessons</Button>
         )}
