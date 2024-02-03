@@ -35,3 +35,9 @@ export const Main: Story = {
     lessonData: lessonData.lessonData,
   },
 };
+
+export const DisabledLessons: Story = {
+  args: {
+    chapterData: lessonData.chapterData,
+  },
+};
