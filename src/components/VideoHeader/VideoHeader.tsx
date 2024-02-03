@@ -15,7 +15,7 @@ import { Typography } from '../Typography/Typography';
  * @property {string} verseStart - The starting verse.
  * @property {string} verseEnd - The ending verse.
  */
-interface VideoHeaderProps {
+export interface VideoHeaderProps {
   surahName: string;
   surahNameArabic: string;
   videoNumber: string;
