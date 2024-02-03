@@ -16,7 +16,7 @@ import {
  * @property {LessonListHeaderProps} headerDetails - The Lesson list chapter header details.
  * @property {Array<LessonButtonCardProps>} allLessons - The array of LessonButtonCardProps representing all the Lessons.
  */
-interface LessonListProps {
+export interface LessonListProps {
   headerDetails: LessonListHeaderProps;
   allLessons: Array<LessonButtonCardProps>;
 }
