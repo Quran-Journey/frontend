@@ -6,7 +6,7 @@ import { colours } from '../../styles/colours';
  * Interface for the PDFEmbed component props.
  * @property {string} src - The source URL of the PDF file to be embedded.
  */
-interface PDFEmbedProps {
+export interface PDFEmbedProps {
   src: string;
 }
 
