@@ -14,7 +14,7 @@ import { FileEarmarkArrowDownFill } from '@styled-icons/bootstrap';
  * @property {string} verseStart - The starting verse number.
  * @property {string} verseEnd - The ending verse number.
  */
-interface PDFDownloadButtonProps {
+export interface PDFDownloadButtonProps {
   onClick?: (event: React.MouseEvent<HTMLDivElement>) => void;
   surahName: string;
   verseStart: string;
