@@ -43,7 +43,7 @@ export const Sidebar = ({
               Lessons / Chapter...
             </Button>
           </ButtonGroup>
-          
+
           <ChapterList allChapters={chapterData.allChapters} />
         </>
       ) : (
@@ -70,10 +70,14 @@ export const Sidebar = ({
           {isChapterSelected ? (
             <ChapterList allChapters={chapterData.allChapters} />
           ) : (
-            <LessonList
-              headerDetails={lessonData.headerDetails}
-              allLessons={lessonData.allLessons}
-            />
+            <>
+              {lessonData && (
+                <LessonList
+                  headerDetails={lessonData.headerDetails}
+                  allLessons={lessonData.allLessons}
+                />
+              )}
+            </>
           )}
         </>
       )}
