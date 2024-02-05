@@ -23,12 +23,29 @@ export interface VideoPlayerSectionProps {
 const VideoPlayer = styled.iframe`
   min-width: 100%;
   aspect-ratio: 16 / 9;
-`
+`;
 
 const VideoSectionDiv = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
+`;
+
+const HeaderSection = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+
+  margin: 38px 0;
+`;
+
+const HeaderItem = styled.div`
+  width: 60%;
+`;
+
+const HeaderDownload = styled.div`
+  width: 36%;
 `;
 
 export const VideoPlayerSection = ({
@@ -50,19 +67,25 @@ export const VideoPlayerSection = ({
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowFullScreen
       />
-      <VideoHeader
-        surahName={headerData.surahName}
-        surahNameArabic={headerData.surahNameArabic}
-        videoNumber={headerData.videoNumber}
-        totalVideos={headerData.totalVideos}
-        verseStart={headerData.verseStart}
-        verseEnd={headerData.verseEnd}
-      ></VideoHeader>
-      <PDFDownloadButton
-        surahName={pdfDownloadData.surahName}
-        verseStart={pdfDownloadData.verseStart}
-        verseEnd={pdfDownloadData.verseEnd}
-      ></PDFDownloadButton>
+      <HeaderSection>
+        <HeaderItem>
+          <VideoHeader
+            surahName={headerData.surahName}
+            surahNameArabic={headerData.surahNameArabic}
+            videoNumber={headerData.videoNumber}
+            totalVideos={headerData.totalVideos}
+            verseStart={headerData.verseStart}
+            verseEnd={headerData.verseEnd}
+          ></VideoHeader>
+        </HeaderItem>
+        <HeaderDownload>
+          <PDFDownloadButton
+            surahName={pdfDownloadData.surahName}
+            verseStart={pdfDownloadData.verseStart}
+            verseEnd={pdfDownloadData.verseEnd}
+          ></PDFDownloadButton>
+        </HeaderDownload>
+      </HeaderSection>
       <PDFEmbed src={srcPDF.src}></PDFEmbed>
       <ButtonGroup>
         <Button startIcon={<ArrowLeftCircleFill />}>Previous</Button>
