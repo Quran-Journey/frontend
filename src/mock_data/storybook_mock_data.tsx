@@ -2,6 +2,7 @@ import { LessonButtonCardProps } from '../components/LessonButtonCard/LessonButt
 import { LessonListHeaderProps } from '../components/LessonListHeader/LessonListHeader';
 import { ChapterButtonCardProps } from '../components/ChapterButtonCard/ChapterButtonCard';
 
+// surah name mock data
 export const sampleSurahName = 'Aal-E-Imran';
 
 // header mock data
