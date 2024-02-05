@@ -46,6 +46,10 @@ export const VideoPlayerSection = ({
         verseEnd={pdfDownloadData.verseEnd}
       ></PDFDownloadButton>
       <PDFEmbed src={src.src}></PDFEmbed>
+      <ButtonGroup>
+        <Button>Previous</Button>
+        <Button>Next</Button>
+      </ButtonGroup>
     </VideoSectionDiv>
   );
 };
