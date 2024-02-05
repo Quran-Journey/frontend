@@ -21,6 +21,7 @@ export default meta;
 // Defining the Story type based on the LessonList component
 type Story = StoryObj<typeof Sidebar>;
 
+// Creating the lessonData object with chapterData and lessonData properties
 const lessonData: SidebarProps = {
   chapterData: { allChapters: sampleChapterData },
   lessonData: {
@@ -29,6 +30,7 @@ const lessonData: SidebarProps = {
   },
 };
 
+// Exporting the Main component as a Story
 export const Main: Story = {
   args: {
     chapterData: lessonData.chapterData,
@@ -36,6 +38,7 @@ export const Main: Story = {
   },
 };
 
+// This is a single-line comment
 export const DisabledLessons: Story = {
   args: {
     chapterData: lessonData.chapterData,
