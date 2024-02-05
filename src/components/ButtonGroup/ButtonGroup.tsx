@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { breakpoints } from '@/styles/breakpoints';
 
 /**
  * Props for button group
@@ -19,6 +20,19 @@ const GroupDiv = styled.div`
 
   margin-top: 10px;
   margin-bottom: 10px;
+
+  height: 38px;
+  line-height: 38px;
+
+  @media (${breakpoints.sm}) {
+    height: 30px;
+    line-height: 30px;
+  }
+
+  @media (${breakpoints.xs}) {
+    height: 24px;
+    line-height: 24px;
+  }
 `;
 
 /**

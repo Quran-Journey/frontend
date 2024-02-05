@@ -52,28 +52,22 @@ const SpaceBetween = styled.div`
   width: 100%;
   justify-content: space-between;
   align-items: flex-end;
-  padding: 10px 0;
-  margin-top: 30px;
-  margin-bottom: 20px;
-
-  @media (${breakpoints.lg}) {
-    margin-top: 25px;
-    margin-bottom: 15px;
-  }
+  margin-top: 15px;
+  margin-bottom: 18px;
 
   @media (${breakpoints.md}) {
-    margin-top: 20px;
+    margin-top: 12px;
     margin-bottom: 15px;
   }
 
   @media (${breakpoints.sm}) {
-    margin-top: 20px;
-    margin-bottom: 13px;
+    margin-top: 10px;
+    margin-bottom: 12px;
   }
 
   @media (${breakpoints.xs}) {
-    margin-top: 12px;
-    margin-bottom: 8px;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 `;
 

@@ -1,23 +1,31 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { ChapterListSidebar } from './ChapterListSidebar';
-import { ChapterButtonCardProps } from '../ChapterButtonCard/ChapterButtonCard';
-// Meta information for the ChapterListSidebar component
-const meta: Meta<typeof ChapterListSidebar> = {
-  title: 'Organism/ChapterListSidebar',
-  component: ChapterListSidebar,
-  parameters: {
-    layout: 'fullscreen',
-  },
-  tags: ['autodocs'],
+import { LessonButtonCardProps } from '../components/LessonButtonCard/LessonButtonCard';
+import { LessonListHeaderProps } from '../components/LessonListHeader/LessonListHeader';
+import { ChapterButtonCardProps } from '../components/ChapterButtonCard/ChapterButtonCard';
+
+// surah name mock data
+export const sampleSurahName = 'Aal-E-Imran';
+
+// header mock data
+export const sampleHeaader: LessonListHeaderProps = {
+  surahName: sampleSurahName,
+  nameTranslation: 'The Family of Imran',
+  surahNameArabic: 'آل عمران',
+  numberOfVerses: '200',
 };
 
-export default meta;
+// Simple function to create mock data for the Lesson button cards
+export const sampleLessonData: LessonButtonCardProps[] = Array.from(
+  { length: 12 },
+  (_, index) => ({
+    lessonNumber: (index + 1).toString(),
+    totalLessons: '12',
+    verseStart: (index * 10 + 1).toString(), // Assuming 10 verses per Lesson, adjust as needed
+    verseEnd: ((index + 1) * 10).toString(), // Assuming 10 verses per Lesson, adjust as needed
+    surahName: sampleSurahName,
+  }),
+);
 
-// Defining the Story type based on the ChapterListSidebar component
-type Story = StoryObj<typeof ChapterListSidebar>;
-
-// Sample data for ChapterButtonCardProps
-const sampleChapterData: ChapterButtonCardProps[] = [
+export const sampleChapterData: ChapterButtonCardProps[] = [
   {
     surahName: 'Al-Fatiha',
     nameTranslation: 'The Opening',
@@ -99,6 +107,3 @@ const sampleChapterData: ChapterButtonCardProps[] = [
     numberOfVideos: '3',
   },
 ];
-
-// Main story showcasing the ChapterListSidebar component
-export const Main: Story = { args: { allChapters: sampleChapterData } };
