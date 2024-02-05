@@ -15,9 +15,15 @@ import {
 
 export interface VideoPlayerSectionProps {
   headerData: VideoHeaderProps;
-  src: PDFEmbedProps;
+  srcPDF: PDFEmbedProps;
+  srcVideo: string;
   pdfDownloadData: PDFDownloadButtonProps;
 }
+
+const VideoPlayer = styled.iframe`
+  min-width: 100%;
+  aspect-ratio: 16 / 9;
+`
 
 const VideoSectionDiv = styled.div`
   width: 100%;
@@ -27,8 +33,9 @@ const VideoSectionDiv = styled.div`
 
 export const VideoPlayerSection = ({
   headerData,
-  src,
+  srcPDF,
   pdfDownloadData,
+  srcVideo,
 }: VideoPlayerSectionProps) => {
   return (
     <VideoSectionDiv>
@@ -36,15 +43,13 @@ export const VideoPlayerSection = ({
         <Button startIcon={<ArrowLeftCircleFill />}>Previous</Button>
         <Button endIcon={<ArrowRightCircleFill />}>Next</Button>
       </ButtonGroup>
-      <iframe
-        width="560"
-        height="315"
-        src="https://www.youtube.com/embed/IxTuddLOAxQ?si=2a2Qe4zZNh3n6yKp"
+      <VideoPlayer
+        src={`${srcVideo}&rel=0`}
         title="YouTube video player"
         frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowFullScreen
-      ></iframe>
+      />
       <VideoHeader
         surahName={headerData.surahName}
         surahNameArabic={headerData.surahNameArabic}
@@ -58,7 +63,7 @@ export const VideoPlayerSection = ({
         verseStart={pdfDownloadData.verseStart}
         verseEnd={pdfDownloadData.verseEnd}
       ></PDFDownloadButton>
-      <PDFEmbed src={src.src}></PDFEmbed>
+      <PDFEmbed src={srcPDF.src}></PDFEmbed>
       <ButtonGroup>
         <Button startIcon={<ArrowLeftCircleFill />}>Previous</Button>
         <Button endIcon={<ArrowRightCircleFill />}>Next</Button>
