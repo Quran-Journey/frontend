@@ -7,34 +7,32 @@ import {
 } from '../ChapterButtonCard/ChapterButtonCard';
 
 /**
- * Represents the props for the ChapterListSidebar component.
- * @interface ChapterListSidebarProps
+ * Represents the props for the ChapterList component.
+ * @interface ChapterListProps
  * @property {Array<ChapterButtonCardProps>} allChapters - The array of ChapterButtonCardProps representing all the chapters.
  */
-interface ChapterListSidebarProps {
+export interface ChapterListProps {
   allChapters: Array<ChapterButtonCardProps>;
 }
 
 /**
- * Represents the styled component for the sidebar div.
+ * Represents the styled component for the list div.
  */
-const SidebarDiv = styled.div`
+const ListDiv = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
 `;
 
 /**
- * Renders the sidebar component for the chapter list.
+ * Renders the list component for the chapter list.
  *
- * @param {ChapterListSidebarProps} allChapters - The array of ChapterButtonCards to be displayed in the sidebar.
- * @returns {JSX.Element} The rendered sidebar component.
+ * @param {ChapterListProps} allChapters - The array of ChapterButtonCards to be displayed in the list.
+ * @returns {JSX.Element} The rendered list component.
  */
-export const ChapterListSidebar = ({
-  allChapters,
-}: ChapterListSidebarProps): JSX.Element => {
+export const ChapterList = ({ allChapters }: ChapterListProps): JSX.Element => {
   return (
-    <SidebarDiv>
+    <ListDiv>
       <ChapterListHeader />
       {allChapters.map((chapter, index) => (
         <ChapterButtonCard
@@ -48,6 +46,6 @@ export const ChapterListSidebar = ({
           numberOfVideos={chapter.numberOfVideos}
         />
       ))}
-    </SidebarDiv>
+    </ListDiv>
   );
 };
