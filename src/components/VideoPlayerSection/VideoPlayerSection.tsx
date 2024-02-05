@@ -8,8 +8,12 @@ import {
   PDFDownloadButtonProps,
 } from '../PDFDownloadButton/PDFDownloadButton';
 import { PDFEmbed, PDFEmbedProps } from '../PDFEmbed/PDFEmbed';
+import {
+  ArrowLeftCircleFill,
+  ArrowRightCircleFill,
+} from '@styled-icons/bootstrap';
 
-interface VideoPlayerSectionProps {
+export interface VideoPlayerSectionProps {
   headerData: VideoHeaderProps;
   src: PDFEmbedProps;
   pdfDownloadData: PDFDownloadButtonProps;
@@ -29,9 +33,18 @@ export const VideoPlayerSection = ({
   return (
     <VideoSectionDiv>
       <ButtonGroup>
-        <Button>Previous</Button>
-        <Button>Next</Button>
+        <Button startIcon={<ArrowLeftCircleFill />}>Previous</Button>
+        <Button endIcon={<ArrowRightCircleFill />}>Next</Button>
       </ButtonGroup>
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/IxTuddLOAxQ?si=2a2Qe4zZNh3n6yKp"
+        title="YouTube video player"
+        frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowFullScreen
+      ></iframe>
       <VideoHeader
         surahName={headerData.surahName}
         surahNameArabic={headerData.surahNameArabic}
@@ -47,8 +60,8 @@ export const VideoPlayerSection = ({
       ></PDFDownloadButton>
       <PDFEmbed src={src.src}></PDFEmbed>
       <ButtonGroup>
-        <Button>Previous</Button>
-        <Button>Next</Button>
+        <Button startIcon={<ArrowLeftCircleFill />}>Previous</Button>
+        <Button endIcon={<ArrowRightCircleFill />}>Next</Button>
       </ButtonGroup>
     </VideoSectionDiv>
   );
