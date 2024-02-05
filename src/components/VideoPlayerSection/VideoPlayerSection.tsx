@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Button } from '../Button/Button';
 import { ButtonGroup } from '../ButtonGroup/ButtonGroup';
 import { VideoHeader, VideoHeaderProps } from '../VideoHeader/VideoHeader';
+import { VideoPlayer, VideoPlayerProps } from '../VideoPlayer/VideoPlayer';
 import {
   PDFDownloadButton,
   PDFDownloadButtonProps,
@@ -16,14 +17,9 @@ import {
 export interface VideoPlayerSectionProps {
   headerData: VideoHeaderProps;
   srcPDF: PDFEmbedProps;
-  srcVideo: string;
+  srcVideo: VideoPlayerProps;
   pdfDownloadData: PDFDownloadButtonProps;
 }
-
-const VideoPlayer = styled.iframe`
-  min-width: 100%;
-  aspect-ratio: 16 / 9;
-`;
 
 const VideoSectionDiv = styled.div`
   width: 100%;
@@ -60,13 +56,7 @@ export const VideoPlayerSection = ({
         <Button startIcon={<ArrowLeftCircleFill />}>Previous</Button>
         <Button endIcon={<ArrowRightCircleFill />}>Next</Button>
       </ButtonGroup>
-      <VideoPlayer
-        src={`${srcVideo}&rel=0`}
-        title="YouTube video player"
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowFullScreen
-      />
+      <VideoPlayer src={`${srcVideo.src}&rel=0`} title={srcVideo.title}/>
       <HeaderSection>
         <HeaderItem>
           <VideoHeader
