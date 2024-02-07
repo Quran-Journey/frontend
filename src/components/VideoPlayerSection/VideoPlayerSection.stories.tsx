@@ -4,10 +4,7 @@ import {
   VideoPlayerSectionProps,
 } from './VideoPlayerSection';
 import {
-  sampleChapterData,
-  sampleHeaader,
-  sampleLessonData,
-  src,
+  sampleSrcPDF,
   sampleVideoHeader,
   samplePdfDownloadInfo,
   sampleVideoSrc,
@@ -32,7 +29,7 @@ type Story = StoryObj<typeof VideoPlayerSection>;
 // Creating the lessonData object with chapterData and lessonData properties
 const videoSectionData: VideoPlayerSectionProps = {
   headerData: sampleVideoHeader,
-  srcPDF: src,
+  srcPDF: sampleSrcPDF,
   pdfDownloadData: samplePdfDownloadInfo,
   srcVideo: sampleVideoSrc,
 };
