@@ -2,12 +2,19 @@ import { LessonButtonCardProps } from '../components/LessonButtonCard/LessonButt
 import { LessonListHeaderProps } from '../components/LessonListHeader/LessonListHeader';
 import { ChapterButtonCardProps } from '../components/ChapterButtonCard/ChapterButtonCard';
 import { PDFEmbedProps } from '@/components/PDFEmbed/PDFEmbed';
+import { VideoPlayerProps } from '@/components/VideoPlayer/VideoPlayer';
+
 // surah name mock data
 export const sampleSurahName = 'Aal-E-Imran';
 
 export const sampleSrcPDF: PDFEmbedProps = {
-  src: 'https://www.alislam.org/quran/Holy-Quran-English.pdf'
-}
+  src: 'https://www.alislam.org/quran/Holy-Quran-English.pdf',
+};
+
+export const sampleVideoSrc: VideoPlayerProps = {
+  src: 'https://www.youtube.com/embed/IxTuddLOAxQ?si=2a2Qe4zZNh3n6yKp',
+  title: 'Quran Journey - Surah Name - Verses 1 - 10',
+};
 
 // header mock data
 export const sampleHeaader: LessonListHeaderProps = {
