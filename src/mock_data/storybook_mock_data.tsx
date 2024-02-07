@@ -3,6 +3,7 @@ import { LessonListHeaderProps } from '../components/LessonListHeader/LessonList
 import { ChapterButtonCardProps } from '../components/ChapterButtonCard/ChapterButtonCard';
 import { PDFEmbedProps } from '@/components/PDFEmbed/PDFEmbed';
 import { VideoPlayerProps } from '@/components/VideoPlayer/VideoPlayer';
+import { VideoHeaderProps } from '@/components/VideoHeader/VideoHeader';
 
 // surah name mock data
 export const sampleSurahName = 'Aal-E-Imran';
@@ -14,6 +15,15 @@ export const sampleSrcPDF: PDFEmbedProps = {
 export const sampleVideoSrc: VideoPlayerProps = {
   src: 'https://www.youtube.com/embed/IxTuddLOAxQ?si=2a2Qe4zZNh3n6yKp',
   title: 'Quran Journey - Surah Name - Verses 1 - 10',
+};
+
+export const sampleVideoHeader: VideoHeaderProps = {
+  surahName: sampleSurahName,
+  surahNameArabic: 'آل عمران',
+  videoNumber: '1',
+  totalVideos: '200',
+  verseStart: '1',
+  verseEnd: '10',
 };
 
 // header mock data
