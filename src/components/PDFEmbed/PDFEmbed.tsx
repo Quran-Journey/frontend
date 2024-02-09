@@ -14,7 +14,7 @@ export interface PDFEmbedProps {
 const PDFContainer = styled.div`
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 80vh;
 `;
 
 // Renders an iframe element styled with CSS using styled-components.
