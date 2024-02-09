@@ -40,7 +40,6 @@ const HeaderSection = styled.div`
     gap: 15px;
     flex-direction: column;
     margin: 15px 0;
-
   }
 
   @media (${breakpoints.xs}) {
@@ -73,6 +72,10 @@ const PDFButtonSection = styled.div`
   margin-bottom: 50px;
 `;
 
+const MarginSection = styled.div`
+  margin: 0 10px;
+`;
+
 export const VideoPlayerSection = ({
   headerData,
   srcPDF,
@@ -86,32 +89,34 @@ export const VideoPlayerSection = ({
         <Button endIcon={<ArrowRightCircleFill />}>Next</Button>
       </ButtonGroup>
       <VideoPlayer src={`${srcVideo.src}&rel=0`} title={srcVideo.title} />
-      <HeaderSection>
-        <HeaderItem>
-          <VideoHeader
-            surahName={headerData.surahName}
-            surahNameArabic={headerData.surahNameArabic}
-            videoNumber={headerData.videoNumber}
-            totalVideos={headerData.totalVideos}
-            verseStart={headerData.verseStart}
-            verseEnd={headerData.verseEnd}
-          ></VideoHeader>
-        </HeaderItem>
-        <HeaderDownload>
-          <PDFDownloadButton
-            surahName={pdfDownloadData.surahName}
-            verseStart={pdfDownloadData.verseStart}
-            verseEnd={pdfDownloadData.verseEnd}
-          ></PDFDownloadButton>
-        </HeaderDownload>
-      </HeaderSection>
-      <PDFButtonSection>
-        <PDFEmbed src={srcPDF.src}></PDFEmbed>
-        <ButtonGroup>
-          <Button startIcon={<ArrowLeftCircleFill />}>Previous</Button>
-          <Button endIcon={<ArrowRightCircleFill />}>Next</Button>
-        </ButtonGroup>
-      </PDFButtonSection>
+      <MarginSection>
+        <HeaderSection>
+          <HeaderItem>
+            <VideoHeader
+              surahName={headerData.surahName}
+              surahNameArabic={headerData.surahNameArabic}
+              videoNumber={headerData.videoNumber}
+              totalVideos={headerData.totalVideos}
+              verseStart={headerData.verseStart}
+              verseEnd={headerData.verseEnd}
+            ></VideoHeader>
+          </HeaderItem>
+          <HeaderDownload>
+            <PDFDownloadButton
+              surahName={pdfDownloadData.surahName}
+              verseStart={pdfDownloadData.verseStart}
+              verseEnd={pdfDownloadData.verseEnd}
+            ></PDFDownloadButton>
+          </HeaderDownload>
+        </HeaderSection>
+        <PDFButtonSection>
+          <PDFEmbed src={srcPDF.src}></PDFEmbed>
+          <ButtonGroup>
+            <Button startIcon={<ArrowLeftCircleFill />}>Previous</Button>
+            <Button endIcon={<ArrowRightCircleFill />}>Next</Button>
+          </ButtonGroup>
+        </PDFButtonSection>
+      </MarginSection>
     </VideoSectionDiv>
   );
 };
