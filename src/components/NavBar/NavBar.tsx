@@ -7,7 +7,11 @@ import { Typography } from '../Typography/Typography';
 // Styled component for the navigation bar (NavBar)
 const NavDiv = styled.div`
   padding: 30px 100px 15px 100px;
+  position: fixed;
+  z-index: 100;
   width: 100%;
+
+  background-color: ${colours.white};
 
   border-bottom: 0.25px solid ${colours.grey};
 
