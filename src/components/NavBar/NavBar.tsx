@@ -6,7 +6,8 @@ import { Typography } from '../Typography/Typography';
 
 // Styled component for the navigation bar (NavBar)
 const NavDiv = styled.div`
-  padding: 30px 100px 15px 100px;
+  padding: 20px 25px 10px 25px;
+
   position: fixed;
   z-index: 100;
   width: 100%;
@@ -16,15 +17,15 @@ const NavDiv = styled.div`
   border-bottom: 0.25px solid ${colours.grey};
 
   @media (${breakpoints.lg}) {
-    padding: 23px 75px 12px 75px;
+    padding: 20px 25px 10px 25px;
   }
 
   @media (${breakpoints.md}) {
-    padding: 20px 50px 10px 50px;
+    padding: 20px 25px 10px 25px;
   }
 
   @media (${breakpoints.sm}) {
-    padding: 17px 20px 9px 20px;
+    padding: 20px 15px 10px 15px;
   }
 
   @media (${breakpoints.xs}) {
