@@ -8,27 +8,34 @@ interface ResponsivePageProps {
 }
 const ResponsiveDiv = styled.div`
   display: block;
-  padding-top: 100px;
+  padding-top: 90px;
   margin-left: 15%;
   margin-right: 15%;
   width: 70%;
 
-  @media (${breakpoints.md}) {
-    padding-top: 80px;
+  @media (${breakpoints.lg}) {
+    padding-top: 90px;
     margin-left: 10%;
     margin-right: 10%;
     width: 80%;
   }
 
+  @media (${breakpoints.md}) {
+    padding-top: 90px;
+    margin-left: 7%;
+    margin-right: 7%;
+    width: 86%;
+  }
+
   @media (${breakpoints.sm}) {
-    padding-top: 70px;
-    margin-left: 5%;
-    margin-right: 5%;
-    width: 90%;
+    padding-top: 90px;
+    margin-left: 4%;
+    margin-right: 4%;
+    width: 92%;
   }
 
   @media (${breakpoints.xs}) {
-    padding-top: 60px;
+    padding-top: 70px;
     margin-left: 3%;
     margin-right: 3%;
     width: 94%;
@@ -37,8 +44,7 @@ const ResponsiveDiv = styled.div`
 
 const ParentDiv = styled.div`
   display: block;
-  margin: 0;
-  padding: 0;
+  width: 100%;
 `;
 
 export const ResponsivePage = ({ children }: ResponsivePageProps) => {
