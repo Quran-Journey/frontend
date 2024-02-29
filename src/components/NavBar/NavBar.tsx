@@ -16,6 +16,8 @@ const NavDiv = styled.div`
 
   border-bottom: 0.25px solid ${colours.grey};
 
+  transition: all 0.3s ease;
+
   @media (${breakpoints.lg}) {
     padding: 20px 25px 10px 25px;
   }

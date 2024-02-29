@@ -13,6 +13,8 @@ const ResponsiveDiv = styled.div`
   margin-right: 15%;
   width: 70%;
 
+  transition: all 0.3s ease;
+
   @media (${breakpoints.lg}) {
     padding-top: 90px;
     margin-left: 10%;
@@ -35,7 +37,7 @@ const ResponsiveDiv = styled.div`
   }
 
   @media (${breakpoints.xs}) {
-    padding-top: 70px;
+    padding-top: 60px;
     margin-left: 3%;
     margin-right: 3%;
     width: 94%;

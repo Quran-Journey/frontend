@@ -43,6 +43,8 @@ const H1 = css`
   font-weight: 600;
   line-height: normal;
 
+  transition: all 0.3s ease;
+
   @media (${breakpoints.sm}) {
     font-size: 32px;
   }
@@ -62,6 +64,8 @@ const H2 = css`
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+
+  transition: all 0.3s ease;
 
   @media (${breakpoints.sm}) {
     font-size: 28px;
@@ -83,6 +87,8 @@ const H3 = css`
   font-weight: 600;
   line-height: normal;
 
+  transition: all 0.3s ease;
+
   @media (${breakpoints.sm}) {
     font-size: 20px;
   }
@@ -102,6 +108,8 @@ const H4 = css`
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+
+  transition: all 0.3s ease;
 
   @media (${breakpoints.sm}) {
     font-size: 18px;
@@ -123,6 +131,8 @@ const SUBTITLE1 = css`
   font-weight: 500;
   line-height: normal;
 
+  transition: all 0.3s ease;
+
   @media (${breakpoints.sm}) {
     font-size: 15px;
   }
@@ -142,6 +152,8 @@ const SUBTITLE2 = css`
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+
+  transition: all 0.3s ease;
 
   @media (${breakpoints.sm}) {
     font-size: 13px;
@@ -164,6 +176,8 @@ const ARABIC_H1 = css`
   line-height: 32px;
   text-align: right;
 
+  transition: all 0.3s ease;
+
   @media (${breakpoints.sm}) {
     font-size: 28px;
   }
@@ -184,6 +198,8 @@ const ARABIC_H2 = css`
   font-weight: 500;
   line-height: 20px;
   text-align: right;
+
+  transition: all 0.3s ease;
 
   @media (${breakpoints.sm}) {
     font-size: 18px;
