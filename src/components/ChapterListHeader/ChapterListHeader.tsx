@@ -17,6 +17,8 @@ const ParentDiv = styled.div`
   margin-top: 15px;
   margin-bottom: 18px;
 
+  transition: all 0.3s ease;
+
   @media (${breakpoints.md}) {
     margin-top: 12px;
     margin-bottom: 15px;

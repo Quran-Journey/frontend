@@ -25,7 +25,7 @@ const IconButtonDiv = styled.div<IconButtonProps>`
   border-radius: 50%;
   background: ${(props) =>
     props.isWhiteOnHover ? colours.white : props.colour};
-    
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -54,6 +54,8 @@ const SMALL = css`
   height: auto;
   padding: 0 2px 1px 2px;
 
+  transition: all 0.3s ease;
+
   @media (${breakpoints.sm}) {
     width: 15px;
   }
@@ -69,6 +71,8 @@ const MEDIUM = css`
   width: 20px;
   height: auto;
   padding: 1px 1px;
+
+  transition: all 0.3s ease;
 
   @media (${breakpoints.sm}) {
     width: 17px;
@@ -86,6 +90,8 @@ const LARGE = css`
   width: 25px;
   height: auto;
   padding: 1px 1px;
+
+  transition: all 0.3s ease;
 
   @media (${breakpoints.sm}) {
     width: 23px;

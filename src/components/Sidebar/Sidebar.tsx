@@ -39,6 +39,8 @@ const SidebarDiv = styled.div`
   margin: 22px 10px;
   padding-bottom: 35px;
 
+  transition: all 0.3s ease;
+
   @media (${breakpoints.md}) {
     margin: 20px 10px;
     padding-bottom: 25px;
