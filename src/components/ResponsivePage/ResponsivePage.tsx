@@ -8,7 +8,7 @@ interface ResponsivePageProps {
 }
 const ResponsiveDiv = styled.div`
   display: block;
-  padding-top: 90px;
+  padding-top: 80px;
   margin-left: 15%;
   margin-right: 15%;
   width: 70%;
@@ -16,31 +16,31 @@ const ResponsiveDiv = styled.div`
   transition: all 0.3s ease;
 
   @media (${breakpoints.lg}) {
-    padding-top: 90px;
+    padding-top: 80px;
     margin-left: 10%;
     margin-right: 10%;
     width: 80%;
   }
 
   @media (${breakpoints.md}) {
-    padding-top: 90px;
+    padding-top: 80px;
     margin-left: 7%;
     margin-right: 7%;
     width: 86%;
   }
 
   @media (${breakpoints.sm}) {
-    padding-top: 90px;
-    margin-left: 4%;
-    margin-right: 4%;
-    width: 92%;
-  }
-
-  @media (${breakpoints.xs}) {
-    padding-top: 60px;
+    padding-top: 80px;
     margin-left: 3%;
     margin-right: 3%;
     width: 94%;
+  }
+
+  @media (${breakpoints.xs}) {
+    padding-top: 55px;
+    margin-left: 1.5%;
+    margin-right: 1.5%;
+    width: 97%;
   }
 `;
 
