@@ -38,7 +38,7 @@ const H1 = css`
   display: inline-block;
 
   font-family: Poppins, Helvetica, sans-serif;
-  font-size: 40px;
+  font-size: 32px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -46,11 +46,11 @@ const H1 = css`
   transition: all 0.3s ease;
 
   @media (${breakpoints.sm}) {
-    font-size: 32px;
+    font-size: 24px;
   }
 
   @media (${breakpoints.xs}) {
-    font-size: 24px;
+    font-size: 22px;
   }
 `;
 
@@ -60,7 +60,7 @@ const H2 = css`
   display: inline-block;
 
   font-family: Poppins, Helvetica, sans-serif;
-  font-size: 36px;
+  font-size: 30px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -68,7 +68,7 @@ const H2 = css`
   transition: all 0.3s ease;
 
   @media (${breakpoints.sm}) {
-    font-size: 28px;
+    font-size: 22px;
   }
 
   @media (${breakpoints.xs}) {
@@ -82,31 +82,9 @@ const H3 = css`
   display: inline-block;
 
   font-family: Poppins, Helvetica, sans-serif;
-  font-size: 24px;
+  font-size: 22px;
   font-style: normal;
   font-weight: 600;
-  line-height: normal;
-
-  transition: all 0.3s ease;
-
-  @media (${breakpoints.sm}) {
-    font-size: 20px;
-  }
-
-  @media (${breakpoints.xs}) {
-    font-size: 18px;
-  }
-`;
-
-// Defines a styled component for English heading 4 with font size adjustments for different breakpoints.
-const H4 = css`
-  color: ${colours.black};
-  display: inline-block;
-
-  font-family: Poppins, Helvetica, sans-serif;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 500;
   line-height: normal;
 
   transition: all 0.3s ease;
@@ -120,13 +98,13 @@ const H4 = css`
   }
 `;
 
-// Defines a styled component for English subtitle 1 with font size adjustments for different breakpoints.
-const SUBTITLE1 = css`
-  color: ${colours.darkGrey};
+// Defines a styled component for English heading 4 with font size adjustments for different breakpoints.
+const H4 = css`
+  color: ${colours.black};
   display: inline-block;
 
-  font-family: General Sans, Open Sans, sans-serif;
-  font-size: 17px;
+  font-family: Poppins, Helvetica, sans-serif;
+  font-size: 18px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
@@ -134,11 +112,33 @@ const SUBTITLE1 = css`
   transition: all 0.3s ease;
 
   @media (${breakpoints.sm}) {
-    font-size: 15px;
+    font-size: 16px;
   }
 
   @media (${breakpoints.xs}) {
-    font-size: 13px;
+    font-size: 14px;
+  }
+`;
+
+// Defines a styled component for English subtitle 1 with font size adjustments for different breakpoints.
+const SUBTITLE1 = css`
+  color: ${colours.darkGrey};
+  display: inline-block;
+
+  font-family: General Sans, Open Sans, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+
+  transition: all 0.3s ease;
+
+  @media (${breakpoints.sm}) {
+    font-size: 14px;
+  }
+
+  @media (${breakpoints.xs}) {
+    font-size: 12px;
   }
 `;
 
@@ -170,7 +170,7 @@ const ARABIC_H1 = css`
   display: inline-block;
 
   font-family: Noto Naskh Arabic;
-  font-size: 32px;
+  font-size: 28px;
   font-style: normal;
   font-weight: 500;
   line-height: 32px;
@@ -179,11 +179,11 @@ const ARABIC_H1 = css`
   transition: all 0.3s ease;
 
   @media (${breakpoints.sm}) {
-    font-size: 28px;
+    font-size: 26px;
   }
 
   @media (${breakpoints.xs}) {
-    font-size: 24px;
+    font-size: 22px;
   }
 `;
 
@@ -193,7 +193,7 @@ const ARABIC_H2 = css`
   display: inline-block;
 
   font-family: Noto Naskh Arabic;
-  font-size: 20px;
+  font-size: 18px;
   font-style: normal;
   font-weight: 500;
   line-height: 20px;
@@ -202,11 +202,11 @@ const ARABIC_H2 = css`
   transition: all 0.3s ease;
 
   @media (${breakpoints.sm}) {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   @media (${breakpoints.xs}) {
-    font-size: 16px;
+    font-size: 14px;
   }
 `;
 
