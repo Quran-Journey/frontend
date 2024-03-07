@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { breakpoints } from '../../styles/breakpoints';
 import { NavBar } from '../NavBar/NavBar';
@@ -6,6 +6,7 @@ import { NavBar } from '../NavBar/NavBar';
 interface ResponsivePageProps {
   children?: React.ReactNode;
 }
+
 const ResponsiveDiv = styled.div`
   display: block;
   padding-top: 80px;
@@ -50,9 +51,32 @@ const ParentDiv = styled.div`
 `;
 
 export const ResponsivePage = ({ children }: ResponsivePageProps) => {
+  const [isNavBarVisible, setIsNavBarVisible] = useState(true);
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.scrollY;
+      setIsNavBarVisible(
+        prevScrollPos > currentScrollPos || currentScrollPos <= 0,
+      );
+      setPrevScrollPos(currentScrollPos);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [prevScrollPos]);
   return (
     <ParentDiv>
-      <NavBar />
+      <NavBar
+        style={{
+          transform: isNavBarVisible ? 'translateY(0)' : 'translateY(-100%)',
+          transition: 'transform 0.3s ease',
+        }}
+      />
       <ResponsiveDiv>{children}</ResponsiveDiv>
     </ParentDiv>
   );
