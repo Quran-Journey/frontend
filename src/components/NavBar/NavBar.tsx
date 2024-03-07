@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { CSSProperties } from 'react';
 import styled from 'styled-components';
 import { breakpoints } from '../../styles/breakpoints';
 import { colours } from '../../styles/colours';
 import { Typography } from '../Typography/Typography';
+
+/**
+ * Interface for the NavBarProps.
+ * @property {CSSProperties} style - The style object for the NavBar component.
+ */
+interface NavBarProps {
+  style?: CSSProperties;
+}
 
 // Styled component for the navigation bar (NavBar)
 const NavDiv = styled.div`
@@ -35,10 +43,15 @@ const NavDiv = styled.div`
   }
 `;
 
-// NavBar component that renders the navigation bar with a title
-export const NavBar = ({}) => {
+/**
+ * Renders a navigation bar component.
+ *
+ * @param {Object} style - The CSS properties to apply to the navigation bar.
+ * @returns {JSX.Element} The rendered navigation bar component.
+ */
+export const NavBar = ({ style }: NavBarProps): JSX.Element => {
   return (
-    <NavDiv>
+    <NavDiv style={style}>
       <Typography variant="h4">Quran Journey</Typography>
     </NavDiv>
   );
