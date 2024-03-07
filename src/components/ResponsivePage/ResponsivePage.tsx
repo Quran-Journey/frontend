@@ -3,10 +3,18 @@ import styled from 'styled-components';
 import { breakpoints } from '../../styles/breakpoints';
 import { NavBar } from '../NavBar/NavBar';
 
+/**
+ * Interface for the props of the ResponsivePage component.
+ * @param {React.ReactNode} children - The children of the component.
+ */
 interface ResponsivePageProps {
   children?: React.ReactNode;
 }
 
+/**
+ * Styled component for a responsive div.
+ * Adjusts padding, margin, and width based on breakpoints.
+ */
 const ResponsiveDiv = styled.div`
   display: block;
   padding-top: 80px;
@@ -45,15 +53,29 @@ const ResponsiveDiv = styled.div`
   }
 `;
 
+/**
+ * Styled component for a parent div.
+ * Sets the display property to block and the width to 100%.
+ */
 const ParentDiv = styled.div`
   display: block;
   width: 100%;
 `;
 
-export const ResponsivePage = ({ children }: ResponsivePageProps) => {
+/**
+ * Renders a responsive page with a navigation bar that appears and disappears based on scroll position.
+ *
+ * @param {ResponsivePageProps} props - The component props.
+ * @param {React.ReactNode} props.children - The content to be rendered inside the responsive page.
+ * @returns {JSX.Element} The rendered responsive page component.
+ */
+export const ResponsivePage = ({
+  children,
+}: ResponsivePageProps): JSX.Element => {
   const [isNavBarVisible, setIsNavBarVisible] = useState(true);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
 
+  // Handles the scroll event and updates the visibility of the navigation bar based on the scroll position.
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollPos = window.scrollY;
@@ -69,6 +91,7 @@ export const ResponsivePage = ({ children }: ResponsivePageProps) => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, [prevScrollPos]);
+
   return (
     <ParentDiv>
       <NavBar
