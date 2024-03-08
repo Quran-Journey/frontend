@@ -94,13 +94,16 @@ const DropdownButtonDiv = styled.div`
   }
 `;
 
-export const SidebarContainer = styled.div<{ isOpen: boolean }>`
+export const SidebarContainer = styled.div<{ isOpen: boolean, isSidebarDropdownButtonTop: boolean }>`
   position: fixed;
   top: 90px;
-  //   left: 0;
-  transition: left 0.3s ease; /* Apply transition effect */
 
   left: ${({ isOpen }) => (isOpen ? '0' : '-50%')}; /* Adjust width as needed */
+  
+  transform: translateY(${({ isSidebarDropdownButtonTop }) =>
+  isSidebarDropdownButtonTop ? '0' : '-60px'}); /* Apply transform based on scroll */
+
+  transition: left 0.3s ease, transform 0.3s ease; 
 
   width: 50%;
   height: 100%;
@@ -125,9 +128,7 @@ export const SidebarContainer = styled.div<{ isOpen: boolean }>`
 export const SidebarDropdown = ({ surahName }: SidebarDropdownProps) => {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
 
-  const toggleSidebar = () => {
-    setSidebarOpen(!isSidebarOpen);
-  };
+  
 
   const [isSidebarDropdownButtonTop, setIsSidebarDropdownButtonTop] =
     useState(true);
@@ -150,6 +151,33 @@ export const SidebarDropdown = ({ surahName }: SidebarDropdownProps) => {
     };
   }, [prevScrollPos]);
 
+  useEffect(() => {
+    const handleOutsideClick = (event: MouseEvent) => {
+      const sidebar = document.getElementById('sidebar');
+      const button = document.getElementById('sidebar-button');
+      if (sidebar && button) {
+
+        if (!sidebar.contains(event.target as Node) && !button.contains(event.target as Node)) {
+            setSidebarOpen(false);
+            console.log('Clicked outside the sidebar!')
+
+          }
+      }
+    };
+
+    document.body.addEventListener('click', handleOutsideClick);
+
+    return () => {
+      document.body.removeEventListener('click', handleOutsideClick);
+    };
+  }, []);
+
+  const toggleSidebar = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    setSidebarOpen(!isSidebarOpen);
+    // Prevent the default behavior of the click event
+    // event.preventDefault();
+  };
+
   return (
     <>
       <DropdownButtonDiv
@@ -160,7 +188,7 @@ export const SidebarDropdown = ({ surahName }: SidebarDropdownProps) => {
           transition: 'transform 0.3s ease',
         }}
       >
-        <TextButton onClick={toggleSidebar}>
+        <TextButton id="sidebar-button" onClick={toggleSidebar}>
           <Typography variant="subtitle1">{surahName}</Typography>
           {/* <CaretDownFill /> */}
           <IconButton
@@ -171,7 +199,7 @@ export const SidebarDropdown = ({ surahName }: SidebarDropdownProps) => {
         </TextButton>
       </DropdownButtonDiv>
       
-      <SidebarContainer isOpen={isSidebarOpen}>
+      <SidebarContainer id="sidebar" isOpen={isSidebarOpen} isSidebarDropdownButtonTop={isSidebarDropdownButtonTop}>
         <Sidebar
           chapterData={lessonData.chapterData}
           lessonData={lessonData.lessonData}
