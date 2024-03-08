@@ -1,4 +1,4 @@
-import React, { CSSProperties } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { breakpoints } from '../../styles/breakpoints';
 import { colours } from '../../styles/colours';
@@ -6,14 +6,14 @@ import { Typography } from '../Typography/Typography';
 
 /**
  * Interface for the NavBarProps.
- * @property {CSSProperties} style - The style object for the NavBar component.
+ * @property {boolean} isVisible - Indicates whether the navigation bar is visible or not.
  */
 interface NavBarProps {
-  style?: CSSProperties;
+  isVisible?: boolean;
 }
 
 // Styled component for the navigation bar (NavBar)
-const NavDiv = styled.div`
+const NavDiv = styled.div<NavBarProps>`
   padding: 20px 25px 10px 25px;
 
   position: fixed;
@@ -23,6 +23,15 @@ const NavDiv = styled.div`
   background-color: ${colours.white};
 
   border-bottom: 0.25px solid ${colours.grey};
+
+  ${(props) =>
+    props.isVisible
+      ? `
+        transform: translateY(0);
+      `
+      : `
+        transform: translateY(-100%);
+      `}
 
   transition: all 0.3s ease;
 
@@ -44,14 +53,33 @@ const NavDiv = styled.div`
 `;
 
 /**
- * Renders a navigation bar component.
+ * Renders a navigation bar component with a scroll animation.
  *
  * @param {Object} style - The CSS properties to apply to the navigation bar.
  * @returns {JSX.Element} The rendered navigation bar component.
  */
-export const NavBar = ({ style }: NavBarProps): JSX.Element => {
+export const NavBar = ({}: NavBarProps): JSX.Element => {
+  const [isNavBarVisible, setIsNavBarVisible] = useState(true);
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+
+  // Handles the scroll event and updates the visibility of the navigation bar based on the scroll position.
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.scrollY;
+      setIsNavBarVisible(
+        prevScrollPos > currentScrollPos || currentScrollPos <= 0,
+      );
+      setPrevScrollPos(currentScrollPos);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [prevScrollPos]);
   return (
-    <NavDiv style={style}>
+    <NavDiv isVisible={isNavBarVisible}>
       <Typography variant="h4">Quran Journey</Typography>
     </NavDiv>
   );
