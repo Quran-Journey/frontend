@@ -39,7 +39,7 @@ const videoSectionData: VideoPlayerSectionProps = {
   srcVideo: sampleVideoSrc,
 };
 
-const TextButton = styled.button`
+const TextButton = styled.button<{ isSidebarOpen: boolean }>`
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -47,16 +47,15 @@ const TextButton = styled.button`
   gap: 7px;
 
   border: none;
-  border-bottom: 3px solid ${colours.white};
+  border-bottom: ${({ isSidebarOpen }) =>
+    isSidebarOpen
+      ? `3px solid ${colours.emrald}`
+      : `3px solid ${colours.white}`};
   background-color: ${colours.white};
 
   cursor: pointer;
 
   transition: border 0.2s ease;
-
-  &:active {
-    border-bottom: 3px solid ${colours.emrald};
-  }
 
   &:hover {
     border-bottom: 3px solid ${colours.emrald};
@@ -195,7 +194,11 @@ export const SidebarDropdown = ({ surahName }: SidebarDropdownProps) => {
           transition: 'transform 0.3s ease',
         }}
       >
-        <TextButton id="sidebar-button" onClick={toggleSidebar}>
+        <TextButton
+          id="sidebar-button"
+          onClick={toggleSidebar}
+          isSidebarOpen={isSidebarOpen}
+        >
           <Typography variant="subtitle1">{surahName}</Typography>
           <IconButton
             icon={isSidebarOpen ? <CaretLeftFill /> : <CaretRightFill />}
