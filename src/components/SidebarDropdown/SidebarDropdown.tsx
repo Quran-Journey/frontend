@@ -64,62 +64,70 @@ const TextButton = styled.button`
 `;
 
 const DropdownButtonDiv = styled.div`
-  padding: 10px 25px 0px 20px;
   position: fixed;
+  top: 57px;
   z-index: 101;
   width: 100%;
 
-  top: 57px;
+  padding: 10px 25px 0px 20px;
 
   background-color: ${colours.white};
-
   border-bottom: 0.25px solid ${colours.grey};
 
-  transition: all 0.3s ease;
+  transition: padding 0.3s ease, top 0.3s ease;
 
   @media (${breakpoints.lg}) {
-    padding: 20px 25px 10px 25px;
+    padding: 10px 25px 0px 20px;
   }
 
   @media (${breakpoints.md}) {
-    padding: 20px 25px 10px 25px;
-  }
-
-  @media (${breakpoints.sm}) {
-    padding: 20px 15px 10px 15px;
+    top: 54px;
   }
 
   @media (${breakpoints.xs}) {
-    padding: 15px 10px 7px 10px;
+    padding: 7px 10px 0px 5px;
+    top: 43px;
   }
 `;
 
-export const SidebarContainer = styled.div<{ isOpen: boolean, isSidebarDropdownButtonTop: boolean }>`
+export const SidebarContainer = styled.div<{
+  isOpen: boolean;
+  isSidebarDropdownButtonTop: boolean;
+}>`
   position: fixed;
   top: 90px;
-
   left: ${({ isOpen }) => (isOpen ? '0' : '-50%')}; /* Adjust width as needed */
-  
-  transform: translateY(${({ isSidebarDropdownButtonTop }) =>
-  isSidebarDropdownButtonTop ? '0' : '-60px'}); /* Apply transform based on scroll */
-
-  transition: left 0.3s ease, transform 0.3s ease; 
-
   width: 50%;
   height: 100%;
-  background: #fff;
-  z-index: 5; /* Ensure sidebar is above other content */
+  z-index: 99;
+
+  transform: translateY(
+    ${({ isSidebarDropdownButtonTop }) =>
+      isSidebarDropdownButtonTop ? '0' : '-60px'}
+  );
+
+  transition: left 0.3s ease, transform 0.3s ease, width 0.3s ease;
+
+  background-color: ${colours.white};
   overflow-y: auto;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
   @media (${breakpoints.md}) {
+    top: 80px;
     width: 75%;
 
     left: ${({ isOpen }) => (isOpen ? '0' : '-75%')};
   }
 
+  @media (${breakpoints.sm}) {
+    width: 85%;
+
+    left: ${({ isOpen }) => (isOpen ? '0' : '-85%')};
+  }
+
   @media (${breakpoints.xs}) {
     width: 100%;
+    top: 70px;
 
     left: ${({ isOpen }) => (isOpen ? '0' : '-100%')};
   }
@@ -127,8 +135,6 @@ export const SidebarContainer = styled.div<{ isOpen: boolean, isSidebarDropdownB
 
 export const SidebarDropdown = ({ surahName }: SidebarDropdownProps) => {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
-
-  
 
   const [isSidebarDropdownButtonTop, setIsSidebarDropdownButtonTop] =
     useState(true);
@@ -156,12 +162,13 @@ export const SidebarDropdown = ({ surahName }: SidebarDropdownProps) => {
       const sidebar = document.getElementById('sidebar');
       const button = document.getElementById('sidebar-button');
       if (sidebar && button) {
-
-        if (!sidebar.contains(event.target as Node) && !button.contains(event.target as Node)) {
-            setSidebarOpen(false);
-            console.log('Clicked outside the sidebar!')
-
-          }
+        if (
+          !sidebar.contains(event.target as Node) &&
+          !button.contains(event.target as Node)
+        ) {
+          setSidebarOpen(false);
+          console.log('Clicked outside the sidebar!');
+        }
       }
     };
 
@@ -172,10 +179,10 @@ export const SidebarDropdown = ({ surahName }: SidebarDropdownProps) => {
     };
   }, []);
 
-  const toggleSidebar = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+  const toggleSidebar = (
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+  ) => {
     setSidebarOpen(!isSidebarOpen);
-    // Prevent the default behavior of the click event
-    // event.preventDefault();
   };
 
   return (
@@ -190,7 +197,6 @@ export const SidebarDropdown = ({ surahName }: SidebarDropdownProps) => {
       >
         <TextButton id="sidebar-button" onClick={toggleSidebar}>
           <Typography variant="subtitle1">{surahName}</Typography>
-          {/* <CaretDownFill /> */}
           <IconButton
             icon={isSidebarOpen ? <CaretLeftFill /> : <CaretRightFill />}
             colour={colours.white}
@@ -198,8 +204,12 @@ export const SidebarDropdown = ({ surahName }: SidebarDropdownProps) => {
           />
         </TextButton>
       </DropdownButtonDiv>
-      
-      <SidebarContainer id="sidebar" isOpen={isSidebarOpen} isSidebarDropdownButtonTop={isSidebarDropdownButtonTop}>
+
+      <SidebarContainer
+        id="sidebar"
+        isOpen={isSidebarOpen}
+        isSidebarDropdownButtonTop={isSidebarDropdownButtonTop}
+      >
         <Sidebar
           chapterData={lessonData.chapterData}
           lessonData={lessonData.lessonData}
