@@ -1,13 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Sidebar, SidebarProps } from '../Sidebar/Sidebar';
+import { SidebarProps } from '../Sidebar/Sidebar';
 import {
   sampleChapterData,
   sampleHeaader,
   sampleLessonData,
-  sampleSrcPDF,
-  sampleVideoHeader,
-  samplePdfDownloadInfo,
-  sampleVideoSrc,
+  sampleSurahName,
 } from '@/mock_data/storybook_mock_data';
 import { SidebarDropdown } from './SidebarDropdown';
 
@@ -18,7 +15,6 @@ const meta: Meta<typeof SidebarDropdown> = {
   parameters: {
     layout: 'fullscreen',
   },
-  tags: ['autodocs'],
 };
 
 export default meta;
@@ -26,6 +22,7 @@ export default meta;
 // Defining the Story type based on the SidebarDropdown component
 type Story = StoryObj<typeof SidebarDropdown>;
 
+// Definig mock data for MainDropdown Story
 const mockLessonData: SidebarProps = {
   chapterData: { allChapters: sampleChapterData },
   lessonData: {
@@ -34,10 +31,10 @@ const mockLessonData: SidebarProps = {
   },
 };
 
-// This is a single-line comment
-export const DisabledLessons: Story = {
+// MainDropdown is a Story object that represents a dropdown component in the sidebar
+export const MainDropdown: Story = {
   args: {
     sidebarData: mockLessonData,
-    surahName: mockLessonData.lessonData.headerDetails.surahName,
+    surahName: sampleSurahName,
   },
 };
