@@ -18,7 +18,7 @@ const meta: Meta<typeof Sidebar> = {
 
 export default meta;
 
-// Defining the Story type based on the LessonList component
+// Defining the Story type based on the Sidebar component
 type Story = StoryObj<typeof Sidebar>;
 
 // Creating the lessonData object with chapterData and lessonData properties
