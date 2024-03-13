@@ -97,7 +97,7 @@ export const VideoHeader = ({
         </HeaderTitle>
         <LabelGroup>
           <Label labelText={'verses ' + verseStart + '-' + verseEnd} />
-          <Label labelText={'video ' + videoNumber + ' of ' + totalVideos} />
+          <Label labelText={'lesson ' + videoNumber + ' of ' + totalVideos} />
         </LabelGroup>
       </SurahNameDiv>
     </SpaceBetween>
