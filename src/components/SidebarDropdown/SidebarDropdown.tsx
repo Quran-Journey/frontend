@@ -10,21 +10,20 @@ import {
   sampleChapterData,
   sampleHeaader,
   sampleLessonData,
-  sampleSrcPDF,
-  sampleVideoHeader,
-  samplePdfDownloadInfo,
-  sampleVideoSrc,
 } from '@/mock_data/storybook_mock_data';
-import {
-  VideoPlayerSectionProps,
-  VideoPlayerSection,
-} from '@/components/VideoPlayerSection/VideoPlayerSection';
 
-interface SidebarDropdownProps {
+/**
+ * Interface for the props of SidebarDropdown component.
+ *
+ * @param {string} surahName - The name of the surah displayed on the sidebar button.
+ * @param {SidebarProps} sidebarData - The data to be displayed in the sidebar dropdown menu.
+ */
+export interface SidebarDropdownProps {
   surahName: string;
+  sidebarData?: SidebarProps;
 }
 
-const lessonData: SidebarProps = {
+const mockSidebarData: SidebarProps = {
   chapterData: { allChapters: sampleChapterData },
   lessonData: {
     headerDetails: sampleHeaader,
@@ -32,13 +31,12 @@ const lessonData: SidebarProps = {
   },
 };
 
-const videoSectionData: VideoPlayerSectionProps = {
-  headerData: sampleVideoHeader,
-  srcPDF: sampleSrcPDF,
-  pdfDownloadData: samplePdfDownloadInfo,
-  srcVideo: sampleVideoSrc,
-};
-
+/**
+ * Represents a styled button component for the sidebar.
+ * 
+ * @param {boolean} isSidebarOpen - Indicates whether the sidebar is open or closed.
+ * @returns {JSX.Element} The styled button component for the sidebar.
+ */
 const TextButton = styled.button<{ isSidebarOpen: boolean }>`
   display: flex;
   justify-content: flex-end;
@@ -62,6 +60,11 @@ const TextButton = styled.button<{ isSidebarOpen: boolean }>`
   }
 `;
 
+/**
+ * Represents a styled container for the dropdown button in the sidebar.
+ *
+ * @returns {JSX.Element} The styled container for the dropdown button.
+ */
 const DropdownButtonDiv = styled.div`
   position: fixed;
   top: 57px;
@@ -89,6 +92,13 @@ const DropdownButtonDiv = styled.div`
   }
 `;
 
+/**
+ * Represents a styled container for the sidebar.
+ *
+ * @param {boolean} isOpen - Indicates whether the sidebar is open or closed.
+ * @param {boolean} isSidebarDropdownButtonTop - Indicates whether the sidebar dropdown button is at the top of the page.
+ * @returns {JSX.Element} The styled container for the sidebar.
+ */
 export const SidebarContainer = styled.div<{
   isOpen: boolean;
   isSidebarDropdownButtonTop: boolean;
@@ -132,9 +142,18 @@ export const SidebarContainer = styled.div<{
   }
 `;
 
-export const SidebarDropdown = ({ surahName }: SidebarDropdownProps) => {
+/**
+ * SidebarDropdown component displays a button that toggles a dropdown sidebar menu.
+ *
+ * @param {SidebarDropdownProps} props - The props for the SidebarDropdown component.
+ * @returns {JSX.Element} The rendered SidebarDropdown component.
+ */
+export const SidebarDropdown = ({
+  surahName,
+  sidebarData = mockSidebarData,
+}: SidebarDropdownProps): JSX.Element => {
+  // Initialize state variables for managing sidebar state and scroll position
   const [isSidebarOpen, setSidebarOpen] = useState(false);
-
   const [isSidebarDropdownButtonTop, setIsSidebarDropdownButtonTop] =
     useState(true);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
@@ -143,24 +162,29 @@ export const SidebarDropdown = ({ surahName }: SidebarDropdownProps) => {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollPos = window.scrollY;
+      // Update the visibility of the dropdown button based on the scroll position
       setIsSidebarDropdownButtonTop(
         prevScrollPos > currentScrollPos || currentScrollPos <= 0,
       );
       setPrevScrollPos(currentScrollPos);
     };
 
+    // Add scroll event listener when the component mounts
     window.addEventListener('scroll', handleScroll);
 
+    // Remove scroll event listener when the component unmounts
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, [prevScrollPos]);
 
+  // Handles clicks outside the sidebar to close it
   useEffect(() => {
     const handleOutsideClick = (event: MouseEvent) => {
       const sidebar = document.getElementById('sidebar');
       const button = document.getElementById('sidebar-button');
       if (sidebar && button) {
+        // Check if the click occurred outside the sidebar and sidebar button
         if (
           !sidebar.contains(event.target as Node) &&
           !button.contains(event.target as Node)
@@ -171,13 +195,16 @@ export const SidebarDropdown = ({ surahName }: SidebarDropdownProps) => {
       }
     };
 
+    // Add click event listener to handle clicks outside the sidebar
     document.body.addEventListener('click', handleOutsideClick);
 
+    // Remove click event listener when the component unmounts
     return () => {
       document.body.removeEventListener('click', handleOutsideClick);
     };
   }, []);
 
+  // Function to toggle the sidebar open/close state
   const toggleSidebar = (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
   ) => {
@@ -214,8 +241,8 @@ export const SidebarDropdown = ({ surahName }: SidebarDropdownProps) => {
         isSidebarDropdownButtonTop={isSidebarDropdownButtonTop}
       >
         <Sidebar
-          chapterData={lessonData.chapterData}
-          lessonData={lessonData.lessonData}
+          chapterData={sidebarData.chapterData}
+          lessonData={sidebarData.lessonData}
         />
       </SidebarContainer>
     </>
