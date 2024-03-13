@@ -17,7 +17,7 @@ import {
 
 // Meta information for the ResponsivePage component
 const meta: Meta<typeof ResponsivePage> = {
-  title: 'Responsive/ResponsivePage',
+  title: 'Layout/ResponsivePage',
   component: ResponsivePage,
   parameters: {
     layout: 'fullscreen',
