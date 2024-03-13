@@ -5,6 +5,7 @@ import { PDFEmbedProps } from '@/components/PDFEmbed/PDFEmbed';
 import { VideoPlayerProps } from '@/components/VideoPlayer/VideoPlayer';
 import { VideoHeaderProps } from '@/components/VideoHeader/VideoHeader';
 import { PDFDownloadButtonProps } from '@/components/PDFDownloadButton/PDFDownloadButton';
+import { SidebarProps } from '@/components/Sidebar/Sidebar';
 
 // surah name mock data
 export const sampleSurahName = 'Aal-E-Imran';
@@ -135,3 +136,11 @@ export const sampleChapterData: ChapterButtonCardProps[] = [
     numberOfVideos: '3',
   },
 ];
+
+export const mockSidebarData: SidebarProps = {
+  chapterData: { allChapters: sampleChapterData },
+  lessonData: {
+    headerDetails: sampleHeaader,
+    allLessons: sampleLessonData,
+  },
+};
