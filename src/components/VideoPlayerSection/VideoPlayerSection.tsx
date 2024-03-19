@@ -38,6 +38,22 @@ const VideoSectionDiv = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
+
+  padding-top: 40px;
+
+  transition:  all 0.3s ease;
+
+  @media (${breakpoints.md}) {
+    padding-top: 30px;
+  }
+
+  @media (${breakpoints.sm}) {
+    padding-top: 20px;
+  }
+
+  @media (${breakpoints.xs}) {
+    padding-top: 10px;
+  }
 `;
 
 /**
