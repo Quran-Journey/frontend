@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ResponsivePage } from './ResponsivePage';
+import { ResponsiveContainer } from './ResponsiveContainer';
 import { Sidebar, SidebarProps } from '@/components/Sidebar/Sidebar';
 import {
   sampleChapterData,
@@ -15,10 +15,10 @@ import {
   VideoPlayerSection,
 } from '@/components/VideoPlayerSection/VideoPlayerSection';
 
-// Meta information for the ResponsivePage component
-const meta: Meta<typeof ResponsivePage> = {
-  title: 'Layout/ResponsivePage',
-  component: ResponsivePage,
+// Meta information for the ResponsiveContainer component
+const meta: Meta<typeof ResponsiveContainer> = {
+  title: 'Layout/ResponsiveContainer',
+  component: ResponsiveContainer,
   parameters: {
     layout: 'fullscreen',
   },
@@ -30,8 +30,8 @@ const meta: Meta<typeof ResponsivePage> = {
 
 export default meta;
 
-// Defining the Story type based on the ResponsivePage component
-type Story = StoryObj<typeof ResponsivePage>;
+// Defining the Story type based on the ResponsiveContainer component
+type Story = StoryObj<typeof ResponsiveContainer>;
 
 // Setting mock data
 const chapterData: SidebarProps = {

@@ -1,13 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 import { breakpoints } from '../../styles/breakpoints';
-import { NavBar } from '../NavBar/NavBar';
 
 /**
- * Interface for the props of the ResponsivePage component.
+ * Interface for the props of the ResponsiveContainer component.
  * @param {React.ReactNode} children - The children of the component.
  */
-interface ResponsivePageProps {
+interface ResponsiveContainerProps {
   children?: React.ReactNode;
 }
 
@@ -46,7 +45,7 @@ const ResponsiveDiv = styled.div`
   }
 
   @media (${breakpoints.xs}) {
-    padding-top: 55px;
+    padding-top: 70px;
     margin-left: 1.5%;
     margin-right: 1.5%;
     width: 97%;
@@ -63,15 +62,15 @@ const ParentDiv = styled.div`
 `;
 
 /**
- * Renders a responsive page 
+ * Renders a responsive container 
  *
- * @param {ResponsivePageProps} props - The component props.
- * @param {React.ReactNode} props.children - The content to be rendered inside the responsive page.
- * @returns {JSX.Element} The rendered responsive page component.
+ * @param {ResponsiveContainerProps} props - The component props.
+ * @param {React.ReactNode} props.children - The content to be rendered inside the responsive container.
+ * @returns {JSX.Element} The rendered responsive container component.
  */
-export const ResponsivePage = ({
+export const ResponsiveContainer = ({
   children,
-}: ResponsivePageProps): JSX.Element => {
+}: ResponsiveContainerProps): JSX.Element => {
   return (
     <ParentDiv>
       <ResponsiveDiv>{children}</ResponsiveDiv>
