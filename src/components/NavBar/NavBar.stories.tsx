@@ -8,7 +8,6 @@ const meta: Meta<typeof NavBar> = {
   parameters: {
     layout: 'fullscreen',
   },
-  tags: ['autodocs'],
 };
 
 export default meta;
@@ -16,6 +15,7 @@ export default meta;
 // Defining the Story type based on the NavBar component
 type Story = StoryObj<typeof NavBar>;
 
+// Defining Main Story for Navbar
 export const Main: Story = {
   args: {},
 };

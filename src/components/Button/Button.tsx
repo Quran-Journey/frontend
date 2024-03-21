@@ -70,10 +70,10 @@ const ButtonDiv = styled.button<ButtonProps>`
   }
 
   @media (${breakpoints.xs}) {
-    font-size: 10px;
+    font-size: 12px;
     line-height: normal;
 
-    padding: 3px 8px;
+    padding: 4px 10px;
   }
 
   ${(props) => props.disabled && DISABLED}
