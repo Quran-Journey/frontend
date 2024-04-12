@@ -74,8 +74,6 @@ const ParentDiv = styled.div`
 
   &:hover {
     cursor: pointer;
-
-    border: none;
   }
 
   @media (${breakpoints.sm}) {
