@@ -11,7 +11,7 @@ import { SidebarProps } from '@/components/Sidebar/Sidebar';
 export const sampleSurahName = 'Aal-E-Imran';
 
 export const sampleSrcPDF: PDFEmbedProps = {
-  src: 'https://www.pdfquran.com/download/standard1/standard1-quran.pdf',
+  src: 'https://drive.google.com/file/d/1nsSvShhz8G4tglEr0e60kj2DFVb9ipJj/preview',
 };
 
 export const sampleVideoSrc: VideoPlayerProps = {
