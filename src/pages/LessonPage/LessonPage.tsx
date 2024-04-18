@@ -1,5 +1,13 @@
 import * as React from 'react';
+import styled from 'styled-components';
 import { ResponsiveContainer } from '@/components/ResponsivePage/ResponsiveContainer';
+import { NavBar } from '@/components/NavBar/NavBar';
+import {
+  SidebarDropdown,
+  SidebarDropdownProps,
+} from '@/components/SidebarDropdown/SidebarDropdown';
+
+// TODO: Remove once fetch calls in place
 import {
   sampleSrcPDF,
   sampleVideoHeader,
@@ -10,28 +18,21 @@ import {
   VideoPlayerSectionProps,
   VideoPlayerSection,
 } from '@/components/VideoPlayerSection/VideoPlayerSection';
-import styled from 'styled-components';
-import { NavBar } from '@/components/NavBar/NavBar';
-import { SidebarDropdown } from '@/components/SidebarDropdown/SidebarDropdown';
 
-const videoSectionData: VideoPlayerSectionProps = {
+
+export interface LessonPage {
+  videoSectionData: VideoPlayerSectionProps;
+  sidebarDropdownData: SidebarDropdownProps;
+}
+
+
+// TODO: Remove once fetch calls in place
+const videoSectionData1: VideoPlayerSectionProps = {
   headerData: sampleVideoHeader,
   srcPDF: sampleSrcPDF,
   pdfDownloadData: samplePdfDownloadInfo,
   srcVideo: sampleVideoSrc,
 };
-
-export const SidebarContainer = styled.div`
-  position: absolute;
-  top: 50;
-  left: 0;
-  width: 500px; 
-  height: 100%;
-  background: #fff;
-  z-index: 999; 
-  overflow-y: auto;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-`;
 
 /**
  * Renders the Home component.
@@ -39,16 +40,18 @@ export const SidebarContainer = styled.div`
  * @returns {JSX.Element} The rendered Home component.
  */
 export const LessonPage: React.FC = (): JSX.Element => {
+  // TODO: fetch lesson page data here
+
   return (
     <>
       <NavBar />
       <SidebarDropdown surahName={"Ali' Imran"} />
       <ResponsiveContainer>
         <VideoPlayerSection
-          headerData={videoSectionData.headerData}
-          srcPDF={videoSectionData.srcPDF}
-          pdfDownloadData={videoSectionData.pdfDownloadData}
-          srcVideo={videoSectionData.srcVideo}
+          headerData={videoSectionData1.headerData}
+          srcPDF={videoSectionData1.srcPDF}
+          pdfDownloadData={videoSectionData1.pdfDownloadData}
+          srcVideo={videoSectionData1.srcVideo}
         />
       </ResponsiveContainer>
     </>
