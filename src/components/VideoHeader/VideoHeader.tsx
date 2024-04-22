@@ -60,6 +60,12 @@ const SpaceBetween = styled.div`
   align-items: flex-start;
 `;
 
+// Represents a styled component for a div that aligns items in the center.
+const HeaderTitle = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
 /**
  * Renders the header component for a video.
  *
@@ -83,15 +89,17 @@ export const VideoHeader = ({
   return (
     <SpaceBetween>
       <SurahNameDiv>
-        <Typography variant="h2">{surahName}</Typography>
+        <HeaderTitle>
+          <Typography variant="h2">
+            {surahName} | {'\xa0 '}
+          </Typography>
+          <Typography variant="h1_arabic">{surahNameArabic}</Typography>
+        </HeaderTitle>
         <LabelGroup>
           <Label labelText={'verses ' + verseStart + '-' + verseEnd} />
-          <Label labelText={'video ' + videoNumber + ' of ' + totalVideos} />
+          <Label labelText={'lesson ' + videoNumber + ' of ' + totalVideos} />
         </LabelGroup>
       </SurahNameDiv>
-      <SurahNameArDiv>
-        <Typography variant="h1_arabic">{surahNameArabic}</Typography>
-      </SurahNameArDiv>
     </SpaceBetween>
   );
 };

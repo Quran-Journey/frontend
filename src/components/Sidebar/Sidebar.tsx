@@ -37,21 +37,23 @@ const SidebarDiv = styled.div`
   overflow-y: auto; /* Enable vertical scrolling seprate from the parent page*/
 
   margin: 22px 10px;
-  padding-bottom: 35px;
+  padding-bottom: 100px;
+
+  transition: all 0.3s ease;
 
   @media (${breakpoints.md}) {
     margin: 20px 10px;
-    padding-bottom: 25px;
+    padding-bottom: 50px;
   }
 
   @media (${breakpoints.sm}) {
     margin: 10px 8px;
-    padding-bottom: 25px;
+    padding-bottom: 50px;
   }
 
   @media (${breakpoints.xs}) {
     margin: 8px 5px;
-    padding-bottom: 20px;
+    padding-bottom: 50px;
   }
 `;
 

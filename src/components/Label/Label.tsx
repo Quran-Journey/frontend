@@ -34,6 +34,8 @@ const LabelDiv = styled.div<LabelProps>`
   font-weight: 400;
   line-height: normal;
 
+  transition: all 0.3s ease;
+
   @media (${breakpoints.sm}) {
     font-size: 12px;
     padding: 1px 7px;

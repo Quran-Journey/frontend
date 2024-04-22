@@ -5,12 +5,13 @@ import { PDFEmbedProps } from '@/components/PDFEmbed/PDFEmbed';
 import { VideoPlayerProps } from '@/components/VideoPlayer/VideoPlayer';
 import { VideoHeaderProps } from '@/components/VideoHeader/VideoHeader';
 import { PDFDownloadButtonProps } from '@/components/PDFDownloadButton/PDFDownloadButton';
+import { SidebarProps } from '@/components/Sidebar/Sidebar';
 
 // surah name mock data
 export const sampleSurahName = 'Aal-E-Imran';
 
 export const sampleSrcPDF: PDFEmbedProps = {
-  src: 'https://www.alislam.org/quran/Holy-Quran-English.pdf',
+  src: 'https://drive.google.com/file/d/1nsSvShhz8G4tglEr0e60kj2DFVb9ipJj/preview',
 };
 
 export const sampleVideoSrc: VideoPlayerProps = {
@@ -135,3 +136,11 @@ export const sampleChapterData: ChapterButtonCardProps[] = [
     numberOfVideos: '3',
   },
 ];
+
+export const mockSidebarData: SidebarProps = {
+  chapterData: { allChapters: sampleChapterData },
+  lessonData: {
+    headerDetails: sampleHeaader,
+    allLessons: sampleLessonData,
+  },
+};

@@ -38,6 +38,22 @@ const VideoSectionDiv = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
+
+  padding-top: 40px;
+
+  transition:  all 0.3s ease;
+
+  @media (${breakpoints.md}) {
+    padding-top: 30px;
+  }
+
+  @media (${breakpoints.sm}) {
+    padding-top: 20px;
+  }
+
+  @media (${breakpoints.xs}) {
+    padding-top: 10px;
+  }
 `;
 
 /**
@@ -46,10 +62,10 @@ const VideoSectionDiv = styled.div`
 const HeaderSection = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: row;
 
-  margin: 38px 0;
+  margin: 25px 0 50px 0;
 
   @media (${breakpoints.sm}) {
     gap: 15px;
@@ -78,9 +94,13 @@ const HeaderItem = styled.div`
  */
 const HeaderDownload = styled.div`
   width: 36%;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
 
   @media (${breakpoints.sm}) {
     width: 100%;
+    justify-content: space-between;
   }
 `;
 
@@ -103,6 +123,10 @@ const MarginSection = styled.div`
   margin: 0 10px;
 `;
 
+const ButtonMargin = styled.div`
+  margin-top: 20px;
+`;
+
 /**
  * Renders a video player section with buttons for navigation, a video player, a video header, a PDF download button, and a PDF embed.
  *
@@ -121,10 +145,6 @@ export const VideoPlayerSection = ({
 }: VideoPlayerSectionProps): JSX.Element => {
   return (
     <VideoSectionDiv>
-      <ButtonGroup>
-        <Button startIcon={<ArrowLeftCircleFill />}>Previous</Button>
-        <Button endIcon={<ArrowRightCircleFill />}>Next</Button>
-      </ButtonGroup>
       <VideoPlayer src={`${srcVideo.src}&rel=0`} title={srcVideo.title} />
       <MarginSection>
         <HeaderSection>
@@ -139,19 +159,20 @@ export const VideoPlayerSection = ({
             ></VideoHeader>
           </HeaderItem>
           <HeaderDownload>
-            <PDFDownloadButton
-              surahName={pdfDownloadData.surahName}
-              verseStart={pdfDownloadData.verseStart}
-              verseEnd={pdfDownloadData.verseEnd}
-            ></PDFDownloadButton>
+            <ButtonGroup>
+              <Button startIcon={<ArrowLeftCircleFill />}>Previous</Button>
+              <Button endIcon={<ArrowRightCircleFill />}>Next</Button>
+            </ButtonGroup>
           </HeaderDownload>
         </HeaderSection>
         <PDFButtonSection>
           <PDFEmbed src={srcPDF.src}></PDFEmbed>
-          <ButtonGroup>
-            <Button startIcon={<ArrowLeftCircleFill />}>Previous</Button>
-            <Button endIcon={<ArrowRightCircleFill />}>Next</Button>
-          </ButtonGroup>
+          <ButtonMargin>
+            <ButtonGroup>
+              <Button startIcon={<ArrowLeftCircleFill />}>Previous</Button>
+              <Button endIcon={<ArrowRightCircleFill />}>Next</Button>
+            </ButtonGroup>
+          </ButtonMargin>
         </PDFButtonSection>
       </MarginSection>
     </VideoSectionDiv>

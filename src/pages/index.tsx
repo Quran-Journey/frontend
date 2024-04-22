@@ -1,5 +1,7 @@
 import * as React from 'react';
-import { Typography } from '@/components/Typography/Typography';
+import { HomePage } from './HomePage/HomePage';
+import { LessonPage } from './LessonPage/LessonPage';
+
 
 /**
  * Renders the Home component.
@@ -7,13 +9,15 @@ import { Typography } from '@/components/Typography/Typography';
  * @returns {JSX.Element} The rendered Home component.
  */
 const Home: React.FC = (): JSX.Element => {
+
+  // TODO: fetch data
+  
   return (
-    <div style={{ margin: '50px' }}>
-      <Typography variant="h1">Welcome to Quran Journey</Typography>
-      <div>
-        <Typography variant="subtitle1">This is a placeholder page</Typography>
-      </div>
-    </div>
+    <>
+      {/* <HomePage /> */}
+      
+      <LessonPage />
+    </>
   );
 };
 
