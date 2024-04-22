@@ -1,11 +1,13 @@
 import * as React from 'react';
-import styled from 'styled-components';
+import { useState, useEffect } from 'react';
 import { ResponsiveContainer } from '@/components/ResponsivePage/ResponsiveContainer';
 import { NavBar } from '@/components/NavBar/NavBar';
 import {
   SidebarDropdown,
   SidebarDropdownProps,
 } from '@/components/SidebarDropdown/SidebarDropdown';
+import lessons from '../../api/lessons';
+import Lesson from '@/models/lesson/lesson';
 
 // TODO: Remove once fetch calls in place
 import {
@@ -19,12 +21,14 @@ import {
   VideoPlayerSection,
 } from '@/components/VideoPlayerSection/VideoPlayerSection';
 
+export interface LessonPageProps {
+  lessonId: number;
+}
 
 export interface LessonPage {
   videoSectionData: VideoPlayerSectionProps;
   sidebarDropdownData: SidebarDropdownProps;
 }
-
 
 // TODO: Remove once fetch calls in place
 const videoSectionData1: VideoPlayerSectionProps = {
@@ -39,8 +43,26 @@ const videoSectionData1: VideoPlayerSectionProps = {
  *
  * @returns {JSX.Element} The rendered Home component.
  */
-export const LessonPage: React.FC = (): JSX.Element => {
+export const LessonPage: React.FC<LessonPageProps> = ({
+  lessonId,
+}): JSX.Element => {
   // TODO: fetch lesson page data here
+  const [lesson, setLesson] = useState<Lesson | undefined>();
+
+  useEffect(() => {
+    async function fetchChapterData() {
+      try {
+        const fetchedChapterData = await lessons.getLessonById(lessonId);
+        setLesson(fetchedChapterData);
+      } catch (error) {
+        console.error('Error fetching lesson data:', error);
+      }
+    }
+
+    fetchChapterData();
+  }, [lessonId]);
+
+  console.log(lesson);
 
   return (
     <>
