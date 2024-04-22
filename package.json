@@ -21,7 +21,7 @@
     "@fontsource/open-sans": "^5.0.21",
     "@fontsource/poppins": "^5.0.8",
     "@styled-icons/bootstrap": "^10.47.0",
-    "axios": "^1.6.7",
+    "axios": "^1.6.8",
     "next": "^14.0.4",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
