@@ -31,23 +31,55 @@ export const HomePage: React.FC = ({
   chapterData = lessonData1.chapterData,
   lessonData = null,
 }: SidebarProps): JSX.Element => {
-  
   // TODO: fetch chapter data here
-  const [chapters, setChapters] = useState<Surah[] | undefined>();
-  useEffect(() => {
-    async function fetchChapterData() {
-      try {
-        const fetchedChapterData = await surahs.getSurahs();
-        setChapters(fetchedChapterData);
-      } catch (error) {
-        console.error('Error fetching chapter data:', error);
-      }
+
+  const [allChapters, setAllChapters] = useState<Surah[]>([]);
+  const [chaptersWithLessons, setChaptersWithLessons] = useState<{
+    [key: number]: { surah: Surah; numOfLessons: number };
+  }>({});
+
+  async function fetchChaptersWithLessons() {
+    try {
+      const fetchedAllChapters = await surahs.getSurahs();
+      setAllChapters(fetchedAllChapters);
+
+      // Loop through each chapter and fetch the lessons
+      const chapterLessonsCountMap: { [key: number]: number } = {};
+      const chaptersWithLessonsMap: {
+        [key: number]: { surah: Surah; numOfLessons: number };
+      } = {};
+      await Promise.all(
+        fetchedAllChapters.map(async (chapter) => {
+          if (chapter.surahId !== undefined) {
+            try {
+              const lessons = await surahs.getSurahLessons(chapter.surahId);
+              if (lessons.length > 0) {
+                chapterLessonsCountMap[chapter.surahId] = lessons.length;
+                chaptersWithLessonsMap[chapter.surahId] = {
+                  surah: chapter,
+                  numOfLessons: lessons.length,
+                };
+              }
+            } catch (error) {
+              console.error(
+                `Error fetching lessons for surahId ${chapter.surahId}:`,
+                error,
+              );
+            }
+          }
+        }),
+      );
+
+      setChaptersWithLessons(chaptersWithLessonsMap);
+      console.log('chapters with lessons: ', chaptersWithLessons);
+    } catch (error) {
+      console.error('Error fetching all chapter data:', error);
     }
+  }
 
-    fetchChapterData();
+  useEffect(() => {
+    fetchChaptersWithLessons();
   }, []);
-
-  console.log(chapters);
 
   return (
     <>
