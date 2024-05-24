@@ -46,21 +46,20 @@ const videoSectionData1: VideoPlayerSectionProps = {
 export const LessonPage: React.FC<LessonPageProps> = ({
   lessonId,
 }): JSX.Element => {
-  // TODO: fetch lesson page data here
   const [lesson, setLesson] = useState<Lesson | undefined>();
 
-  useEffect(() => {
-    async function fetchChapterData() {
-      try {
-        const fetchedChapterData = await lessons.getLessonById(lessonId);
-        setLesson(fetchedChapterData);
-      } catch (error) {
-        console.error('Error fetching lesson data:', error);
-      }
+  async function fetchLessonData() {
+    try {
+      const fetchedChapterData = await lessons.getLessonById(lessonId);
+      setLesson(fetchedChapterData);
+    } catch (error) {
+      console.error('Error fetching lesson data:', error);
     }
+  }
 
-    fetchChapterData();
-  }, [lessonId]);
+  useEffect(() => {
+    fetchLessonData();
+  }, []);
 
   console.log(lesson);
 
