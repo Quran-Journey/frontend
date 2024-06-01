@@ -18,4 +18,4 @@ export default meta;
 type Story = StoryObj<typeof ChapterList>;
 
 // Main story showcasing the ChapterList component
-export const Main: Story = { args: { allChapters: sampleChapterData } };
+export const Main: Story = { args: { chapterData: sampleChapterData } };
