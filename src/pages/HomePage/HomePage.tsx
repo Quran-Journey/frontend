@@ -15,7 +15,7 @@ import {
 
 // TODO: Remove once fetch calls in place
 const lessonData1: SidebarProps = {
-  chapterData: { allChapters: sampleChapterData },
+  chapterData: sampleChapterData,
   lessonData: {
     headerDetails: sampleHeaader,
     allLessons: sampleLessonData,
@@ -70,7 +70,7 @@ export const HomePage: React.FC = ({
     <>
       <NavBar />
       <ResponsiveContainer>
-        <Sidebar chapterData={chapterData} lessonData={lessonData} />
+        <Sidebar chapterData={chapterData} lessonData={lessonData} apiData={chaptersToDisplay}/>
       </ResponsiveContainer>
     </>
   );
