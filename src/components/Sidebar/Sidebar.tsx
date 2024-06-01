@@ -5,6 +5,8 @@ import { LessonList, LessonListProps } from '../LessonList/LessonList';
 import { Button } from '../Button/Button';
 import { ButtonGroup } from '../ButtonGroup/ButtonGroup';
 import { breakpoints } from '@/styles/breakpoints';
+import { ChapterButtonCardProps } from '../ChapterButtonCard/ChapterButtonCard';
+import Surah from '@/models/surah/surah';
 
 /**
  * Interface for the Sidebar component props.
@@ -13,8 +15,10 @@ import { breakpoints } from '@/styles/breakpoints';
  * @param {LessonListProps | undefined | null} lessonData - The data for the LessonList component, which is optional and can be undefined or null.
  */
 export interface SidebarProps {
-  chapterData: ChapterListProps;
+  chapterData: Array<ChapterButtonCardProps>;
   lessonData?: LessonListProps | undefined | null;
+
+  apiData?: { [surahId: number]: { surah: Surah; numOfLessons: number } };
 }
 
 /**
@@ -67,12 +71,15 @@ const SidebarDiv = styled.div`
 export const Sidebar = ({
   chapterData,
   lessonData = null,
+  apiData,
 }: SidebarProps): JSX.Element => {
   /* Setting variables to allow chapter and lesson buttons to toggle or disable lesson button */
   const [isChapterSelected, setChapterSelected] = useState(true);
   const [isLessonListDisabled, setLessonListDisabled] = useState(
     lessonData === null,
   );
+
+  console.log("Passed to SideBar component: ", apiData)
   return (
     <SidebarDiv>
       <SidebarContent>
@@ -93,7 +100,7 @@ export const Sidebar = ({
                 </Button>
               </ButtonGroup>
             </Margin>
-            <ChapterList allChapters={chapterData.allChapters} />
+            <ChapterList chapterData={chapterData} apiData={apiData} />
           </>
         ) : (
           <>
@@ -121,7 +128,7 @@ export const Sidebar = ({
 
             {isChapterSelected ? (
               /* Render chapter list if it is selected */
-              <ChapterList allChapters={chapterData.allChapters} />
+              <ChapterList chapterData={chapterData} apiData={apiData}/>
             ) : (
               <>
                 {/* Render lesson list if it is selected */}
