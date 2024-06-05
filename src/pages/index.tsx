@@ -14,9 +14,9 @@ const Home: React.FC = (): JSX.Element => {
   
   return (
     <>
-      {/* <HomePage /> */}
+      <HomePage />
       
-      <LessonPage />
+      {/* <LessonPage lessonId={2}/> */}
     </>
   );
 };

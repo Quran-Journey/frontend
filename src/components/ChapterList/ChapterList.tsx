@@ -5,14 +5,19 @@ import {
   ChapterButtonCardProps,
   ChapterButtonCard,
 } from '../ChapterButtonCard/ChapterButtonCard';
+import Surah from '@/models/surah/surah';
 
 /**
  * Represents the props for the ChapterList component.
  * @interface ChapterListProps
- * @property {Array<ChapterButtonCardProps>} allChapters - The array of ChapterButtonCardProps representing all the chapters.
+ * @property {Array<ChapterButtonCardProps>} chapterData - The array of ChapterButtonCardProps representing all the chapters.
  */
 export interface ChapterListProps {
-  allChapters: Array<ChapterButtonCardProps>;
+  chapterData: Array<ChapterButtonCardProps>;
+  apiData?: {
+    [surahId: number]: { surah: Surah; numOfLessons: number };
+  };
+  onChapterClick: (surahId: number) => void;
 }
 
 /**
@@ -30,11 +35,33 @@ const ListDiv = styled.div`
  * @param {ChapterListProps} allChapters - The array of ChapterButtonCards to be displayed in the list.
  * @returns {JSX.Element} The rendered list component.
  */
-export const ChapterList = ({ allChapters }: ChapterListProps): JSX.Element => {
-  return (
-    <ListDiv>
-      <ChapterListHeader />
-      {allChapters.map((chapter, index) => (
+export const ChapterList = ({
+  chapterData,
+  apiData,
+  onChapterClick,
+}: ChapterListProps): JSX.Element => {
+  // Transform the chaptersToDisplay object to an array of ChapterButtonCardProps
+
+  function returnApiChapterButtonCard() {
+    if (apiData) {
+      const chapterDataInfo = Object.values(apiData).map(
+        ({ surah, numOfLessons }) => (
+          <ChapterButtonCard
+            key={surah.surahId} // Add a unique key for each mapped component
+            onClick={() => onChapterClick(surah.surahId)}
+            surahName={surah.nameComplex || ''}
+            nameTranslation={'Translation Placeholder'}
+            surahNameArabic={surah.nameArabic || 'سُورَة'}
+            numberOfVerses={'000'}
+            surahNumber={surah.surahNumber || '00'}
+            numberOfVideos={numOfLessons}
+          />
+        ),
+      );
+
+      return chapterDataInfo;
+    } else {
+      const chapterDataInfo = chapterData.map((chapter, index) => (
         <ChapterButtonCard
           key={index} // Add a unique key for each mapped component
           onClick={chapter.onClick}
@@ -45,7 +72,16 @@ export const ChapterList = ({ allChapters }: ChapterListProps): JSX.Element => {
           surahNumber={chapter.surahNumber}
           numberOfVideos={chapter.numberOfVideos}
         />
-      ))}
+      ));
+
+      return chapterDataInfo;
+    }
+  }
+
+  return (
+    <ListDiv>
+      <ChapterListHeader />
+      {returnApiChapterButtonCard()}
     </ListDiv>
   );
 };

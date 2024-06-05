@@ -23,7 +23,7 @@ type Story = StoryObj<typeof Sidebar>;
 
 // Creating the lessonData object with chapterData and lessonData properties
 const lessonData: SidebarProps = {
-  chapterData: { allChapters: sampleChapterData },
+  chapterData: sampleChapterData,
   lessonData: {
     headerDetails: sampleHeaader,
     allLessons: sampleLessonData,
