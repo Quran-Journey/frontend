@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { ChapterList, ChapterListProps } from '../ChapterList/ChapterList';
 import { LessonList, LessonListProps } from '../LessonList/LessonList';
@@ -7,6 +7,8 @@ import { ButtonGroup } from '../ButtonGroup/ButtonGroup';
 import { breakpoints } from '@/styles/breakpoints';
 import { ChapterButtonCardProps } from '../ChapterButtonCard/ChapterButtonCard';
 import Surah from '@/models/surah/surah';
+import surahs from '../../api/surahs';
+import Lesson from '@/models/lesson/lesson';
 
 /**
  * Interface for the Sidebar component props.
@@ -75,11 +77,43 @@ export const Sidebar = ({
 }: SidebarProps): JSX.Element => {
   /* Setting variables to allow chapter and lesson buttons to toggle or disable lesson button */
   const [isChapterSelected, setChapterSelected] = useState(true);
-  const [isLessonListDisabled, setLessonListDisabled] = useState(
-    lessonData === null,
-  );
+  const [isLessonListDisabled, setLessonListDisabled] = useState(true);
+  const [fetchedLessonData, setFetchedLessonData] = useState<Lesson[]>([]);
+  const [headerDetails, setHeaderDetails] = useState<{
+    surahName?: string;
+    nameTranslation?: string;
+    surahNameArabic?: string;
+    numberOfVerses?: string;
+  }>();
 
-  console.log("Passed to SideBar component: ", apiData)
+  const handleChapterClick = (surahId: number) => {
+    console.log(`Surah ${surahId} clicked`);
+
+    fetchChapterLessons(surahId);
+    setLessonListDisabled(false);
+    setChapterSelected(false);
+    if (apiData) {
+      setHeaderDetails({
+        surahName: apiData[surahId].surah.nameComplex,
+        nameTranslation: 'temp',
+        surahNameArabic: apiData[surahId].surah.nameArabic + 'سُوۡرَةُ ',
+        numberOfVerses: 'temp',
+      });
+    }
+
+    console.log(fetchedLessonData);
+  };
+
+  async function fetchChapterLessons(surahId: number) {
+    try {
+      const lessons = await surahs.getSurahLessons(surahId);
+
+      setFetchedLessonData(lessons);
+    } catch (error) {
+      console.error(`Error fetching lessons for surahId ${surahId}:`, error);
+    }
+  }
+
   return (
     <SidebarDiv>
       <SidebarContent>
@@ -100,7 +134,11 @@ export const Sidebar = ({
                 </Button>
               </ButtonGroup>
             </Margin>
-            <ChapterList chapterData={chapterData} apiData={apiData} />
+            <ChapterList
+              chapterData={chapterData}
+              apiData={apiData}
+              onChapterClick={handleChapterClick}
+            />
           </>
         ) : (
           <>
@@ -115,12 +153,12 @@ export const Sidebar = ({
                 </Button>
 
                 {/* Ensure lessonData is not null to avoid typescript errors */}
-                {lessonData && (
+                {headerDetails && (
                   <Button
                     selected={!isChapterSelected}
                     onClick={() => setChapterSelected(false)}
                   >
-                    Lessons / {lessonData.headerDetails.surahName}{' '}
+                    Lessons / {headerDetails.surahName}{' '}
                   </Button>
                 )}
               </ButtonGroup>
@@ -128,15 +166,24 @@ export const Sidebar = ({
 
             {isChapterSelected ? (
               /* Render chapter list if it is selected */
-              <ChapterList chapterData={chapterData} apiData={apiData}/>
+              <ChapterList
+                chapterData={chapterData}
+                apiData={apiData}
+                onChapterClick={handleChapterClick}
+              />
             ) : (
               <>
                 {/* Render lesson list if it is selected */}
                 {/* Ensure lessonData is not null to avoid typescript errors */}
-                {lessonData && (
+                {fetchedLessonData && (
                   <LessonList
-                    headerDetails={lessonData.headerDetails}
-                    allLessons={lessonData.allLessons}
+                    // headerDetails={lessonData.headerDetails}
+                    // allLessons={lessonData.allLessons}
+                    surahName={headerDetails?.surahName}
+                    nameTranslation={headerDetails?.nameTranslation}
+                    surahNameArabic={headerDetails?.surahNameArabic}
+                    numberOfVerses={headerDetails?.numberOfVerses}
+                    lessonList={fetchedLessonData}
                   />
                 )}
               </>
