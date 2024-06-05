@@ -17,6 +17,7 @@ export interface ChapterListProps {
   apiData?: {
     [surahId: number]: { surah: Surah; numOfLessons: number };
   };
+  onChapterClick: (surahId: number) => void;
 }
 
 /**
@@ -37,6 +38,7 @@ const ListDiv = styled.div`
 export const ChapterList = ({
   chapterData,
   apiData,
+  onChapterClick,
 }: ChapterListProps): JSX.Element => {
   // Transform the chaptersToDisplay object to an array of ChapterButtonCardProps
 
@@ -46,7 +48,7 @@ export const ChapterList = ({
         ({ surah, numOfLessons }) => (
           <ChapterButtonCard
             key={surah.surahId} // Add a unique key for each mapped component
-            onClick={() => console.log(`Surah ${surah.surahId} clicked`)}
+            onClick={() => onChapterClick(surah.surahId)}
             surahName={surah.nameComplex || ''}
             nameTranslation={'Translation Placeholder'}
             surahNameArabic={surah.nameArabic || 'سُورَة'}
@@ -76,11 +78,10 @@ export const ChapterList = ({
     }
   }
 
-  console.log('In chapterList: ', apiData);
   return (
     <ListDiv>
       <ChapterListHeader />
-        {returnApiChapterButtonCard()}
+      {returnApiChapterButtonCard()}
     </ListDiv>
   );
 };
